@@ -1,0 +1,104 @@
+==============================================
+Script: 33a_diagnose_inputs
+Start: 2026-09-16 21:02:36
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+=== 1. Structure of the annotation object ===
+  Class: DFrame
+  Dimensions: 485512 x 33
+  Column names (first 20): chr, pos, strand, Name, AddressA, AddressB, ProbeSeqA, ProbeSeqB, Type, NextBase, Color, Probe_rs, Probe_maf, CpG_rs, CpG_maf, SBE_rs, SBE_maf, Islands_Name, Relation_to_Island, Forward_Sequence
+  Row names present: TRUE; first 5: cg00050873, cg00212031, cg00213748, cg00214611, cg00455876
+  Columns containing cg IDs: Name
+    e.g. cg00050873, cg00212031, cg00213748, cg00214611, cg00455876; total 485512 rows
+  Chromosome column: chr
+    values (first 8): chr1=46857; chr10=24388; chr11=28794; chr12=24539; chr13=12285; chr14=15078; chr15=15259; chr16=21969
+
+=== 2. Column names and probe names of each data file ===
+---------- GSE84727 ----------
+  Header: GSM 847 (GSM2250273, GSM2250274); title examples 33262604, 33261623
+  Data file GSE84727_normalisedBetas.csv.gz: 848 columns
+  Name of first column: V1; probe name examples: cg00000029, cg00000108, cg00000109
+  First 6 column names: 3998567027_R01C01 | 3998567027_R02C01 | 3998567027_R03C01 | 3998567027_R04C01 | 3998567027_R05C01 | 3998567027_R06C01
+  Last 3 column names: 3998567028_R04C02 | 3998567028_R05C02 | 3998567028_R06C02
+  Column names matching GSMs: 0; matching titles: 0
+  After removing common prefixes and suffixes: matching GSMs 0; matching titles: 0
+  Repeated column names: 0 ( 0.00)
+
+---------- GSE80417 ----------
+  Header: GSM 675 (GSM2126260, GSM2126261); title examples C0301, C0256
+  Data file GSE80417_normalizedBetas.csv.gz: 676 columns
+  Name of first column: V1; probe name examples: cg00000029, cg00000108, cg00000109
+  First 6 column names: 9704031032_R02C01 | 9704031032_R06C01 | 9721367113_R04C02 | 9721367113_R05C01 | 9721367113_R06C01 | 9721367113_R06C02
+  Last 3 column names: 9992571076_R05C01 | 9992571076_R05C02 | 9992571076_R06C01
+  Column names matching GSMs: 0; matching titles: 0
+  After removing common prefixes and suffixes: matching GSMs 0; matching titles: 0
+  Repeated column names: 0 ( 0.00)
+
+---------- GSE198904 ----------
+  Header: GSM 655 (GSM5959229, GSM5959230); title examples 201172200060_R08C01, 201172200055_R06C01
+  Data file GSE198904_DHRC_Matrix_processed.txt.gz: 865 columns
+  Name of first column: cg21870274; probe name examples: cg09499020, cg16535257, cg00168193
+  First 6 column names: 0.647725231795411 | 0 | 0.63838039089477 | 0 | 0.660168296531908 | 0
+  Last 3 column names: 0 | 0.591469987993726 | 0
+  Column names matching GSMs: 0; matching titles: 0
+  After removing common prefixes and suffixes: matching GSMs 0; matching titles: 0
+  Repeated column names: 431 ( 0.50)
+  Layout decision: alternating FALSE; in blocks FALSE
+  [NOTE] neither layout fits; the complete column names need manual inspection
+
+---------- GSE273970 ----------
+  Header: GSM 283 (GSM8440623, GSM8440624); title examples sample 1_genomic DNA from blood sample C0171, sample 2_genomic DNA from blood sample C0310
+  Data file GSE273970_Processed_Data.txt.gz: 567 columns
+  Name of first column: ID_REF; probe name examples: cg18478105, cg09835024, cg14361672
+  First 6 column names: sample_1.Noob_Beta | sample_3.Noob_Beta | sample_4.Noob_Beta | sample_5.Noob_Beta | sample_6.Noob_Beta | sample_8.Noob_Beta
+  Last 3 column names: sample_280.Detection_Pval | sample_281.Detection_Pval | sample_282.Detection_Pval
+  Column names matching GSMs: 0; matching titles: 0
+  After removing common prefixes and suffixes: matching GSMs 0; matching titles: 0
+  Repeated column names: 0 ( 0.00)
+
+---------- GSE338167 ----------
+  Header: GSM 621 (GSM9868217, GSM9868218); title examples Whole blood DNA methylation, NHW CONTROL, 90yo M, 207097420061_R03C01, Whole blood DNA methylation, AA CONTROL, 77yo M, 207097420010_R04C01
+  Data file GSE338167_beta_matrix_normalized.txt.gz: 622 columns
+  Name of first column: V1; probe name examples: cg00000029_TC21, cg00000109_TC21, cg00000155_BC21
+  First 6 column names: 207097420061_R03C01 | 207097420010_R04C01 | 207080910085_R07C01 | 207097420040_R06C01 | 207097420049_R03C01 | 207080920090_R05C01
+  Last 3 column names: 207215820046_R07C01 | 207097650070_R06C01 | 207097650112_R08C01
+  Column names matching GSMs: 0; matching titles: 0
+  After removing common prefixes and suffixes: matching GSMs 0; matching titles: 0
+  Repeated column names: 0 ( 0.00)
+
+---------- GSE144858 ----------
+  Header: GSM 300 (GSM4299202, GSM4299203); title examples Genomic DNA from blood 1, Genomic DNA from blood 2
+  Data file GSE144858_series_matrix.txt.gz: 2 columns
+  Name of first column: !Series_title; probe name examples: !Series_geo_accession, !Series_status, !Series_submission_date
+  First 6 column names: An epigenome-wide association study of Alzheimer’s disease blood highlights robust DNA hypermethylation in the HOXB6 gene.
+  Last 3 column names: !Series_title | An epigenome-wide association study of Alzheimer’s disease blood highlights robust DNA hypermethylation in the HOXB6 gene.
+  Column names matching GSMs: 0; matching titles: 0
+  After removing common prefixes and suffixes: matching GSMs 0; matching titles: 0
+  Repeated column names: 0 ( 0.00)
+
+Diagnosis finished. Review this log before revising step 33.
+
+==============================================
+Status: completed normally
+End: 2026-09-16 21:05:16   elapsed 2.7 min
+Warnings: 1
+  - closing unused connection 4 (C:/blood_methylation_download/raw/GSE198904/GSE198904_DHRC_Matrix_processed.txt.gz)
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

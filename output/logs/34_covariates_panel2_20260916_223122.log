@@ -1,0 +1,224 @@
+==============================================
+Script: 34_covariates_panel2
+Start: 2026-09-16 22:31:22
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+=== Loading the internal data of the two packages ===
+  EpiSmokEr: data sets 6 (CS_final_coefs, FS_final_coefs, Illig_data, NS_final_coefs, Zhangetal_cpgs, dummyBetaData)
+    loaded successfully: 2 (Illig_data, dummyBetaData)
+  dnaMethyAge needs to be attached (it fetches clock data internally with data() without a package name)
+  Attached; new search path entries: package:dnaMethyAge
+  Exported objects with the same name as base objects: none
+  Key object probeAnnotation21kdatMethUsed: [not in place, but can be fetched by the package itself if attach succeeded]
+  Key object Illig_data: in place
+
+EpiDISH reference matrix: 600 probes x 12 types: CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+
+==== GSE84727 ====
+  Target samples: 847 samples
+  Reading raw matrix GSE84727_normalisedBetas.csv.gz (2.66 GB)
+G3;    delimiter comma; header 848 fields, data rows 848 fields
+gG3;  Single-column matrix
+g  Mapping strategy: characteristics_ch1 after colon, success rate 1.000
+  Obtained 847 samples, probes 420374; time 0.6 min
+  Reference matrix probes found: 577 / 600
+  Median row sum 1.000; median neutrophil fraction 0.592
+G3;Start data imputation ...
+gG3;Loading required package: impute
+gG3;Finished imputation.
+gG3;Normalization by adusted BMIQ ...
+gG3;Estimate running time for normalisation (BMIQ with fixed reference) by a single core: 104.5 minutes.
+g  DNAm age: median 50.4, range 20.2 to 82.0
+G3;=================================
+gG3;<<<<< Smoking Score Calculation Started >>>>>
+gG3;=================================
+gG3;Dataset has 179 of 187 CpGs required for smoking status estimation.
+gG3;cg03188382 is missing from the input dataset.cg19713851 is missing from the input dataset.cg06644428 is missing from the input dataset.cg21566642 is missing from the input dataset.cg08606254 is missing from the input dataset.cg12513616 is missing from the input dataset.cg16611234 is missing from the input dataset.cg22649124 is missing from the input dataset.
+gG3;====================================
+gG3;<<<<< Smoking Score Calculation Completed >>>>>
+gG3;====================================
+g  Smoking score: median 3.172, missing 0 samples
+  Saved GSE84727_covariates.csv
+
+==== GSE80417 ====
+  Target samples: 636 samples
+  Reading raw matrix GSE80417_normalizedBetas.csv.gz (2.45 GB)
+G3;    delimiter comma; header 676 fields, data rows 676 fields
+gG3;  Single-column matrix
+g  Mapping strategy: description raw value, success rate 1.000
+  Obtained 636 samples, probes 483636; time 0.6 min
+  Reference matrix probes found: 596 / 600
+  Median row sum 1.000; median neutrophil fraction 0.593
+G3;Start data imputation ...
+gG3;Finished imputation.
+gG3;Normalization by adusted BMIQ ...
+gG3;Estimate running time for normalisation (BMIQ with fixed reference) by a single core: 78.4 minutes.
+g  DNAm age: median 38.2, range 11.1 to 88.5
+  Correlation with chronological age: r = 0.929, mean difference -0.7 years
+G3;=================================
+gG3;<<<<< Smoking Score Calculation Started >>>>>
+gG3;=================================
+gG3;Dataset has 187 of 187 CpGs required for smoking status estimation.
+gG3;====================================
+gG3;<<<<< Smoking Score Calculation Completed >>>>>
+gG3;====================================
+g  Smoking score: median 1.789, missing 0 samples
+  Saved GSE80417_covariates.csv
+
+==== GSE198904 ====
+  Target samples: 429 samples
+  Reading raw matrix GSE198904_DHRC_Matrix_processed.txt.gz (1.41 GB)
+G3;    delimiter tab; header 864 fields, data rows 865 fields; header lacks the first field, treated as shifted
+gG3;  Column names repeat in pairs: alternating TRUE, in blocks FALSE
+gG3;  The group with the larger mean is taken as beta: first group (median of means in the two groups 0.572 / 0.000)
+g  Mapping strategy: sample title, success rate 1.000
+  Obtained 429 samples, probes 729562; time 0.5 min
+  Reference matrix probes found: 583 / 600
+  Median row sum 1.000; median neutrophil fraction 0.546
+G3;Start data imputation ...
+gG3;Finished imputation.
+gG3;Normalization by adusted BMIQ ...
+gG3;Estimate running time for normalisation (BMIQ with fixed reference) by a single core: 52.9 minutes.
+g  DNAm age: median 46.2, range 19.2 to 80.0
+  Correlation with chronological age: r = 0.926, mean difference 5.4 years
+G3;=================================
+gG3;<<<<< Smoking Score Calculation Started >>>>>
+gG3;=================================
+gG3;Dataset has 163 of 187 CpGs required for smoking status estimation.
+gG3;cg15542713 is missing from the input dataset.cg11231349 is missing from the input dataset.cg03188382 is missing from the input dataset.cg19713851 is missing from the input dataset.cg05951221 is missing from the input dataset.cg13193840 is missing from the input dataset.cg15693572 is missing from the input dataset.cg03274391 is missing from the input dataset.cg17924476 is missing from the input dataset.cg08606254 is missing from the input dataset.cg03991871 is missing from the input dataset.cg14817490 is missing from the input dataset.cg12513616 is missing from the input dataset.cg06126421 is missing from the input dataset.cg10807309 is missing from the input dataset.cg00931843 is missing from the input dataset.cg22132788 is missing from the input dataset.cg07826859 is missing from the input dataset.cg25421530 is missing from the input dataset.cg07123182 is missing from the input dataset.cg21611682 is missing from the input dataset.cg23126342 is missing from the input dataset.cg03489965 is missing from the input dataset.cg22649124 is missing from the input dataset.
+gG3;====================================
+gG3;<<<<< Smoking Score Calculation Completed >>>>>
+gG3;====================================
+g  Smoking score: median 0.844, missing 0 samples
+  Saved GSE198904_covariates.csv
+
+==== GSE273970 ====
+  Target samples: 283 samples
+  Reading raw matrix GSE273970_Processed_Data.txt.gz (1.97 GB)
+G3;    delimiter tab; header 567 fields, data rows 567 fields
+gG3;  Column names carry beta / detection P value suffixes; beta columns kept: 283
+g  Mapping strategy: sample_N in title, success rate 1.000
+  Obtained 283 samples, probes 865859; time 0.5 min
+  Reference matrix probes found: 600 / 600
+  Median row sum 1.000; median neutrophil fraction 0.553
+G3;Start data imputation ...
+gG3;Finished imputation.
+gG3;Normalization by adusted BMIQ ...
+gG3;Estimate running time for normalisation (BMIQ with fixed reference) by a single core: 34.9 minutes.
+g  DNAm age: median 42.2, range 19.1 to 68.0
+G3;=================================
+gG3;<<<<< Smoking Score Calculation Started >>>>>
+gG3;=================================
+gG3;Dataset has 174 of 187 CpGs required for smoking status estimation.
+gG3;cg11231349 is missing from the input dataset.cg05951221 is missing from the input dataset.cg03274391 is missing from the input dataset.cg17924476 is missing from the input dataset.cg03991871 is missing from the input dataset.cg14817490 is missing from the input dataset.cg06126421 is missing from the input dataset.cg00931843 is missing from the input dataset.cg22132788 is missing from the input dataset.cg07826859 is missing from the input dataset.cg07123182 is missing from the input dataset.cg23126342 is missing from the input dataset.cg03489965 is missing from the input dataset.
+gG3;====================================
+gG3;<<<<< Smoking Score Calculation Completed >>>>>
+gG3;====================================
+g  Smoking score: median -5.839, missing 0 samples
+  Saved GSE273970_covariates.csv
+
+==== GSE338167 ====
+  Target samples: 621 samples
+  Reading raw matrix GSE338167_beta_matrix_normalized.txt.gz (3.95 GB)
+G3;    delimiter tab; header 622 fields, data rows 622 fields
+gG3;  Single-column matrix
+g  Mapping strategy: barcode in title, success rate 1.000
+  EPIC v2: suffixes stripped and duplicated probes merged: 5861 records
+  Obtained 621 samples, probes 848810; time 1.3 min
+  Reference matrix probes found: 565 / 600
+  Median row sum 1.000; median neutrophil fraction 0.686
+G3;Start data imputation ...
+gG3;Finished imputation.
+gG3;Normalization by adusted BMIQ ...
+gG3;Estimate running time for normalisation (BMIQ with fixed reference) by a single core: 76.6 minutes.
+g  DNAm age: median 75.2, range 54.2 to 113.3
+  Correlation with chronological age: r = 0.649, mean difference -1.5 years
+G3;=================================
+gG3;<<<<< Smoking Score Calculation Started >>>>>
+gG3;=================================
+gG3;Dataset has 174 of 187 CpGs required for smoking status estimation.
+gG3;cg09469355 is missing from the input dataset.cg15542713 is missing from the input dataset.cg03188382 is missing from the input dataset.cg19713851 is missing from the input dataset.cg05951221 is missing from the input dataset.cg13193840 is missing from the input dataset.cg08606254 is missing from the input dataset.cg12513616 is missing from the input dataset.cg10807309 is missing from the input dataset.cg00921574 is missing from the input dataset.cg21611682 is missing from the input dataset.cg07381806 is missing from the input dataset.cg22649124 is missing from the input dataset.
+gG3;====================================
+gG3;<<<<< Smoking Score Calculation Completed >>>>>
+gG3;====================================
+g  Smoking score: median -4.117, missing 0 samples
+  Saved GSE338167_covariates.csv
+
+==== GSE144858 ====
+  Target samples: 189 samples
+  Reading raw matrix GSE144858_series_matrix.txt.gz (0.48 GB)
+G3;    delimiter tab; header 301 fields, data rows 301 fields
+gG3;  Single-column matrix
+g  Mapping strategy: GSM accession, success rate 1.000
+  Obtained 189 samples, probes 410942; time 0.2 min
+  Reference matrix probes found: 547 / 600
+  Median row sum 1.000; median neutrophil fraction 0.593
+G3;Start data imputation ...
+gG3;Finished imputation.
+gG3;Normalization by adusted BMIQ ...
+gG3;Estimate running time for normalisation (BMIQ with fixed reference) by a single core: 23.3 minutes.
+g  DNAm age: median 73.4, range 50.7 to 93.2
+  Correlation with chronological age: r = 0.651, mean difference -1.3 years
+G3;=================================
+gG3;<<<<< Smoking Score Calculation Started >>>>>
+gG3;=================================
+gG3;Dataset has 173 of 187 CpGs required for smoking status estimation.
+gG3;cg03188382 is missing from the input dataset.cg19713851 is missing from the input dataset.cg06644428 is missing from the input dataset.cg21566642 is missing from the input dataset.cg08606254 is missing from the input dataset.cg26703534 is missing from the input dataset.cg12513616 is missing from the input dataset.cg10807309 is missing from the input dataset.cg16611234 is missing from the input dataset.cg22851561 is missing from the input dataset.cg00911794 is missing from the input dataset.cg22649124 is missing from the input dataset.cg07339236 is missing from the input dataset.cg06595162 is missing from the input dataset.
+gG3;====================================
+gG3;<<<<< Smoking Score Calculation Completed >>>>>
+gG3;====================================
+g  Smoking score: median -3.402, missing 0 samples
+  Saved GSE144858_covariates.csv
+
+There were 13 warnings (use warnings() to see them)
+=== Summary ===
+        gse   n ref_hit age_ok smoke_ok
+1  GSE84727 847     577    847      847
+2  GSE80417 636     596    636      636
+3 GSE198904 429     583    429      429
+4 GSE273970 283     600    283      283
+5 GSE338167 621     565    621      621
+6 GSE144858 189     547    189      189
+
+==============================================
+Status: completed normally
+End: 2026-09-17 02:01:23   elapsed 210.0 min
+Warnings: 13
+  - 205 CpG probes cannot be matched in horvath's ref probes, will set to NA
+  - 205 rows with more than 50 % entries missing;
+ mean imputation used for these rows
+  - package ‘cluster’ was built under R version 4.4.3
+  - 8 CpG probes cannot be matched in horvath's ref probes, will set to NA
+  - 8 rows with more than 50 % entries missing;
+ mean imputation used for these rows
+  - 1609 CpG probes cannot be matched in horvath's ref probes, will set to NA
+  - 1609 rows with more than 50 % entries missing;
+ mean imputation used for these rows
+  - 1062 CpG probes cannot be matched in horvath's ref probes, will set to NA
+  - 1062 rows with more than 50 % entries missing;
+ mean imputation used for these rows
+  - 1015 CpG probes cannot be matched in horvath's ref probes, will set to NA
+  - 1015 rows with more than 50 % entries missing;
+ mean imputation used for these rows
+  - 586 CpG probes cannot be matched in horvath's ref probes, will set to NA
+  - 586 rows with more than 50 % entries missing;
+ mean imputation used for these rows
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

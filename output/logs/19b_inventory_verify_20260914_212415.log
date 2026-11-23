@@ -1,0 +1,119 @@
+==============================================
+Script: 19b_inventory_verify
+Start: 2026-09-14 21:24:15
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+Series retrieved by 19: 3180
+sample number >= 80: 947 (the only pre-filter of this step)
+Processing the first 947
+
+  Processed 50 / 947, time 1.3 min, estimated remaining 24 min
+  Processed 100 / 947, time 2.7 min, estimated remaining 23 min
+  Processed 150 / 947, time 4.1 min, estimated remaining 22 min
+  Processed 250 / 947, time 7.8 min, estimated remaining 22 min
+  Processed 300 / 947, time 9.5 min, estimated remaining 20 min
+  Processed 350 / 947, time 11.3 min, estimated remaining 19 min
+  Processed 400 / 947, time 13.5 min, estimated remaining 18 min
+  Processed 450 / 947, time 16.1 min, estimated remaining 18 min
+  Processed 500 / 947, time 18.1 min, estimated remaining 16 min
+  Processed 550 / 947, time 20.0 min, estimated remaining 14 min
+  Processed 600 / 947, time 22.3 min, estimated remaining 13 min
+  Processed 700 / 947, time 26.1 min, estimated remaining 9 min
+  Processed 750 / 947, time 28.1 min, estimated remaining 7 min
+  Processed 800 / 947, time 30.0 min, estimated remaining 6 min
+There were 50 or more warnings (use warnings() to see the first 50)
+
+=== Benchmark test: six known data sets ===
+  GSE145361  n=1889  tissue=whole blood  group field=disease-state          pass
+             values: Parkinson's disease=959; Control=930
+  GSE111629  n=572   tissue=whole blood  group field=disease state          pass
+             values: Parkinson's disease (PD)=335; PD-free control=237
+  GSE72774   n=508   tissue=whole blood  group field=diseasestatus          pass
+             values: PD=183; no=129; control=127; yes=69
+  GSE87648   n=384   tissue=whole blood  group field=smoking status         pass
+             values: Never=171; Ex=107; Current=99; Don't know=4; HL=3
+  GSE112611  n=402   tissue=whole blood  group field=diagnosis              pass
+             values: Crohn's disease=328; non-IBD control=74
+  GSE152027  n=800   tissue=whole blood  group field=status                 pass
+             values: FEP=307; SCZ=290; CON=203
+  Benchmark passed completely; the list below can be trusted
+
+=== Tissue distribution ===
+  header not available 300
+  non-blood      293
+  unclear        150
+  whole blood    144
+  PBMC           30
+  sorted cells   30
+
+=== Series with whole blood, a group field and a disease term: 30 ===
+  schizophrenia                cohorts  5, samples in total  3346, largest set  934
+  inflammatory bowel disease   cohorts  5, samples in total  2032, largest set  875
+  Parkinson                    cohorts  4, samples in total  3053, largest set 1889
+  Alzheimer                    cohorts  3, samples in total  1536, largest set  621
+  COVID                        cohorts  2, samples in total   701, largest set  574
+  major depression             cohorts  2, samples in total   353, largest set  194
+  obesity                      cohorts  2, samples in total   276, largest set  180
+  heart failure                cohorts  2, samples in total   200, largest set  104
+  type 1 diabetes              cohorts  1, samples in total   395, largest set  395
+  rheumatic/other autoimmune   cohorts  1, samples in total   395, largest set  395
+  multiple sclerosis           cohorts  1, samples in total   279, largest set  279
+  ALS                          cohorts  1, samples in total   122, largest set  122
+  rheumatoid arthritis         cohorts  1, samples in total   101, largest set  101
+  celiac disease               cohorts  1, samples in total    96, largest set   96
+
+Diseases with at least two cohorts: 8
+Reminder: the cohort numbers of this step do not yet exclude double counting of the same study population; 
+      true independence must be verified with array barcodes (the lesson from PEG).
+
+==============================================
+Status: completed normally
+End: 2026-09-14 22:00:18   elapsed 36.0 min
+Warnings: 50
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE56nnn/GSE56047/matrix/GSE56047_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE137nnn/GSE137503/matrix/GSE137503_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE158nnn/GSE158064/matrix/GSE158064_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE210nnn/GSE210256/matrix/GSE210256_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE85nnn/GSE85218/matrix/GSE85218_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE140nnn/GSE140686/matrix/GSE140686_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE130nnn/GSE130051/matrix/GSE130051_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE157nnn/GSE157131/matrix/GSE157131_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE154nnn/GSE154566/matrix/GSE154566_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE66nnn/GSE66708/matrix/GSE66708_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE117nnn/GSE117861/matrix/GSE117861_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE117nnn/GSE117861/matrix/GSE117861-GPL13534_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE215nnn/GSE215240/matrix/GSE215240_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE49nnn/GSE49032/matrix/GSE49032_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE237nnn/GSE237299/matrix/GSE237299_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE175nnn/GSE175459/matrix/GSE175459_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE175nnn/GSE175459/matrix/GSE175459-GPL13534_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE224nnn/GSE224807/matrix/GSE224807_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE87nnn/GSE87650/matrix/GSE87650_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE263nnn/GSE263455/matrix/GSE263455_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE263nnn/GSE263455/matrix/GSE263455-GPL13534_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE179nnn/GSE179849/matrix/GSE179849_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE179nnn/GSE179849/matrix/GSE179849-GPL13534_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE107nnn/GSE107082/matrix/GSE107082_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE107nnn/GSE107082/matrix/GSE107082-GPL13534_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE224nnn/GSE224624/matrix/GSE224624_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE224nnn/GSE224624/matrix/GSE224624-GPL13534_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE183nnn/GSE183656/matrix/GSE183656_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE183nnn/GSE183656/matrix/GSE183656-GPL13534_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE225nnn/GSE225847/matrix/GSE225847_series_matrix.txt.gz': HTTP status was '404 Not Found'
+  (remaining 20 omitted)
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

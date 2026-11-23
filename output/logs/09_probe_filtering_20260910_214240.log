@@ -1,0 +1,74 @@
+==============================================
+Script: 09_probe_filtering
+Start: 2026-09-10 21:42:40
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+==============================================
+
+Thresholds: remove if SNP minor allele frequency > 0.01; remove if probe missing rate > 0.05
+
+=== Reading the lists of non-specific probes ===
+  48639-non-specific-probes-Illumina450k.csv -> 29233 probe IDs
+  HumanMethylation450_15017482_v.1.1_hg19_bowtie_multimap.txt -> 33457 probe IDs
+  450K after merging: 38941
+  13059_2016_1066_MOESM1_ESM.csv -> 43254 probe IDs
+  1-s2.0-S221359601630071X-mmc2.txt -> 42558 probe IDs
+  1-s2.0-S221359601630071X-mmc3.txt -> 1652 probe IDs
+  EPIC after merging: 44570
+
+=== Reading the annotation and flagging probes to remove ===
+  Annotation: 485512 rows
+  Sex-chromosome probes: 11648
+  Probes with a common SNP at the CpG or single-base extension site: 17297
+    of which at the CpG site: 16758, at the extension site: 7735
+
+=== High-missingness probes in each data set ===
+  GSE111629 (main set) probes with missing rate > 0.05: 0
+  GSE112611 (repl set) probes with missing rate > 0.05: 3581
+  GSE145361 (main set) probes with missing rate > 0.05: 0
+  GSE152027 (main set) probes with missing rate > 0.05: 0
+  GSE72774 (main set) probes with missing rate > 0.05: 0
+  GSE87648 (main set) probes with missing rate > 0.05: 0
+  High-missingness probes merged within the primary analysis set: 0
+  High-missingness probes merged within the replication set: 3581
+
+=== primary analysis set (5 sets, 450K) ===
+  Start: 456896
+  removed sex chromosomes 10944, remaining 445952
+  removed common SNPs 6632, remaining 439320
+  removed non-specific / multi-mapping 32667, remaining 406653
+  removed high missingness 0, remaining 406653
+  Final: 406653, removed in total 50243 ( 11.0%)
+
+=== replication set (including the paediatric EPIC cohort) ===
+  Start: 401022
+  removed sex chromosomes 9173, remaining 391849
+  removed common SNPs 5663, remaining 386186
+  removed non-specific / multi-mapping 7701, remaining 378485
+  removed high missingness 3348, remaining 375137
+  Final: 375137, removed in total 25885 ( 6.5%)
+
+=== Restricting the analysis objects ===
+  GSE111629: 406653 probes x 572 samples -> GSE111629_analysis_filtered.rds
+  GSE112611: 375137 probes x 238 samples -> GSE112611_analysis_filtered.rds
+  GSE145361: 406653 probes x 1638 samples -> GSE145361_analysis_filtered.rds
+  GSE152027: 406653 probes x 493 samples -> GSE152027_analysis_filtered.rds
+  GSE72774: 406653 probes x 508 samples -> GSE72774_analysis_filtered.rds
+  GSE87648: 406653 probes x 382 samples -> GSE87648_analysis_filtered.rds
+
+==============================================
+Status: completed normally
+End: 2026-09-10 21:43:50   elapsed 1.2 min
+Warnings: 1
+  - running command '"C:/PROGRA~1/R/R-44~1.1/bin/x64/R" CMD INSTALL "C:\Users\user\AppData\Local\Temp\RtmpIncUz2/maxprobes.tar.gz"' had status 1
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

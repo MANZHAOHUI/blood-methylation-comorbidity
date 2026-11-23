@@ -1,0 +1,71 @@
+==============================================
+Script: 03b_download_panel2
+Start: 2026-09-15 21:14:42
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+Download back end: aria2c  (C:\aria2\aria2c.exe)
+
+=== Querying remote sizes ===
+  GSE84727  header         GSE84727_series_matrix.txt.gz                           23.3 KB
+  GSE80417  header         GSE80417_series_matrix.txt.gz                           17.9 KB
+  GSE198904 header         GSE198904_series_matrix.txt.gz                          54.6 KB
+  GSE273970 header         GSE273970_series_matrix.txt.gz                          13.7 KB
+  GSE338167 header         GSE338167_series_matrix.txt.gz                          32.8 KB
+  GSE84727  data           GSE84727_normalisedBetas.csv.gz                          2.7 GB
+  GSE80417  data           GSE80417_normalizedBetas.csv.gz                          2.4 GB
+  GSE198904 data           GSE198904_DHRC_Matrix_processed.txt.gz                   1.4 GB
+  GSE198904 data           GSE198904_OBSERVEMDD0001_Matrix_processed.txt.gz         1.3 GB
+  GSE273970 data           GSE273970_Processed_Data.txt.gz                          2.0 GB
+  GSE338167 data           GSE338167_beta_matrix_normalized.txt.gz                  4.0 GB
+  GSE144858 data           GSE144858_series_matrix.txt.gz                         490.5 MB
+
+  Files in total: 12, to download: 12, total size: 14.2 GB
+
+=== Step 1: download the headers first (less than 1 MB in total) ===
+  GSE84727_series_matrix.txt.gz                        finished
+  GSE80417_series_matrix.txt.gz                        finished
+  GSE198904_series_matrix.txt.gz                       finished
+  GSE273970_series_matrix.txt.gz                       finished
+  GSE338167_series_matrix.txt.gz                       finished
+
+=== Step 2: confounding gate before downloading the data matrices (GSE198904) ===
+  Cross-tabulation of sub-study and group: 
+    Cohort 1: HC=32; MDD=0
+    Cohort 2: HC=68; MDD=361
+  [FAIL] a sub-study lacks one of the groups; group and sub-study are completely confounded, the data files of this set are skipped
+
+=== Step 3: download the data matrices (back end aria2c), 5 files, 11.5 GB ===
+[1/5] GSE84727_normalisedBetas.csv.gz  2.7 GB
+  finished and verified, 277.1 min, average 168 KB/s
+[2/5] GSE80417_normalizedBetas.csv.gz  2.4 GB
+  finished and verified, 180.1 min, average 238 KB/s
+[3/5] GSE273970_Processed_Data.txt.gz  2.0 GB
+  finished and verified, 121.3 min, average 283 KB/s
+[4/5] GSE338167_beta_matrix_normalized.txt.gz  4.0 GB
+  finished and verified, 4.5 min, average 15379 KB/s
+[5/5] GSE144858_series_matrix.txt.gz  490.5 MB
+  finished and verified, 1.2 min, average 6826 KB/s
+
+Finished, completed: 10 / 12
+Next: run 30_ingest_new_cohorts.R for verification.
+
+==============================================
+Status: completed normally
+End: 2026-09-16 07:00:39   elapsed 585.9 min
+Warnings: none
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

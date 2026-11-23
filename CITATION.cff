@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the archived release."
+type: software
+title: "blood-methylation-comorbidity: analysis code, run logs and figure source data for a benchmarked comparison of blood DNA methylation across five common disorders"
+abstract: "R scripts, run logs and figure source data of a study that compares genome-wide case-control effects of peripheral-blood DNA methylation between Parkinson's disease, schizophrenia, Alzheimer's disease, major depressive disorder and inflammatory bowel disease in ten public cohorts, with within-disease replication, permutation nulls and detection limits for every comparison."
+authors:
+  - family-names: Man
+    given-names: Zhaohui
+    orcid: "https://orcid.org/0000-0003-2537-1425"
+    affiliation: "Beijing CapitalBio Technology Co., Ltd."
+version: "1.0.0"
+license: MIT
+repository-code: "https://github.com/MANZHAOHUI/blood-methylation-comorbidity"
+keywords:
+  - DNA methylation
+  - epigenome-wide association study
+  - peripheral blood
+  - cross-disorder comparison
+  - permutation test
+  - reproducibility

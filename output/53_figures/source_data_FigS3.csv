@@ -1,0 +1,11 @@
+"dis","level","rho"
+"PD","Single CpG (same subset)",0.028265862428886
+"SCZ","Single CpG (same subset)",0.0574435932473621
+"AD","Single CpG (same subset)",0.00236506373145558
+"MDD","Single CpG (same subset)",-0.00277824494865681
+"IBD","Single CpG (same subset)",0.0942269779699094
+"PD","1-kb region",0.0277493515732789
+"SCZ","1-kb region",0.0965544090750074
+"AD","1-kb region",0.000211844978384748
+"MDD","1-kb region",-0.0306790228686758
+"IBD","1-kb region",0.154281425994149

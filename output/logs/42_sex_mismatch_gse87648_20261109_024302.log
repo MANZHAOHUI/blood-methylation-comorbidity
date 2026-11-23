@@ -1,0 +1,77 @@
+==============================================
+Script: 42_sex_mismatch_gse87648
+Start: 2026-11-09 02:43:02
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:ggplot2 -> Position
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+X probes in the annotation: 11232, Y probes 416
+Recorded sex: M=194; REF=184
+Matrix 460398 x 378
+X probes in the matrix: 10961, Y probes 113
+Y probes available; their mean and SD serve as the second line of evidence
+
+=== Clustering by each line of evidence ===
+  proportion of X probes with intermediate methylation: cluster centres 0.204 and 0.595, distance 0.392; between the two clusters: 48 samples
+  mean of Y probes: cluster centres 0.499 and 0.556, distance 0.057; between the two clusters: 29 samples
+  [FAIL] the distance between the two Y clusters is only 0.057, below 0.15. Women have no Y and only cross-hybridisation background remains, so men and women should differ greatly; 
+            such a small distance means the Y probes of this matrix have no discriminating power, and this line of evidence is void.
+  Only the X line is available; the decisions below rest on it and are not described as 'two lines of evidence'
+
+Recorded 'REF': 184; called female by the X line: 200 samples
+ (first confirming that REF corresponds to female: concordance with the X line 0.9471)
+
+=== Summary of decisions ===
+  X clearly discordant:       6
+  consistent               358
+  suspect (intermediate value) 14
+
+X clearly discordant: 6 (X value clearly on the side of the opposite-sex cluster):
+  GSM2337388   recorded M  X proportion 0.556  Y mean NA
+  GSM2337421   recorded M  X proportion 0.528  Y mean NA
+  GSM2337505   recorded M  X proportion 0.564  Y mean NA
+  GSM2337493   recorded M  X proportion 0.623  Y mean NA
+  GSM2337382   recorded M  X proportion 0.648  Y mean NA
+  GSM2337286   recorded M  X proportion 0.619  Y mean NA
+Suspect: 14; the record is not overturned on this basis
+
+=== Mismatch and group ===
+  discordant: control=5; case=1
+  normal: control=169; case=203
+  Fisher's exact test: p = 0.0987  Mismatch is unrelated to group; removal amounts to a random reduction in sample size
+
+=== Intermediate values: sex-chromosome anomaly or data quality? ===
+  Proportion of autosomal probes between 0.3 and 0.7 (quality index, higher is worse): 
+    consistent samples     median 0.1876
+    intermediate values    median 0.3318 (n=14)
+    X clearly discordant   median 0.2395 (n=6)
+  Difference between the two, Wilcoxon p = 3.91e-07  The overall data quality of samples with intermediate values is indeed poorer; they should be treated as a quality problem
+
+=== Plotting ===
+  [figure] fig45_sex_check_gse87648  8x5.5 in @600 dpi  png 155.3 KB
+
+Next, to be decided manually: whether samples confirmed as true mismatches are removed; if so, the EWAS of this cohort must be re-run, 
+together with the pairs involving it (one within-disease positive control and eight cross-disease pairs).
+
+==============================================
+Status: completed normally
+End: 2026-11-09 02:43:11   elapsed 0.2 min
+Warnings: none
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

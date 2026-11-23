@@ -1,0 +1,90 @@
+==============================================
+Script: 12_pc_attribution
+Start: 2026-09-13 20:57:01
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+==============================================
+
+Reading 6 filtered analysis objects
+
+==== GSE111629 ====
+  Covariates: 18case/control, sex, chronological age, batch (slide), DNAm age, DNAm smoking, CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+  The first 10 principal components explain cumulatively 21.3%
+  PC1 ( 8.8%): covariates with the highest explanatory power: 
+    Neu  R2 = 0.431  p = <2e-16
+    CD4Tmem  R2 = 0.295  p = <2e-16
+    CD8Tmem  R2 = 0.277  p = <2e-16
+    Bnv  R2 = 0.125  p = <2e-16
+  DNAm age vs chronological age: r = 0.827, median offset -5.9 years, n = 572
+
+==== GSE112611 ====
+  Covariates: 18case/control, sex, chronological age, batch (slide), DNAm age, DNAm smoking, CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+  The first 10 principal components explain cumulatively 59.8%
+  PC1 ( 27.3%): covariates with the highest explanatory power: 
+    batch (slide)  R2 = 0.587  p = 6.9e-16
+    CD8Tnv  R2 = 0.337  p = <2e-16
+    Bnv  R2 = 0.332  p = <2e-16
+    CD4Tmem  R2 = 0.242  p = 6.9e-16
+  DNAm age vs chronological age: r = 0.626, median offset +1.0 years, n = 238
+
+==== GSE145361 ====
+  Covariates: 17case/control, sex, batch (slide), DNAm age, DNAm smoking, CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+  The first 10 principal components explain cumulatively 27.3%
+  PC1 ( 13.6%): covariates with the highest explanatory power: 
+    Neu  R2 = 0.871  p = <2e-16
+    CD4Tmem  R2 = 0.424  p = <2e-16
+    CD8Tmem  R2 = 0.377  p = <2e-16
+    Baso  R2 = 0.356  p = <2e-16
+
+==== GSE152027 ====
+  Covariates: 18case/control, sex, chronological age, batch (slide), DNAm age, DNAm smoking, CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+  The first 10 principal components explain cumulatively 32.1%
+  PC1 ( 12.9%): covariates with the highest explanatory power: 
+    Treg  R2 = 0.471  p = <2e-16
+    Neu  R2 = 0.448  p = <2e-16
+    CD8Tnv  R2 = 0.181  p = <2e-16
+    Bnv  R2 = 0.173  p = <2e-16
+  DNAm age vs chronological age: r = 0.897, median offset +4.8 years, n = 194
+
+==== GSE72774 ====
+  Covariates: 17case/control, sex, chronological age, DNAm age, DNAm smoking, CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+  The first 10 principal components explain cumulatively 21.4%
+  PC1 ( 8.5%): covariates with the highest explanatory power: 
+    Neu  R2 = 0.393  p = <2e-16
+    CD4Tmem  R2 = 0.285  p = <2e-16
+    CD8Tmem  R2 = 0.264  p = <2e-16
+    NK  R2 = 0.109  p = 2e-14
+  DNAm age vs chronological age: r = 0.816, median offset -5.8 years, n = 508
+
+==== GSE87648 ====
+  Covariates: 18case/control, sex, chronological age, batch (scan date), DNAm age, DNAm smoking, CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+  The first 10 principal components explain cumulatively 67.1%
+  PC1 ( 47.3%): covariates with the highest explanatory power: 
+    batch (scan date)  R2 = 0.731  p = <2e-16
+    Baso  R2 = 0.169  p = <2e-16
+    CD4Tmem  R2 = 0.081  p = 1.5e-08
+    Mono  R2 = 0.055  p = 3.3e-06
+  DNAm age vs chronological age: r = 0.935, median offset -1.2 years, n = 380
+
+=== Plotting ===
+  [figure] fig10_pc_covariate_heatmap  11x8 in @600 dpi  png 589.6 KB
+  [figure] fig11_pc_scree  10x6 in @600 dpi  png 250.9 KB
+  [figure] fig12_dnam_vs_chronological_age  10x4.2 in @600 dpi  png 1479.3 KB
+
+==============================================
+Status: completed normally
+End: 2026-09-13 21:01:11   elapsed 4.2 min
+Warnings: 2
+  - Removed 52 rows containing non-finite outside the scale range (`stat_boxplot()`).
+  - Removed 52 rows containing non-finite outside the scale range (`stat_boxplot()`).
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

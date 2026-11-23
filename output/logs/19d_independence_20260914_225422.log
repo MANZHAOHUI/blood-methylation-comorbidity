@@ -1,0 +1,131 @@
+==============================================
+Script: 19d_independence
+Start: 2026-09-14 22:54:22
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+Headers not obtained in the previous round: 201; retrying with back-off in this round
+  Retried 25 / 201, succeeded 25
+  Retried 50 / 201, succeeded 50
+  Retried 75 / 201, succeeded 75
+  Retried 100 / 201, succeeded 98
+  Retried 125 / 201, succeeded 122
+  Retried 150 / 201, succeeded 146
+  Retried 175 / 201, succeeded 169
+  Retried 200 / 201, succeeded 192
+There were 34 warnings (use warnings() to see them)
+  Recovered 193
+
+=== Re-deciding tissue composition per sample ===
+  non-blood          623
+  whole blood        213
+  mixed (contains whole blood) 38
+  sorted cells       33
+  PBMC               29
+  header not available    8
+  unclear            3
+  of which mixed (whole blood present but proportion < 0.6) can only be used after selecting samples
+
+=== Cohort independence ===
+Series entering the independence decision: 56
+  Alzheimer                    series  7 -> independent cohorts  6, samples in total  2320
+        GSE338167, GSE59685, GSE53740, GSE144858, GSE156994, GSE74519, GSE74486
+        merged: GSE74519~GSE74486 (same submitter, title similarity 0.68)
+  major depression             series  5 -> independent cohorts  4, samples in total  1400
+        GSE198904, GSE273970, GSE113725, GSE200956, GSE200954
+        merged: GSE200956~GSE200954 (same submitter, title similarity 0.85)
+  COVID                        series  4 -> independent cohorts  4, samples in total  1189
+        GSE179325, GSE210435, GSE193879, GSE161778
+  schizophrenia                series  7 -> independent cohorts  3, samples in total  4346
+        GSE152026, GSE84727, GSE152027, GSE147221, GSE80417, GSE116380, GSE116379
+        merged: GSE152026~GSE152027 (same submitter, title similarity 0.83) | GSE152026~GSE147221 (same submitter) | GSE84727~GSE80417 (same submitter, title similarity 1.00) | GSE152027~GSE147221 (same submitter, title similarity 0.67) | GSE116380~GSE116379 (same submitter, title similarity 0.89)
+  Parkinson                    series  4 -> independent cohorts  3, samples in total  3053
+        GSE145361, GSE111629, GSE72774, GSE72776
+        merged: GSE72774~GSE72776 (same submitter, title similarity 0.86)
+  HIV                          series  4 -> independent cohorts  3, samples in total  1893
+        GSE107082, GSE217633, GSE107080, GSE67705
+        merged: GSE107082~GSE107080 (barcode overlap 405, same submitter, title similarity 0.60)
+  inflammatory bowel disease   series  5 -> independent cohorts  3, samples in total  1888
+        GSE87650, GSE112611, GSE191331, GSE87640, GSE191297
+        merged: GSE87650~GSE87640 (same submitter, title similarity 0.88) | GSE191331~GSE191297 (same submitter, title similarity 0.94)
+  type 2 diabetes              series  3 -> independent cohorts  3, samples in total   848
+        GSE315764, GSE286347, GSE301735
+  obesity                      series  3 -> independent cohorts  3, samples in total   631
+        GSE73103, GSE149318, GSE172208
+  heart failure                series  4 -> independent cohorts  3, samples in total   538
+        GSE191083, GSE191082, GSE224359, GSE154683
+        merged: GSE191083~GSE191082 (same submitter, title similarity 1.00)
+  rheumatoid arthritis         series  2 -> independent cohorts  2, samples in total   214
+        GSE176168, GSE175364
+  coronary artery disease      series  1 -> independent cohorts  1, samples in total   589
+        GSE69138
+  type 1 diabetes              series  1 -> independent cohorts  1, samples in total   395
+        GSE142512
+  Graves disease               series  1 -> independent cohorts  1, samples in total   305
+        GSE71957
+  multiple sclerosis           series  1 -> independent cohorts  1, samples in total   279
+        GSE106648
+  chronic kidney disease       series  1 -> independent cohorts  1, samples in total   180
+        GSE230652
+  ALS                          series  1 -> independent cohorts  1, samples in total   122
+        GSE239901
+  asthma                       series  1 -> independent cohorts  1, samples in total   120
+        GSE272991
+  systemic lupus               series  1 -> independent cohorts  1, samples in total    90
+        GSE96879
+
+Diseases with >= 2 independent cohorts: 11
+Diseases with >= 3 independent cohorts: 10
+Reminder: barcode overlap is hard evidence; same submitter plus similar titles is only a suspicion, 
+      and each pair in the final list still needs a manual look at the original descriptions.
+
+==============================================
+Status: completed normally
+End: 2026-09-14 23:10:43   elapsed 16.3 min
+Warnings: 34
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE269nnn/GSE269983/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE212nnn/GSE212965/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE34nnn/GSE34982/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE231nnn/GSE231459/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE184nnn/GSE184269/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE70nnn/GSE70494/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE135nnn/GSE135066/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE118nnn/GSE118144/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE249nnn/GSE249639/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE249nnn/GSE249639/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE249nnn/GSE249639/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE289nnn/GSE289742/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE289nnn/GSE289742/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE289nnn/GSE289742/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE87nnn/GSE87177/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE87nnn/GSE87177/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE87nnn/GSE87177/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE73nnn/GSE73515/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE73nnn/GSE73515/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE73nnn/GSE73515/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE62nnn/GSE62992/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE62nnn/GSE62992/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE41nnn/GSE41169/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE41nnn/GSE41169/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE41nnn/GSE41169/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE67nnn/GSE67751/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE67nnn/GSE67751/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE67nnn/GSE67751/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE312nnn/GSE312587/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE312nnn/GSE312587/matrix/': HTTP status was '503 Service Unavailable'
+  (remaining 4 omitted)
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

@@ -1,0 +1,74 @@
+==============================================
+Script: 46_detection_limits_all_pairs
+Start: 2026-11-10 01:12:50
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:ggplot2 -> Position
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+Results of the forty-five pairs from 39 loaded: 45 rows
+Ten-thousand-permutation results from 45 loaded: 5 rows; they are decisive for the five within-disease pairs
+
+=== Within-disease positive controls ===
+  PC-IBD                     rho=+0.1174  P=0.0001  critical 0.0413  80% power needs 0.0626  effective probes   1559
+  PC-Schizophrenia           rho=+0.0713  P=0.0001  critical 0.0353  80% power needs 0.0533  effective probes   2188
+  PC-Parkinson               rho=+0.0430  P=0.0335  critical 0.0388  80% power needs 0.0586  effective probes   1800
+  PC-Alzheimer               rho=+0.0026  P=0.3968  critical 0.0163  80% power needs 0.0246  effective probes  10275
+  PC-Depression              rho=-0.0089  P=0.6969  critical 0.0274  80% power needs 0.0414  effective probes   3638
+
+=== Forty cross-disease pairs: summary by disease pair ===
+  parkinson-schizophrenia      rho +0.035 +0.039 -0.006 -0.020; significant 2/4; critical 0.0235 to 0.0422
+  parkinson-alzheimer          rho +0.030 +0.008 -0.019 -0.024; significant 0/4; critical 0.0247 to 0.0532
+  parkinson-ibd                rho +0.004 -0.049 -0.011 +0.017; significant 0/4; critical 0.0378 to 0.0586
+  schizophrenia-ibd            rho +0.017 +0.000 +0.047 +0.037; significant 2/4; critical 0.0235 to 0.0378
+  alzheimer-ibd                rho -0.015 +0.023 +0.026 +0.040; significant 1/4; critical 0.0301 to 0.0501
+  depression-ibd               rho +0.002 -0.053 +0.006 -0.016; significant 0/4; critical 0.0198 to 0.0712
+  schizophrenia-alzheimer      rho -0.005 +0.006 +0.032 +0.018; significant 0/4; critical 0.0136 to 0.0383
+  alzheimer-depression         rho -0.007 +0.007 -0.018 +0.045; significant 0/4; critical 0.0107 to 0.0620
+  parkinson-depression         rho +0.048 -0.007 +0.016 +0.035; significant 1/4; critical 0.0085 to 0.0503
+  schizophrenia-depression     rho -0.013 -0.009 +0.032 +0.048; significant 1/4; critical 0.0117 to 0.0344
+
+=== Three quantitative statements suitable for the paper ===
+  (1) Within-disease concordance is strongest for inflammatory bowel disease, rho = +0.1174; the two weakest disorders
+      have observed values of +0.0026 and -0.0089, while their critical values are 0.0163 and 0.0274 -
+      the test itself is sensitive enough; there is simply no reproducible signal.
+  (2) The observed value of inflammatory bowel disease is 7.2 times the critical value of Alzheimer's disease; a reproducible signal
+      of that order in the latter would certainly be detected by this design.
+  (3) The highest of the forty cross-disease cells is +0.0484 (schizophrenia-depression: GSE80417 vs GSE273970); relative to the weakest within-disease value
+      (+0.0430) it is of the same order. But it is only one of the four pairings of that disease pair, and the other three are -0.013, -0.009, +0.032;
+      none of the ten disease pairs is significant in all four cohort pairings. The point is not how high a single cell is 
+      but whether the four pairings agree - looking at the highest cell alone would lead to the opposite conclusion.
+
+=== Effective number of independent probes (a note for the Methods, not a finding) ===
+  Back-calculated from the SD of the null (1 over the variance); a heuristic quantity: the SD of the correlation between two independent random vectors
+  is about 1 over the square root of the number of probes, which can be inverted to estimate 'how many
+  independent probes this corresponds to'. It explains why detection limits differ so much between pairs, but removing it changes no conclusion, 
+  so it belongs in the Methods only and is not a finding.
+  highest  37492 (Parkinson|Depression), lowest    505 (Depression|IBD), median   2461
+  Meaning: the detection limit depends on how much independent information remains given the residual correlation structure, not on the total number of probes.
+
+=== Plotting ===
+  [figure] fig49_detection_limits  8.5x6 in @600 dpi  png 348.5 KB
+
+==============================================
+Status: completed normally
+End: 2026-11-10 01:12:51   elapsed 0.0 min
+Warnings: 1
+  - package ‘limma’ was built under R version 4.4.2
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

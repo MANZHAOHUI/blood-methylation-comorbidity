@@ -1,0 +1,141 @@
+==============================================
+Script: 33b_gse80417_mapping
+Start: 2026-09-16 21:51:16
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+Samples: 675
+
+=== 1. Sample-level fields in the header ===
+  !Sample_title                      675 values; 0 with barcodes; e.g. C0301 | C0256
+  !Sample_geo_accession              675 values; 0 with barcodes; e.g. GSM2126260 | GSM2126261
+  !Sample_status                     675 values; 0 with barcodes; e.g. Public on Aug 01 2016 | Public on Aug 01 2016
+  !Sample_submission_date            675 values; 0 with barcodes; e.g. Apr 19 2016 | Apr 19 2016
+  !Sample_last_update_date           675 values; 0 with barcodes; e.g. Aug 01 2016 | Aug 01 2016
+  !Sample_type                       675 values; 0 with barcodes; e.g. genomic | genomic
+  !Sample_channel_count              675 values; 0 with barcodes; e.g. 1 | 1
+  !Sample_source_name_ch1            675 values; 0 with barcodes; e.g. control blood | control blood
+  !Sample_organism_ch1               675 values; 0 with barcodes; e.g. Homo sapiens | Homo sapiens
+  !Sample_characteristics_ch1        675 values; 0 with barcodes; e.g. Sex: F | Sex: M
+  !Sample_characteristics_ch1        675 values; 0 with barcodes; e.g. age: 23 | age: 57
+  !Sample_characteristics_ch1        675 values; 0 with barcodes; e.g. disease status: 1 | disease status: 1
+  !Sample_characteristics_ch1        675 values; 0 with barcodes; e.g. tissue: whole blood | tissue: whole blood
+  !Sample_treatment_protocol_ch1     675 values; 0 with barcodes; e.g. NA | NA
+  !Sample_growth_protocol_ch1        675 values; 0 with barcodes; e.g. NA | NA
+  !Sample_molecule_ch1               675 values; 0 with barcodes; e.g. genomic DNA | genomic DNA
+  !Sample_extract_protocol_ch1       675 values; 0 with barcodes; e.g. Genomic DNA was extracted from frozen whole blood samples using a standard cell lysis, proteinase K digestion, phenol/chloroform, ethanol precipitation method. | Genomic DNA was extracted from frozen whole blood samples using a standard cell lysis, proteinase K digestion, phenol/chloroform, ethanol precipitation method.
+  !Sample_label_ch1                  675 values; 0 with barcodes; e.g. Cy5 and Cy3 | Cy5 and Cy3
+  !Sample_label_protocol_ch1         675 values; 0 with barcodes; e.g. 500 ng DNA from each sample was sodium bisulfite-treated using the EZ-96 DNA Methylation-Gol Kit  (Zymo Research) according to the manufacturer’s standard protocol. | 500 ng DNA from each sample was sodium bisulfite-treated using the EZ-96 DNA Methylation-Gol Kit  (Zymo Research) according to the manufacturer’s standard protocol.
+  !Sample_taxid_ch1                  675 values; 0 with barcodes; e.g. 9606 | 9606
+  !Sample_hyb_protocol               675 values; 0 with barcodes; e.g. Samples were processed according to the Illumina Infinium HumanMethylation450K BeadChip (Illumina) protocol with the exception that 7ul of bisulfite treated material was input into the whole genome amplicifaction reaction instead of 4ul. | Samples were processed according to the Illumina Infinium HumanMethylation450K BeadChip (Illumina) protocol with the exception that 7ul of bisulfite treated material was input into the whole genome amplicifaction reaction instead of 4ul.
+  !Sample_scan_protocol              675 values; 0 with barcodes; e.g. Samples were assessed using the Illumina Infinium HumanMethylation450K BeadChip (Illumina) using a Illumina iScan System (Illumina). | Samples were assessed using the Illumina Infinium HumanMethylation450K BeadChip (Illumina) using a Illumina iScan System (Illumina).
+  !Sample_description                675 values; 675 with barcodes; e.g. 9704031032_R02C01 | 9704031032_R06C01
+  !Sample_data_processing            675 values; 0 with barcodes; e.g. Data was imported using the R package methylumi methylumIDAT function. Data was then  pre-processed in the R package wateRmelon using the pfilter and dasen functions. | Data was imported using the R package methylumi methylumIDAT function. Data was then  pre-processed in the R package wateRmelon using the pfilter and dasen functions.
+  !Sample_platform_id                675 values; 0 with barcodes; e.g. GPL13534 | GPL13534
+  !Sample_contact_name               675 values; 0 with barcodes; e.g. Jonathan,,Mill | Jonathan,,Mill
+  !Sample_contact_department         675 values; 0 with barcodes; e.g. Medical School | Medical School
+  !Sample_contact_institute          675 values; 0 with barcodes; e.g. University of Exeter | University of Exeter
+  !Sample_contact_address            675 values; 0 with barcodes; e.g. RILD Building, RD&E Hospital | RILD Building, RD&E Hospital
+  !Sample_contact_city               675 values; 0 with barcodes; e.g. Exeter | Exeter
+  !Sample_contact_zip/postal_code    675 values; 0 with barcodes; e.g. EX2 5DW | EX2 5DW
+  !Sample_contact_country            675 values; 0 with barcodes; e.g. United Kingdom | United Kingdom
+  !Sample_supplementary_file         675 values; 0 with barcodes; e.g. NONE | NONE
+  !Sample_data_row_count             675 values; 0 with barcodes; e.g. 0 | 0
+
+=== 2. Checking the matrix column names strategy by strategy ===
+  Matrix columns: 675; e.g. 9704031032_R02C01 | 9704031032_R06C01 | 9721367113_R04C02
+  GSM accession                                   0.000
+  sample title                                 0.000
+  !Sample_title raw value                         0.000
+  !Sample_title after colon                      0.000
+  !Sample_geo_accession raw value                 0.000
+  !Sample_geo_accession after colon              0.000
+  !Sample_status raw value                        0.000
+  !Sample_status after colon                     0.000
+  !Sample_submission_date raw value               0.000
+  !Sample_submission_date after colon            0.000
+  !Sample_last_update_date raw value              0.000
+  !Sample_last_update_date after colon           0.000
+  !Sample_type raw value                          0.000
+  !Sample_type after colon                       0.000
+  !Sample_channel_count raw value                 0.000
+  !Sample_channel_count after colon              0.000
+  !Sample_source_name_ch1 raw value               0.000
+  !Sample_source_name_ch1 after colon            0.000
+  !Sample_organism_ch1 raw value                  0.000
+  !Sample_organism_ch1 after colon               0.000
+  !Sample_characteristics_ch1 raw value           0.000
+  !Sample_characteristics_ch1 after colon        0.000
+  !Sample_characteristics_ch1 raw value           0.000
+  !Sample_characteristics_ch1 after colon        0.000
+  !Sample_characteristics_ch1 raw value           0.000
+  !Sample_characteristics_ch1 after colon        0.000
+  !Sample_characteristics_ch1 raw value           0.000
+  !Sample_characteristics_ch1 after colon        0.000
+  !Sample_treatment_protocol_ch1 raw value        0.000
+  !Sample_treatment_protocol_ch1 after colon     0.000
+  !Sample_growth_protocol_ch1 raw value           0.000
+  !Sample_growth_protocol_ch1 after colon        0.000
+  !Sample_molecule_ch1 raw value                  0.000
+  !Sample_molecule_ch1 after colon               0.000
+  !Sample_extract_protocol_ch1 raw value          0.000
+  !Sample_extract_protocol_ch1 after colon       0.000
+  !Sample_label_ch1 raw value                     0.000
+  !Sample_label_ch1 after colon                  0.000
+  !Sample_label_protocol_ch1 raw value            0.000
+  !Sample_label_protocol_ch1 after colon         0.000
+  !Sample_taxid_ch1 raw value                     0.000
+  !Sample_taxid_ch1 after colon                  0.000
+  !Sample_hyb_protocol raw value                  0.000
+  !Sample_hyb_protocol after colon               0.000
+  !Sample_scan_protocol raw value                 0.000
+  !Sample_scan_protocol after colon              0.000
+  !Sample_description raw value                   1.000
+  !Sample_description barcode within             1.000
+  !Sample_description after colon                1.000
+  !Sample_data_processing raw value               0.000
+  !Sample_data_processing after colon            0.000
+  !Sample_platform_id raw value                   0.000
+  !Sample_platform_id after colon                0.000
+  !Sample_contact_name raw value                  0.000
+  !Sample_contact_name after colon               0.000
+  !Sample_contact_department raw value            0.000
+  !Sample_contact_department after colon         0.000
+  !Sample_contact_institute raw value             0.000
+  !Sample_contact_institute after colon          0.000
+  !Sample_contact_address raw value               0.000
+  !Sample_contact_address after colon            0.000
+  !Sample_contact_city raw value                  0.000
+  !Sample_contact_city after colon               0.000
+  !Sample_contact_zip/postal_code raw value       0.000
+  !Sample_contact_zip/postal_code after colon    0.000
+  !Sample_contact_country raw value               0.000
+  !Sample_contact_country after colon            0.000
+  !Sample_supplementary_file raw value            0.000
+  !Sample_supplementary_file after colon         0.000
+  !Sample_data_row_count raw value                0.000
+  !Sample_data_row_count after colon             0.000
+  Highest success rate: 1.000 (!Sample_description raw value)
+
+  A matching field exists in the header; it can be used directly and order verification is not needed.
+  Add this strategy to the mapping list of step 33 and re-run.
+
+==============================================
+Status: completed normally
+End: 2026-09-16 21:51:45   elapsed 0.5 min
+Warnings: none
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

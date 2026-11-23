@@ -1,0 +1,254 @@
+==============================================
+Script: 40_composition_matrix
+Start: 2026-11-17 02:03:03
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:ggplot2 -> Position
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+==== GSE145361 (parkinson) ====
+  Cell types 12 types: CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+  Row sums of fractions: median 1.0000, range 1.0000 to 1.0000
+  Zeros: 1904, replaced with 0.65 times the smallest non-zero value
+  Covariates: 221 columns (removed 11 cell fraction columns: CD4Tnv, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono)
+  Composition effects (clr, cases minus controls): 
+    Eos -0.3231  Neu +0.3146  Bnv -0.3127  CD4Tmem -0.1744  CD8Tnv -0.1360  Mono +0.1315  NK +0.1243  Treg +0.1202  Baso +0.0908  CD8Tmem +0.0873  Bmem +0.0852  CD4Tnv -0.0078
+  Smoking score: available 1638 samples; residual SD 3.3071 (originally 4.1505)
+    standardised case-control difference -0.412 SD
+
+==== GSE111629 (parkinson) ====
+  Cell types 12 types: CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+  Row sums of fractions: median 1.0000, range 1.0000 to 1.0000
+  Zeros: 515, replaced with 0.65 times the smallest non-zero value
+  Covariates: 73 columns (removed 11 cell fraction columns: CD4Tnv, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono)
+  Composition effects (clr, cases minus controls): 
+    CD4Tnv -0.1861  Neu +0.1371  CD8Tnv +0.1241  Treg +0.1016  Bnv -0.1001  Bmem +0.0850  Mono -0.0657  Baso -0.0470  Eos -0.0350  CD8Tmem -0.0345  NK +0.0224  CD4Tmem -0.0017
+  Smoking score: available 572 samples; residual SD 4.2072 (originally 4.6181)
+    standardised case-control difference -0.231 SD
+
+==== GSE84727 (schizophrenia) ====
+  Cell types 12 types: CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+  Row sums of fractions: median 1.0000, range 1.0000 to 1.0000
+  Zeros: 553, replaced with 0.65 times the smallest non-zero value
+  Covariates: 102 columns (removed 11 cell fraction columns: CD4Tnv, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono)
+  Composition effects (clr, cases minus controls): 
+    CD4Tmem -0.4632  Bmem -0.2996  Neu +0.2611  CD8Tmem -0.2199  Treg +0.2193  Eos -0.1988  CD4Tnv +0.1978  Bnv +0.1770  Mono +0.1092  NK +0.0985  Baso +0.0821  CD8Tnv +0.0365
+  Smoking score: available 847 samples; residual SD 4.9883 (originally 6.3351)
+    standardised case-control difference +0.880 SD
+
+==== GSE80417 (schizophrenia) ====
+  Cell types 12 types: CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+  Row sums of fractions: median 1.0000, range 1.0000 to 1.0000
+  Zeros: 529, replaced with 0.65 times the smallest non-zero value
+  Covariates: 83 columns (removed 11 cell fraction columns: CD4Tnv, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono)
+  Composition effects (clr, cases minus controls): 
+    CD4Tmem -0.4805  Neu +0.3075  Bmem -0.2824  Treg +0.2309  Eos -0.2255  CD4Tnv +0.2003  Bnv +0.1551  CD8Tmem -0.1436  Mono +0.1152  NK +0.0951  Baso +0.0879  CD8Tnv -0.0599
+  Smoking score: available 636 samples; residual SD 5.7656 (originally 6.3592)
+    standardised case-control difference +1.076 SD
+
+==== GSE338167 (alzheimer) ====
+  Cell types 12 types: CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+  Row sums of fractions: median 1.0000, range 1.0000 to 1.0000
+  Zeros: 1192, replaced with 0.65 times the smallest non-zero value
+  Covariates: 94 columns (removed 11 cell fraction columns: CD4Tnv, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono)
+  Composition effects (clr, cases minus controls): 
+    Bnv -0.2737  Neu +0.1511  Bmem +0.1305  Baso +0.1264  Eos -0.1230  CD4Tnv +0.0919  CD8Tnv -0.0684  CD4Tmem -0.0676  Treg +0.0668  Mono -0.0498  CD8Tmem +0.0184  NK -0.0025
+  Smoking score: available 621 samples; residual SD 3.3562 (originally 3.6583)
+    standardised case-control difference -0.195 SD
+
+==== GSE144858 (alzheimer) ====
+  Cell types 12 types: CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+  Row sums of fractions: median 1.0000, range 1.0000 to 1.0000
+  Zeros: 386, replaced with 0.65 times the smallest non-zero value
+  Covariates: 9 columns (removed 11 cell fraction columns: CD4Tnv, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono)
+  Composition effects (clr, cases minus controls): 
+    Eos -0.3547  Bnv -0.3407  Bmem +0.2670  CD8Tmem +0.1281  CD4Tnv +0.1084  NK +0.1027  Neu +0.0709  Treg +0.0670  CD8Tnv -0.0490  Baso +0.0393  Mono -0.0324  CD4Tmem -0.0067
+  Smoking score: available 189 samples; residual SD 2.5062 (originally 2.8169)
+    standardised case-control difference -0.251 SD
+
+==== GSE198904 (depression) ====
+  Cell types 12 types: CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+  Row sums of fractions: median 1.0000, range 1.0000 to 1.0000
+  Zeros: 136, replaced with 0.65 times the smallest non-zero value
+  Covariates: 125 columns (removed 11 cell fraction columns: CD4Tnv, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono)
+  Composition effects (clr, cases minus controls): 
+    Baso +0.2138  Bnv -0.1814  Eos -0.1054  Bmem +0.0846  CD4Tnv -0.0832  CD8Tnv +0.0815  CD8Tmem +0.0760  Treg -0.0609  Mono -0.0604  CD4Tmem +0.0418  NK -0.0409  Neu +0.0344
+  Smoking score: available 429 samples; residual SD 1.9969 (originally 4.8463)
+    standardised case-control difference +0.586 SD
+
+==== GSE273970 (depression) ====
+  Cell types 12 types: CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+  Row sums of fractions: median 1.0000, range 1.0000 to 1.0000
+  Zeros: 233, replaced with 0.65 times the smallest non-zero value
+  Covariates: 39 columns (removed 11 cell fraction columns: CD4Tnv, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono)
+  Composition effects (clr, cases minus controls): 
+    Neu +0.3084  Eos -0.2895  CD4Tmem -0.2584  Treg +0.1311  CD4Tnv +0.1251  CD8Tmem +0.0932  Mono -0.0888  Baso +0.0522  CD8Tnv -0.0510  NK +0.0464  Bnv -0.0356  Bmem -0.0330
+  Smoking score: available 283 samples; residual SD 2.7450 (originally 3.1019)
+    standardised case-control difference +0.310 SD
+
+==== GSE87648 (ibd) ====
+  Cell types 12 types: CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+  Row sums of fractions: median 1.0000, range 1.0000 to 1.0000
+  Zeros: 803, replaced with 0.65 times the smallest non-zero value
+  Covariates: 10 columns (removed 11 cell fraction columns: CD4Tnv, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono)
+  Composition effects (clr, cases minus controls): 
+    Neu +0.4752  CD8Tmem -0.3016  Treg +0.2965  NK -0.2917  CD8Tnv -0.2002  CD4Tmem -0.0945  Baso +0.0687  Mono +0.0626  Eos -0.0524  Bnv +0.0372  Bmem +0.0133  CD4Tnv -0.0131
+  Smoking score: available 378 samples; residual SD 3.8058 (originally 4.2169)
+    standardised case-control difference -0.028 SD
+
+==== GSE112611 (ibd) ====
+  Cell types 12 types: CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+  Row sums of fractions: median 1.0000, range 1.0000 to 1.0000
+  Zeros: 566, replaced with 0.65 times the smallest non-zero value
+  Covariates: 57 columns (removed 11 cell fraction columns: CD4Tnv, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono)
+  Composition effects (clr, cases minus controls): 
+    Neu +0.9662  CD8Tnv -0.6319  NK -0.5505  Treg +0.4295  CD8Tmem -0.3350  Mono +0.2051  Bnv -0.1125  Bmem -0.0863  CD4Tmem +0.0626  CD4Tnv +0.0433  Baso +0.0147  Eos -0.0052
+  Smoking score: available 186 samples; residual SD 1.6984 (originally 2.1394)
+    standardised case-control difference -1.237 SD
+
+Cell types common to the ten sets: 12 types: CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+
+  PC-Parkinson               GSE145361 vs GSE111629  Pearson +0.365 (Z=+0.90, P=0.2183)  Spearman +0.329 (P=0.2458)  null mean +0.008
+  PC-Schizophrenia           GSE84727  vs GSE80417   Pearson +0.985 (Z=+2.38, P=0.0001)  Spearman +0.993 (P=0.0001)  null mean +0.009
+  PC-Alzheimer               GSE338167 vs GSE144858  Pearson +0.837 (Z=+1.98, P=0.0032)  Spearman +0.776 (P=0.0094)  null mean -0.002
+  PC-Depression              GSE198904 vs GSE273970  Pearson +0.168 (Z=+0.65, P=0.2721)  Spearman +0.098 (P=0.3817)  null mean +0.001
+  PC-IBD                     GSE87648  vs GSE112611  Pearson +0.930 (Z=+2.33, P=0.0001)  Spearman +0.762 (P=0.0034)  null mean +0.002
+  Parkinson|Schizophrenia    GSE145361 vs GSE84727   Pearson +0.358 (Z=+1.07, P=0.1611)  Spearman +0.490 (P=0.0880)  null mean -0.007
+  Parkinson|Schizophrenia    GSE145361 vs GSE80417   Pearson +0.462 (Z=+1.36, P=0.0942)  Spearman +0.531 (P=0.0629)  null mean +0.002
+  Parkinson|Schizophrenia    GSE111629 vs GSE84727   Pearson -0.043 (Z=-0.14, P=0.5523)  Spearman -0.021 (P=0.5339)  null mean -0.001
+  Parkinson|Schizophrenia    GSE111629 vs GSE80417   Pearson -0.056 (Z=-0.21, P=0.5819)  Spearman -0.014 (P=0.5252)  null mean +0.000
+  Parkinson|Alzheimer        GSE145361 vs GSE338167  Pearson +0.816 (Z=+2.00, P=0.0068)  Spearman +0.643 (P=0.0562)  null mean +0.005
+  Parkinson|Alzheimer        GSE145361 vs GSE144858  Pearson +0.776 (Z=+1.86, P=0.0100)  Spearman +0.455 (P=0.1325)  null mean -0.006
+  Parkinson|Alzheimer        GSE111629 vs GSE338167  Pearson +0.308 (Z=+0.90, P=0.2094)  Spearman +0.301 (P=0.2012)  null mean -0.001
+  Parkinson|Alzheimer        GSE111629 vs GSE144858  Pearson +0.293 (Z=+0.96, P=0.1844)  Spearman +0.196 (P=0.2674)  null mean -0.006
+  Parkinson|Depression       GSE145361 vs GSE198904  Pearson +0.417 (Z=+1.31, P=0.1040)  Spearman +0.252 (P=0.2238)  null mean +0.010
+  Parkinson|Depression       GSE145361 vs GSE273970  Pearson +0.761 (Z=+1.64, P=0.0343)  Spearman +0.594 (P=0.0951)  null mean -0.000
+  Parkinson|Depression       GSE111629 vs GSE198904  Pearson +0.373 (Z=+1.28, P=0.1121)  Spearman +0.434 (P=0.0737)  null mean -0.001
+  Parkinson|Depression       GSE111629 vs GSE273970  Pearson +0.215 (Z=+0.68, P=0.2639)  Spearman +0.245 (P=0.2373)  null mean -0.003
+  Parkinson|IBD              GSE145361 vs GSE87648   Pearson +0.389 (Z=+1.09, P=0.1601)  Spearman +0.413 (P=0.1445)  null mean -0.006
+  Parkinson|IBD              GSE145361 vs GSE112611  Pearson +0.426 (Z=+1.10, P=0.1621)  Spearman +0.406 (P=0.1461)  null mean +0.004
+  Parkinson|IBD              GSE111629 vs GSE87648   Pearson +0.285 (Z=+1.05, P=0.1602)  Spearman +0.049 (P=0.4450)  null mean -0.001
+  Parkinson|IBD              GSE111629 vs GSE112611  Pearson +0.171 (Z=+0.69, P=0.2488)  Spearman +0.028 (P=0.4573)  null mean -0.003
+  Schizophrenia|Alzheimer    GSE84727  vs GSE338167  Pearson +0.120 (Z=+0.33, P=0.3837)  Spearman +0.252 (P=0.2736)  null mean +0.001
+  Schizophrenia|Alzheimer    GSE84727  vs GSE144858  Pearson -0.068 (Z=-0.25, P=0.5897)  Spearman -0.028 (P=0.5415)  null mean -0.002
+  Schizophrenia|Alzheimer    GSE80417  vs GSE338167  Pearson +0.207 (Z=+0.56, P=0.3047)  Spearman +0.287 (P=0.2450)  null mean +0.002
+  Schizophrenia|Alzheimer    GSE80417  vs GSE144858  Pearson +0.017 (Z=+0.06, P=0.4817)  Spearman +0.042 (P=0.4500)  null mean -0.001
+  Schizophrenia|Depression   GSE84727  vs GSE198904  Pearson -0.299 (Z=-1.06, P=0.8472)  Spearman -0.497 (P=0.9589)  null mean +0.004
+  Schizophrenia|Depression   GSE84727  vs GSE273970  Pearson +0.677 (Z=+1.84, P=0.0236)  Spearman +0.622 (P=0.0418)  null mean +0.004
+  Schizophrenia|Depression   GSE80417  vs GSE198904  Pearson -0.269 (Z=-0.91, P=0.8033)  Spearman -0.448 (P=0.9312)  null mean +0.005
+  Schizophrenia|Depression   GSE80417  vs GSE273970  Pearson +0.758 (Z=+1.97, P=0.0116)  Spearman +0.678 (P=0.0266)  null mean -0.006
+  Schizophrenia|IBD          GSE84727  vs GSE87648   Pearson +0.494 (Z=+1.44, P=0.0816)  Spearman +0.643 (P=0.0499)  null mean +0.001
+  Schizophrenia|IBD          GSE84727  vs GSE112611  Pearson +0.320 (Z=+1.02, P=0.1691)  Spearman +0.469 (P=0.0928)  null mean +0.003
+  Schizophrenia|IBD          GSE80417  vs GSE87648   Pearson +0.530 (Z=+1.54, P=0.0621)  Spearman +0.615 (P=0.0571)  null mean -0.003
+  Schizophrenia|IBD          GSE80417  vs GSE112611  Pearson +0.394 (Z=+1.25, P=0.1185)  Spearman +0.448 (P=0.1067)  null mean +0.002
+  Alzheimer|Depression       GSE338167 vs GSE198904  Pearson +0.610 (Z=+2.11, P=0.0106)  Spearman +0.476 (P=0.0701)  null mean +0.001
+  Alzheimer|Depression       GSE338167 vs GSE273970  Pearson +0.620 (Z=+1.53, P=0.0597)  Spearman +0.755 (P=0.0288)  null mean +0.004
+  Alzheimer|Depression       GSE144858 vs GSE198904  Pearson +0.566 (Z=+1.56, P=0.0588)  Spearman +0.406 (P=0.1479)  null mean +0.005
+  Alzheimer|Depression       GSE144858 vs GSE273970  Pearson +0.527 (Z=+1.32, P=0.1062)  Spearman +0.650 (P=0.0549)  null mean +0.004
+  Alzheimer|IBD              GSE338167 vs GSE87648   Pearson +0.356 (Z=+1.08, P=0.1539)  Spearman +0.441 (P=0.1005)  null mean +0.005
+  Alzheimer|IBD              GSE338167 vs GSE112611  Pearson +0.384 (Z=+1.02, P=0.1842)  Spearman +0.420 (P=0.1491)  null mean -0.005
+  Alzheimer|IBD              GSE144858 vs GSE87648   Pearson +0.009 (Z=+0.01, P=0.4960)  Spearman -0.105 (P=0.6335)  null mean +0.006
+  Alzheimer|IBD              GSE144858 vs GSE112611  Pearson +0.052 (Z=+0.16, P=0.4503)  Spearman +0.007 (P=0.4925)  null mean -0.004
+  Depression|IBD             GSE198904 vs GSE87648   Pearson -0.079 (Z=-0.27, P=0.5987)  Spearman -0.126 (P=0.6495)  null mean +0.001
+  Depression|IBD             GSE198904 vs GSE112611  Pearson -0.087 (Z=-0.34, P=0.6234)  Spearman -0.203 (P=0.7678)  null mean +0.004
+  Depression|IBD             GSE273970 vs GSE87648   Pearson +0.459 (Z=+1.32, P=0.1043)  Spearman +0.385 (P=0.1543)  null mean -0.000
+  Depression|IBD             GSE273970 vs GSE112611  Pearson +0.397 (Z=+1.11, P=0.1530)  Spearman +0.301 (P=0.2294)  null mean +0.009
+
+=== Within-disease positive controls (composition axis) ===
+  PC-Parkinson               Pearson +0.365  Z=+0.90  P=0.2183
+  PC-Schizophrenia           Pearson +0.985  Z=+2.38  P=0.0001
+  PC-Alzheimer               Pearson +0.837  Z=+1.98  P=0.0032
+  PC-Depression              Pearson +0.168  Z=+0.65  P=0.2721
+  PC-IBD                     Pearson +0.930  Z=+2.33  P=0.0001
+  Reaching P < 0.05: 3 / 5
+  Null means: median +0.0009, range -0.0066 to +0.0104 (expected value 0; a large deviation indicates a problem with the permutation or the clr)
+  Note: with 12 components the null distribution of the correlation is bounded and non-normal; Z is a poor summary and the permutation P is decisive
+
+=== Cross-disease comparisons: the four pairings summarised by disease pair ===
+  parkinson-schizophrenia      Pearson of the four pairings: +0.358 +0.462 -0.043 -0.056; significant 0/4
+  parkinson-alzheimer          Pearson of the four pairings: +0.816 +0.776 +0.308 +0.293; significant 2/4
+  parkinson-depression         Pearson of the four pairings: +0.417 +0.761 +0.373 +0.215; significant 1/4
+  parkinson-ibd                Pearson of the four pairings: +0.389 +0.426 +0.285 +0.171; significant 0/4
+  schizophrenia-alzheimer      Pearson of the four pairings: +0.120 -0.068 +0.207 +0.017; significant 0/4
+  schizophrenia-depression     Pearson of the four pairings: -0.299 +0.677 -0.269 +0.758; significant 2/4
+  schizophrenia-ibd            Pearson of the four pairings: +0.494 +0.320 +0.530 +0.394; significant 0/4
+  alzheimer-depression         Pearson of the four pairings: +0.610 +0.620 +0.566 +0.527; significant 1/4
+  alzheimer-ibd                Pearson of the four pairings: +0.356 +0.384 +0.009 +0.052; significant 0/4
+  depression-ibd               Pearson of the four pairings: -0.079 -0.087 +0.459 +0.397; significant 0/4
+  Disease pairs with all four pairings significant and consistent in direction: 0 / 10
+
+=== Direction common to the cohorts in the composition effects ===
+  Most cross-disease correlations are positive; how much of this agreement comes from one direction common to the cohorts needs to be established.
+  This section is an exploratory analysis added after the cross-disease correlations were seen to be mostly positive.
+  Per cell type: number of cohorts with cases above controls / below controls (of 10 sets)
+    Neu      10 /  0
+    Baso      9 /  1
+    Treg      9 /  1
+    CD4Tnv    6 /  4
+    Bmem      6 /  4
+    NK        6 /  4
+    CD8Tmem   5 /  5
+    Mono      5 /  5
+    Bnv       3 /  7
+    CD8Tnv    3 /  7
+    CD4Tmem   2 /  8
+    Eos       0 / 10
+  [Main analysis: effect vectors scaled to unit length]
+  First direction: share of the total sum of squares 44.8%
+  Loadings (sorted by absolute value): 
+    Neu +0.625  Eos -0.451  CD4Tmem -0.353  Treg +0.327  Bnv -0.305  Baso +0.183  CD8Tnv -0.163  CD4Tnv +0.117  CD8Tmem -0.058  Bmem +0.056  Mono +0.026  NK -0.004
+  Projection of each cohort on this direction (projection of a unit vector, i.e. the cosine of its angle with the direction): 
+    Parkinson      GSE145361 +0.893  GSE111629 +0.369
+    Schizophrenia  GSE84727 +0.596  GSE80417 +0.677
+    Alzheimer      GSE338167 +0.796  GSE144858 +0.606
+    Depression     GSE198904 +0.293  GSE273970 +0.890
+    IBD            GSE87648 +0.679  GSE112611 +0.630
+  Cohorts with positive projection: 10 / 10
+  Median correlation of the 40 cross-disease pairs: before removal +0.366; after in-sample removal -0.295; after leave-out removal +0.199
+  Median correlation of the  5 within-disease pairs: before removal +0.837; after in-sample removal +0.736; after leave-out removal +0.844
+  Number of the 40 cross-disease pairs with positive correlation: before removal 33; after in-sample removal 13; after leave-out removal 27
+  Interpretation: the in-sample and leave-out computations give the upper and lower bound of the role of this direction.
+  [For reference: unscaled] first direction: share of the total sum of squares 58.1%; share contributed by each cohort: 
+    GSE145361 5%  GSE111629 0%  GSE84727 7%  GSE80417 9%  GSE338167 1%  GSE144858 0%  GSE198904 0%  GSE273970 4%  GSE87648 16%  GSE112611 56%
+    median correlation after in-sample removal: cross-disease -0.102; within-disease +0.451
+    cosine of the angle with the scaled direction 0.829
+
+=== Case-control difference in the smoking score (standardised) ===
+  Parkinson      GSE145361 -0.412  GSE111629 -0.231
+  Schizophrenia  GSE84727 +0.880  GSE80417 +1.076
+  Alzheimer      GSE338167 -0.195  GSE144858 -0.251
+  Depression     GSE198904 +0.586  GSE273970 +0.310
+  IBD            GSE87648 -0.028  GSE112611 -1.237
+  Disorders with the same sign in both cohorts: 5 / 5
+  Note 1: absolute scores are not comparable across cohorts (different numbers of usable sites shift them as a whole); 
+        only the standardised difference within each cohort is used here.
+  Note 2: the model of this section is not adjusted for cell fractions - smoking itself affects cell composition, and removing composition
+        as a covariate would remove part of the smoking effect.
+  Note 3: the smoking score of the paediatric cohort should not be read as true smoking exposure; the sites of the score also
+        respond to inflammation and other factors, and large differences must be understood accordingly.
+
+=== Plotting ===
+  [figure] fig43_composition_heatmap  9x7 in @600 dpi  png 352 KB
+  [figure] fig44_composition_all_pairs  9x9 in @600 dpi  png 297.2 KB
+
+==============================================
+Status: completed normally
+End: 2026-11-17 02:06:28   elapsed 3.4 min
+Warnings: none
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

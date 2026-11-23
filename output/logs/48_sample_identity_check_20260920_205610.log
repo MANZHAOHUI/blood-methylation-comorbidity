@@ -1,0 +1,85 @@
+==============================================
+Script: 48_sample_identity_check
+Start: 2026-09-20 20:56:10
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:ggplot2 -> Position
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+=== 1. Scanning the ten matrices for rs probes ===
+---- GSE145361 ----
+  Source rds/: full matrix 485237 rows, of which rs probes 0
+---- GSE111629 ----
+  Source rds/: full matrix 485512 rows, of which rs probes 0
+---- GSE84727 ----
+  Source raw/: full matrix 420374 rows, of which rs probes 0
+---- GSE80417 ----
+  Source raw/: full matrix 483636 rows, of which rs probes 65
+  After alignment with the analysis samples: 65 probes x 636 samples
+---- GSE338167 ----
+  Source raw/: full matrix 854671 rows, of which rs probes 0
+---- GSE144858 ----
+  Source raw/: full matrix 410942 rows, of which rs probes 0
+---- GSE198904 ----
+  Source raw/: full matrix 729562 rows, of which rs probes 0
+---- GSE273970 ----
+  Source raw/: full matrix 865859 rows, of which rs probes 0
+---- GSE87648 ----
+  Source rds/: full matrix 460398 rows, of which rs probes 63
+  After alignment with the analysis samples: 63 probes x 380 samples
+---- GSE112611 ----
+  Source rds/: full matrix 807511 rows, of which rs probes 59
+  [FAIL] column names cannot be translated to sample IDs
+
+=== Inventory of rs probes ===
+  GSE145361  rs probes   0  samples    0  [not usable] too few probes
+  GSE111629  rs probes   0  samples    0  [not usable] too few probes
+  GSE84727   rs probes   0  samples    0  [not usable] too few probes
+  GSE80417   rs probes  65  samples  636  available
+  GSE338167  rs probes   0  samples    0  [not usable] too few probes
+  GSE144858  rs probes   0  samples    0  [not usable] too few probes
+  GSE198904  rs probes   0  samples    0  [not usable] too few probes
+  GSE273970  rs probes   0  samples    0  [not usable] too few probes
+  GSE87648   rs probes  63  samples  380  available
+  GSE112611  rs probes   0  samples    0  [not usable] too few probes
+  Usable cohorts: 2 / 10
+
+=== 2. Pairwise comparison of sample genotypes ===
+  Criterion for the same person: at least 30 shared rs probes and a genotype concordance of at least 0.9
+  GSE80417   vs GSE87648   shared probes  63  compared   241680 pairs  median concordance 0.413  upper quartile 0.444  maximum 0.714  meeting criterion 0
+  GSE80417   vs GSE80417   shared probes  65  compared   201930 pairs  median concordance 0.415  upper quartile 0.446  maximum 0.677  meeting criterion 0
+  GSE87648   vs GSE87648   shared probes  63  compared    72010 pairs  median concordance 0.429  upper quartile 0.476  maximum 0.968  meeting criterion 2
+
+=== Summary ===
+  Cohort combinations compared: 3; range of median concordance 0.413 to 0.429
+
+  [ACTION NEEDED] sample pairs meeting the same-person criterion: 2
+    duplicates within cohorts: 2; duplicates across cohorts: 0
+      GSE87648   GSM2337252   | GSE87648   GSM2337618   | concordance 0.968
+      GSE87648   GSM2337519   | GSE87648   GSM2337422   | concordance 0.921
+
+=== Plotting ===
+  [figure] fig51_sample_identity  8x5.5 in @600 dpi  png 198.8 KB
+
+==============================================
+Status: completed normally
+End: 2026-09-20 20:59:53   elapsed 3.7 min
+Warnings: 1
+  - package ‘limma’ was built under R version 4.4.2
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

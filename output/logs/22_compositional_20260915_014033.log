@@ -1,0 +1,95 @@
+==============================================
+Script: 22_compositional
+Start: 2026-09-15 01:40:33
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:ggplot2 -> Position
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+=== twelve types clr ===
+  Dimensions 12: CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+  Note: after clr the effects of each data set sum to zero, 
+        so 'all in the same direction' is impossible by construction and sign concordance is again a criterion that can fail
+  PC1  positive control GSE145361 vs GSE111629  n=12  rho=+0.448  sign 0.67  P(rho)=0.1351  P(sign)=0.3211  Z=+1.19
+  PC2  positive control GSE87648 vs GSE112611  n=12  rho=+0.650  sign 0.58  P(rho)=0.0197  P(sign)=0.3940  Z=+1.99
+  M1   primary criterion GSE145361 vs GSE87648  n=12  rho=+0.503  sign 0.67  P(rho)=0.0652  P(sign)=0.2042  Z=+1.55
+  M2   secondary   GSE111629 vs GSE87648  n=12  rho=+0.147  sign 0.50  P(rho)=0.3304  P(sign)=0.6305  Z=+0.47
+  NC1  negative control GSE145361 vs GSE152027  n=12  rho=+0.056  sign 0.58  P(rho)=0.4407  P(sign)=0.4226  Z=+0.17
+  NC2  negative control GSE87648 vs GSE152027  n=12  rho=+0.336  sign 0.75  P(rho)=0.1643  P(sign)=0.1063  Z=+1.04
+
+=== lymphocyte subcomposition clr ===
+  Dimensions 8: CD4Tnv, CD4Tmem, CD8Tnv, CD8Tmem, Treg, Bnv, Bmem, NK
+  Note: after clr the effects of each data set sum to zero, 
+        so 'all in the same direction' is impossible by construction and sign concordance is again a criterion that can fail
+  PC1  positive control GSE145361 vs GSE111629  n= 8  rho=+0.190  sign 0.62  P(rho)=0.3467  P(sign)=0.4169  Z=+0.48
+  PC2  positive control GSE87648 vs GSE112611  n= 8  rho=+0.905  sign 0.75  P(rho)=0.0029  P(sign)=0.1998  Z=+2.22
+  M1   primary criterion GSE145361 vs GSE87648  n= 8  rho=-0.095  sign 0.38  P(rho)=0.5995  P(sign)=0.8398  Z=-0.25
+  M2   secondary   GSE111629 vs GSE87648  n= 8  rho=-0.238  sign 0.50  P(rho)=0.7479  P(sign)=0.6812  Z=-0.72
+  NC1  negative control GSE145361 vs GSE152027  n= 8  rho=-0.333  sign 0.38  P(rho)=0.8137  P(sign)=0.8106  Z=-0.93
+  NC2  negative control GSE87648 vs GSE152027  n= 8  rho=+0.048  sign 0.50  P(rho)=0.4679  P(sign)=0.6769  Z=+0.11
+
+=== Re-estimation with the seven-cell-type reference (does the conclusion depend on the reference matrix?) ===
+  GSE145361 finished, 7 types
+  GSE111629 finished, 7 types
+  GSE72774 finished, 7 types
+  GSE87648 finished, 7 types
+  GSE112611 finished, 7 types
+  GSE152027 finished, 7 types
+
+=== seven-type reference clr ===
+  Dimensions 7: B, NK, CD4T, CD8T, Mono, Neutro, Eosino
+  Note: after clr the effects of each data set sum to zero, 
+        so 'all in the same direction' is impossible by construction and sign concordance is again a criterion that can fail
+  PC1  positive control GSE145361 vs GSE111629  n= 7  rho=+0.393  sign 0.71  P(rho)=0.1922  P(sign)=0.2901  Z=+0.97
+  PC2  positive control GSE87648 vs GSE112611  n= 7  rho=+0.750  sign 0.86  P(rho)=0.0608  P(sign)=0.1126  Z=+1.60
+  M1   primary criterion GSE145361 vs GSE87648  n= 7  rho=+0.357  sign 0.71  P(rho)=0.2512  P(sign)=0.3018  Z=+0.80
+  M2   secondary   GSE111629 vs GSE87648  n= 7  rho=+0.607  sign 0.71  P(rho)=0.0980  P(sign)=0.3163  Z=+1.41
+  NC1  negative control GSE145361 vs GSE152027  n= 7  rho=-0.179  sign 0.71  P(rho)=0.6581  P(sign)=0.2650  Z=-0.42
+  NC2  negative control GSE87648 vs GSE152027  n= 7  rho=+0.321  sign 0.71  P(rho)=0.2809  P(sign)=0.2984  Z=+0.71
+
+=== Primary criterion and controls compared across the three analyses ===
+  twelve types clr
+     PC1  positive control rho=+0.448 sign 0.67  P(rho)=0.1351
+     PC2  positive control rho=+0.650 sign 0.58  P(rho)=0.0197
+     M1   primary criterion rho=+0.503 sign 0.67  P(rho)=0.0652
+     M2   secondary   rho=+0.147 sign 0.50  P(rho)=0.3304
+     NC1  negative control rho=+0.056 sign 0.58  P(rho)=0.4407
+     NC2  negative control rho=+0.336 sign 0.75  P(rho)=0.1643
+  lymphocyte subcomposition clr
+     PC1  positive control rho=+0.190 sign 0.62  P(rho)=0.3467
+     PC2  positive control rho=+0.905 sign 0.75  P(rho)=0.0029
+     M1   primary criterion rho=-0.095 sign 0.38  P(rho)=0.5995
+     M2   secondary   rho=-0.238 sign 0.50  P(rho)=0.7479
+     NC1  negative control rho=-0.333 sign 0.38  P(rho)=0.8137
+     NC2  negative control rho=+0.048 sign 0.50  P(rho)=0.4679
+  seven-type reference clr
+     PC1  positive control rho=+0.393 sign 0.71  P(rho)=0.1922
+     PC2  positive control rho=+0.750 sign 0.86  P(rho)=0.0608
+     M1   primary criterion rho=+0.357 sign 0.71  P(rho)=0.2512
+     M2   secondary   rho=+0.607 sign 0.71  P(rho)=0.0980
+     NC1  negative control rho=-0.179 sign 0.71  P(rho)=0.6581
+     NC2  negative control rho=+0.321 sign 0.71  P(rho)=0.2809
+
+=== Plotting ===
+  [figure] fig28_clr_effects  9x4.4 in @600 dpi  png 296.4 KB
+  [figure] fig29_clr_concordance  8.5x7 in @600 dpi  png 293.6 KB
+
+==============================================
+Status: completed normally
+End: 2026-09-15 02:04:15   elapsed 23.7 min
+Warnings: 1
+  - longer object length is not a multiple of shorter object length
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

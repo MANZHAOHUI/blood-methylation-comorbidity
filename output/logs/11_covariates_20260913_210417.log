@@ -1,0 +1,213 @@
+==============================================
+Script: 11_covariates
+Start: 2026-09-13 21:04:17
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+==============================================
+
+=== Inspecting the calling interfaces of the three packages first ===
+Arguments of dnaMethyAge::methyAge: function (betas, clock = "HorvathS2013", age_info = NA, fit_method = "Linear",      do_plot = TRUE, imputation = TRUE, simple_mode = FALSE, species = "Homo sapiens",      MM_array = FALSE, use_cores = detectCores())  NULL
+G3;To understand what do these clocks represent for, please refer to 'https://github.com/yiluyucheng/dnaMethyAge'.
+gClocks available in dnaMethyAge: HannumG2013, HorvathS2013, LevineM2018, ZhangQ2019, ShirebyG2020, YangZ2016, ZhangY2017, LuA2019, HorvathS2018, DunedinPACE, McEwenL2019, CBL_specific, PCGrimAge, PCHorvathS2013, PCHannumG2013, PCHorvathS2018, PCPhenoAge, CBL_common, Cortex_common, epiTOC2, BernabeuE2023c, LuA2023p1, LuA2023p2, LuA2023p3, FuentealbaM2025
+EpiSmokEr::SSc arguments: function (dataset, ref.Elliott = Illig_data)  NULL
+EpiSmokEr::SSt arguments: function (dataset, samplesheet, ref.CS = CS_final_coefs, ref.FS = FS_final_coefs,      ref.NS = NS_final_coefs)  NULL
+EpiSmokEr::MS arguments: function (dataset, ref.Zhang = Zhangetal_cpgs)  NULL
+EpiSmokEr::epismoker arguments: function (dataset, dataset_QN, dataset_ILM, dataset_SQN, samplesheet,      ref.Elliott = Illig_data, ref.Zhang = Zhangetal_cpgs, ref.CS = CS_final_coefs,      ref.FS = FS_final_coefs, ref.NS = NS_final_coefs, method = c("SSt",          "SSc", "MS", "all"))  NULL
+
+Twelve-cell-type reference matrix: 450K version 600 probes; general version 600 probes
+Cell types: CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+
+To process: 6
+
+==== GSE111629  485512 probes x 572 samples ====
+  Reference probes found: 600 / 600 (100.0%)
+  Cell fractions: 12 types, median row sum 1.000
+  Cell fractions -> pass
+G3;Start data imputation ...
+gG3;Finished imputation.
+gG3;Normalization by adusted BMIQ ...
+gG3;Estimate running time for normalisation (BMIQ with fixed reference) by a single core: 70.5 minutes.
+g  Columns returned by methyAge: Sample, mAge
+  DNAm age: median 64.9, missing 0
+  DNAm age -> pass
+G3;=================================
+gG3;<<<<< Smoking Score Calculation Started >>>>>
+gG3;=================================
+gG3;Dataset has 187 of 187 CpGs required for smoking status estimation.
+gG3;====================================
+gG3;<<<<< Smoking Score Calculation Completed >>>>>
+gG3;====================================
+g  SSc returned: data.frame, columns SampleName, smokingScore
+  Smoking score: median -3.555, missing 0
+  Smoking score -> pass
+  Saved GSE111629_covariates.csv
+
+==== GSE112611  807511 probes x 238 samples ====
+  Reference probes found: 590 / 600 (98.3%)
+  Cell fractions: 12 types, median row sum 1.000
+  Cell fractions -> pass
+G3;Start data imputation ...
+gG3;Finished imputation.
+gG3;Normalization by adusted BMIQ ...
+gG3;Estimate running time for normalisation (BMIQ with fixed reference) by a single core: 29.4 minutes.
+g  Columns returned by methyAge: Sample, mAge
+  DNAm age: median 13.5, missing 0
+  DNAm age -> pass
+G3;=================================
+gG3;<<<<< Smoking Score Calculation Started >>>>>
+gG3;=================================
+gG3;Dataset has 171 of 187 CpGs required for smoking status estimation.
+gG3;cg11231349 is missing from the input dataset.cg03188382 is missing from the input dataset.cg19713851 is missing from the input dataset.cg05951221 is missing from the input dataset.cg03274391 is missing from the input dataset.cg17924476 is missing from the input dataset.cg03991871 is missing from the input dataset.cg14817490 is missing from the input dataset.cg06126421 is missing from the input dataset.cg00931843 is missing from the input dataset.cg22132788 is missing from the input dataset.cg07826859 is missing from the input dataset.cg07123182 is missing from the input dataset.cg23126342 is missing from the input dataset.cg03489965 is missing from the input dataset.cg22649124 is missing from the input dataset.
+gG3;====================================
+gG3;<<<<< Smoking Score Calculation Completed >>>>>
+gG3;====================================
+g  SSc returned: data.frame, columns SampleName, smokingScore
+  Smoking score: median -7.820, missing 52
+  Smoking score -> pass
+  Saved GSE112611_covariates.csv
+
+==== GSE145361  485237 probes x 1638 samples ====
+  Reference probes found: 600 / 600 (100.0%)
+  Cell fractions: 12 types, median row sum 1.000
+  Cell fractions -> pass
+G3;Start data imputation ...
+gG3;Finished imputation.
+gG3;Normalization by adusted BMIQ ...
+gG3;Estimate running time for normalisation (BMIQ with fixed reference) by a single core: 202 minutes.
+g  Columns returned by methyAge: Sample, mAge
+  DNAm age: median 66.5, missing 0
+  DNAm age -> pass
+G3;=================================
+gG3;<<<<< Smoking Score Calculation Started >>>>>
+gG3;=================================
+gG3;Dataset has 187 of 187 CpGs required for smoking status estimation.
+gG3;====================================
+gG3;<<<<< Smoking Score Calculation Completed >>>>>
+gG3;====================================
+g  SSc returned: data.frame, columns SampleName, smokingScore
+  Smoking score: median -1.553, missing 0
+  Smoking score -> pass
+  Saved GSE145361_covariates.csv
+
+==== GSE152027  483756 probes x 493 samples ====
+  Reference probes found: 600 / 600 (100.0%)
+  Cell fractions: 12 types, median row sum 1.000
+  Cell fractions -> pass
+G3;Start data imputation ...
+gG3;Finished imputation.
+gG3;Normalization by adusted BMIQ ...
+gG3;Estimate running time for normalisation (BMIQ with fixed reference) by a single core: 60.8 minutes.
+g  Columns returned by methyAge: Sample, mAge
+  DNAm age: median 44.6, missing 0
+  DNAm age -> pass
+G3;=================================
+gG3;<<<<< Smoking Score Calculation Started >>>>>
+gG3;=================================
+gG3;Dataset has 187 of 187 CpGs required for smoking status estimation.
+gG3;====================================
+gG3;<<<<< Smoking Score Calculation Completed >>>>>
+gG3;====================================
+g  SSc returned: data.frame, columns SampleName, smokingScore
+  Smoking score: median 4.741, missing 0
+  Smoking score -> pass
+  Saved GSE152027_covariates.csv
+
+==== GSE72774  485512 probes x 508 samples ====
+  Reference probes found: 600 / 600 (100.0%)
+  Cell fractions: 12 types, median row sum 1.000
+  Cell fractions -> pass
+G3;Start data imputation ...
+gG3;Finished imputation.
+gG3;Normalization by adusted BMIQ ...
+gG3;Estimate running time for normalisation (BMIQ with fixed reference) by a single core: 62.7 minutes.
+g  Columns returned by methyAge: Sample, mAge
+  DNAm age: median 65.3, missing 0
+  DNAm age -> pass
+G3;=================================
+gG3;<<<<< Smoking Score Calculation Started >>>>>
+gG3;=================================
+gG3;Dataset has 187 of 187 CpGs required for smoking status estimation.
+gG3;====================================
+gG3;<<<<< Smoking Score Calculation Completed >>>>>
+gG3;====================================
+g  SSc returned: data.frame, columns SampleName, smokingScore
+  Smoking score: median -3.433, missing 0
+  Smoking score -> pass
+  [check] our Horvath age vs dnamage shipped with the data: r = 1.0000, mean difference -0.00 years, n = 508
+  [check] ct_Mono vs shipped mono: r = 0.802
+  [check] ct_NK vs shipped nk: r = 0.822
+  [check] neutrophils + eosinophils + basophils vs shipped gran: r = 0.975
+  Saved GSE72774_covariates.csv
+
+==== GSE87648  460398 probes x 382 samples ====
+  Reference probes found: 584 / 600 (97.3%)
+  Cell fractions: 12 types, median row sum 1.000
+  Cell fractions -> pass
+G3;Start data imputation ...
+gG3;Finished imputation.
+gG3;Normalization by adusted BMIQ ...
+gG3;Estimate running time for normalisation (BMIQ with fixed reference) by a single core: 47.1 minutes.
+g  Columns returned by methyAge: Sample, mAge
+  DNAm age: median 32.9, missing 0
+  DNAm age -> pass
+G3;=================================
+gG3;<<<<< Smoking Score Calculation Started >>>>>
+gG3;=================================
+gG3;Dataset has 185 of 187 CpGs required for smoking status estimation.
+gG3;cg26703534 is missing from the input dataset.cg10807309 is missing from the input dataset.
+gG3;====================================
+gG3;<<<<< Smoking Score Calculation Completed >>>>>
+gG3;====================================
+g  SSc returned: data.frame, columns SampleName, smokingScore
+  Smoking score: median -2.832, missing 0
+  Smoking score -> pass
+  Saved GSE87648_covariates.csv
+
+Warning messages:
+1: In horvathPreprocess(betas, normalizeData = TRUE, use_cores = use_cores) :
+  1105 CpG probes cannot be matched in horvath's ref probes, will set to NA
+2: In knnimp(x, k, maxmiss = rowmax, maxp = maxp) :
+  1105 rows with more than 50 % entries missing;
+ mean imputation used for these rows
+3: In horvathPreprocess(betas, normalizeData = TRUE, use_cores = use_cores) :
+  2 CpG probes cannot be matched in horvath's ref probes, will set to NA
+4: In knnimp(x, k, maxmiss = rowmax, maxp = maxp) :
+  2 rows with more than 50 % entries missing;
+ mean imputation used for these rows
+5: In horvathPreprocess(betas, normalizeData = TRUE, use_cores = use_cores) :
+  8 CpG probes cannot be matched in horvath's ref probes, will set to NA
+6: In knnimp(x, k, maxmiss = rowmax, maxp = maxp) :
+  8 rows with more than 50 % entries missing;
+ mean imputation used for these rows
+7: In horvathPreprocess(betas, normalizeData = TRUE, use_cores = use_cores) :
+  183 CpG probes cannot be matched in horvath's ref probes, will set to NA
+8: In knnimp(x, k, maxmiss = rowmax, maxp = maxp) :
+  183 rows with more than 50 % entries missing;
+ mean imputation used for these rows
+=== Summary and plots ===
+Cohorts summarised: GSE111629, GSE112611, GSE145361, GSE152027, GSE72774, GSE87648
+Merged table: 3831 rows, 17 columns: gse, gsm, group, ct_CD4Tnv, ct_Baso, ct_CD4Tmem, ct_Bmem, ct_Bnv, ct_Treg, ct_CD8Tmem, ct_CD8Tnv, ct_Eos, ct_NK, ct_Neu, ct_Mono, dnam_age_horvath, dnam_smoking
+  [figure] fig07_cell_composition  9x8 in @600 dpi  png 637.6 KB
+  [figure] fig08_dnam_age  8x4.6 in @600 dpi  png 408 KB
+  [figure] fig09_dnam_smoking  8x4.4 in @600 dpi  png 198.9 KB
+Warning messages:
+1: Removed 52 rows containing non-finite outside the scale range (`stat_boxplot()`). 
+2: Removed 52 rows containing non-finite outside the scale range (`stat_boxplot()`). 
+
+==============================================
+Status: completed normally
+End: 2026-09-14 02:10:37   elapsed 306.3 min
+Warnings: 2
+  - Removed 52 rows containing non-finite outside the scale range (`stat_boxplot()`).
+  - Removed 52 rows containing non-finite outside the scale range (`stat_boxplot()`).
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

@@ -1,0 +1,53 @@
+==============================================
+Script: 49_snplike_fingerprint
+Start: 2026-09-20 21:15:53
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:ggplot2 -> Position
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+=== 1. Identifying SNP-like probes set by set ===
+---- GSE87648 ----
+  Full matrix 460398 rows x 380 samples; probes with genotype shape: 23 ( 0.005%)
+---- GSE80417 ----
+  Full matrix 483636 rows x 636 samples; probes with genotype shape: 276 ( 0.057%)
+---- GSE84727 ----
+  Full matrix 420374 rows x 847 samples; probes with genotype shape: 4 ( 0.001%)
+---- GSE145361 ----
+  Full matrix 485237 rows x 1638 samples; probes with genotype shape: 426 ( 0.088%)
+---- GSE111629 ----
+  Full matrix 485512 rows x 572 samples; probes with genotype shape: 396 ( 0.082%)
+
+=== 2. Calibration on the two sets with known answers ===
+  Calibration is by rank: do the two kinds of probes give concordances in the same order over all sample pairs, 
+  and do the duplicate pairs identified by rs probes rank at the top under the SNP-like probes?
+  GSE87648: number of probes below 50, calibration not possible
+  GSE80417   SNP-like probes   276, rs probes  65, comparable sample pairs  201930
+    Spearman correlation of the concordances given by the two kinds of probes = 0.359   [FAIL]
+    no known duplicates in this cohort; calibrated by correlation only
+
+  [CALIBRATION FAILED] the SNP-like probes did not reproduce the known answers; the method is not used to judge the other cohorts.
+  To continue, the IDAT raw files of GSE84727, GSE145361 and GSE111629 would have to be downloaded.
+
+==============================================
+Status: completed normally
+End: 2026-09-20 21:20:49   elapsed 4.9 min
+Warnings: 1
+  - package ‘limma’ was built under R version 4.4.2
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

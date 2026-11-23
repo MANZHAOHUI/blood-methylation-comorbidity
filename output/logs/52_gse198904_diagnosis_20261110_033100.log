@@ -1,0 +1,71 @@
+==============================================
+Script: 52_gse198904_diagnosis
+Start: 2026-11-10 03:31:00
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:ggplot2 -> Position
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+=== 1. Sex effect of the other nine sets (reference) ===
+  GSE145361 finished
+  GSE111629 finished
+  GSE84727 finished
+  GSE80417 finished
+  GSE338167 finished
+  GSE144858 finished
+  GSE273970 finished
+  GSE87648 finished
+  GSE112611 finished
+
+=== 2. Design and principal components of GSE198904 ===
+  Sex term 'sexM': number coded 1: 163 / 429 (38.0%)
+  Methylation principal components in the design: 50
+  Five principal components most strongly associated with sex: 
+    mpc6   r = -0.748
+    mpc3   r = +0.329
+    mpc7   r = +0.299
+    mpc9   r = -0.238
+    mpc4   r = +0.198
+  principal components with |r| > 0.3: 2; with |r| > 0.5: 1
+
+=== 3. Sex effect as a function of K ===
+  K= 0  concordance with the sex effect of the nine sets: median +0.1988  minimum +0.1237  maximum +0.3445
+  K= 5  concordance with the sex effect of the nine sets: median +0.1970  minimum +0.1180  maximum +0.3315
+  K=10  concordance with the sex effect of the nine sets: median -0.0039  minimum -0.1247  maximum +0.1199
+  K=20  concordance with the sex effect of the nine sets: median +0.0001  minimum -0.1058  maximum +0.0959
+  K=50  concordance with the sex effect of the nine sets: median +0.0007  minimum -0.0913  maximum +0.0865
+
+=== 4. Disease effect as a function of K (within-disease concordance of depression) ===
+  K= 0  concordance of the disease effect with GSE273970 -0.0116
+  K= 5  concordance of the disease effect with GSE273970 -0.0106
+  K=10  concordance of the disease effect with GSE273970 -0.0039
+  K=20  concordance of the disease effect with GSE273970 -0.0041
+  K=50  concordance of the disease effect with GSE273970 -0.0089
+
+=== Interpretation ===
+  From K = 50 to K = 0 the median sex concordance changes by +0.1981
+  At K=0 the sex concordance returns to the level of the other cohorts: the principal components absorbed the sex effect (explanation A).
+  The data are sound; the problem lies in the model.
+
+==============================================
+Status: completed normally
+End: 2026-11-10 03:44:16   elapsed 13.3 min
+Warnings: 1
+  - package ‘limma’ was built under R version 4.4.2
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

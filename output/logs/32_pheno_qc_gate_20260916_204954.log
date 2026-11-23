@@ -1,0 +1,92 @@
+==============================================
+Script: 32_pheno_qc_gate
+Start: 2026-09-16 20:49:54
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+==== GSE84727 (schizophrenia) ====
+  Samples with non-missing group and within the specified sub-study: 847 (originally 847)
+  Age source: DNAm age (this cohort only has ten-year groups); chronological age is not checked in this step
+  Sex missing: 0 samples
+  Complete cases: controls 433, cases 414, total 847 (originally 847)
+  Gate (cases >= 50 and controls >= 30): pass
+
+==== GSE80417 (schizophrenia) ====
+  Samples with non-missing group and within the specified sub-study: 675 (originally 675)
+  [NOTE] ages outside 18 to 110: 2 samples, values: 883, 891, set to missing
+  Age: originally missing 37, missing after cleaning 39 (5.8%), valid range 18.0 to 90.0
+  Cross-tabulation of missing age and group: 
+    non-missing: case=332; control=304
+    missing: case=21; control=18
+  Test of independence: p = 0.972  Missingness is unrelated to group; complete-case modelling is acceptable
+  Sex missing: 0 samples
+  Complete cases: controls 304, cases 332, total 636 (originally 675)
+  Gate (cases >= 50 and controls >= 30): pass
+
+==== GSE198904 (depression) ====
+  Restricted by sub-study: 461 reduced to 429 samples
+  Samples with non-missing group and within the specified sub-study: 429 (originally 655)
+  Age: originally missing 0, missing after cleaning 0 (0.0%), valid range 18.0 to 68.0
+  Sex missing: 0 samples
+  Complete cases: controls 68, cases 361, total 429 (originally 429)
+  Gate (cases >= 50 and controls >= 30): pass
+
+==== GSE273970 (depression) ====
+  Samples with non-missing group and within the specified sub-study: 283 (originally 283)
+  Age source: DNAm age (this cohort only has ten-year groups); chronological age is not checked in this step
+  Sex missing: 0 samples
+  Complete cases: controls 147, cases 136, total 283 (originally 283)
+  Gate (cases >= 50 and controls >= 30): pass
+
+==== GSE338167 (alzheimer) ====
+  Samples with non-missing group and within the specified sub-study: 621 (originally 621)
+  Age: originally missing 0, missing after cleaning 0 (0.0%), valid range 53.0 to 98.0
+  Sex missing: 0 samples
+  Complete cases: controls 308, cases 313, total 621 (originally 621)
+  Gate (cases >= 50 and controls >= 30): pass
+
+==== GSE144858 (alzheimer) ====
+  Samples with non-missing group and within the specified sub-study: 189 (originally 300)
+  Age: originally missing 0, missing after cleaning 0 (0.0%), valid range 52.0 to 88.0
+  Sex missing: 0 samples
+  Complete cases: controls 96, cases 93, total 189 (originally 189)
+  Gate (cases >= 50 and controls >= 30): pass
+
+=== Summary ===
+        gse       disease n_group n_age_missing n_sex_missing n_complete n_control n_case pass
+1  GSE84727 schizophrenia     847             0             0        847       433    414 TRUE
+2  GSE80417 schizophrenia     675            39             0        636       304    332 TRUE
+3 GSE198904    depression     429             0             0        429        68    361 TRUE
+4 GSE273970    depression     283             0             0        283       147    136 TRUE
+5 GSE338167     alzheimer     621             0             0        621       308    313 TRUE
+6 GSE144858     alzheimer     189             0             0        189        96     93 TRUE
+
+=== Final sample sizes of the five-disorder panel ===
+  parkinson      GSE145361 787/851  GSE111629 237/335  total 2210
+  ibd            GSE87648 176/204  GSE112611 74/164  total 618
+  schizophrenia  GSE84727 433/414  GSE80417 304/332  total 1483
+  depression     GSE198904 68/361  GSE273970 147/136  total 712
+  alzheimer      GSE338167 308/313  GSE144858 96/93  total 810
+  Total: 5833 individuals, 5 disorders, 10 cross-disease comparisons
+
+All checks passed; the common probe set can be recomputed and the analysis sets built
+
+==============================================
+Status: completed normally
+End: 2026-09-16 20:49:54   elapsed 0.0 min
+Warnings: none
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

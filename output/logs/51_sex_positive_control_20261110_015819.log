@@ -1,0 +1,128 @@
+==============================================
+Script: 51_sex_positive_control
+Start: 2026-11-10 01:58:19
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:ggplot2 -> Position
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+=== 1. Estimating the autosomal effect of sex set by set ===
+  GSE145361  samples 1638 (one sex  925)  probes 406653  principal components 50, removed as associated with sex 18  time 4.0 min
+  GSE111629  samples  572 (one sex  323)  probes 406325  principal components  0, removed as associated with sex  0  time 0.9 min
+  GSE84727   samples  847 (one sex  602)  probes 404159  principal components 20, removed as associated with sex  4  time 1.4 min
+  GSE80417   samples  636 (one sex  377)  probes 417939  principal components  5, removed as associated with sex  2  time 1.1 min
+  GSE338167  samples  621 (one sex  202)  probes 371448  principal components  0, removed as associated with sex  0  time 1.0 min
+  GSE144858  samples  189 (one sex   68)  probes 389403  principal components  5, removed as associated with sex  1  time 0.2 min
+  GSE198904  samples  429 (one sex  163)  probes 371956  principal components 50, removed as associated with sex  8  time 0.7 min
+  GSE273970  samples  283 (one sex  132)  probes 390523  principal components  0, removed as associated with sex  0  time 0.4 min
+  GSE87648   samples  378 (one sex  194)  probes 406653  principal components  5, removed as associated with sex  0  time 0.4 min
+  GSE112611  samples  238 (one sex  136)  probes 289139  principal components  0, removed as associated with sex  0  time 0.3 min
+
+=== 2. Concordance of the sex effect in the forty-five pairs ===
+---- Residualising GSE111629 (in 4 pairs) ----
+  Correlation with the coefficients of part 1: 1.000000
+  PC-Parkinson               GSE145361 vs GSE111629 probes 406325  rho=+0.2967  sign 0.6096  Z=   +4.3  P=0.0020
+  Parkinson|Schizophrenia    GSE84727  vs GSE111629 probes 393330  rho=+0.2708  sign 0.5093  Z=   +4.2  P=0.0020
+  Parkinson|Schizophrenia    GSE80417  vs GSE111629 probes 405998  rho=+0.2664  sign 0.5149  Z=   +4.3  P=0.0020
+  Parkinson|Alzheimer        GSE338167 vs GSE111629 probes 361860  rho=+0.2575  sign 0.5393  Z=   +7.7  P=0.0020
+
+---- Residualising GSE112611 (in 8 pairs) ----
+  Correlation with the coefficients of part 1: 1.000000
+  PC-IBD                     GSE87648  vs GSE112611 probes 289139  rho=+0.1756  sign 0.5346  Z=   +3.9  P=0.0020
+  Parkinson|IBD              GSE145361 vs GSE112611 probes 289139  rho=+0.0389  sign 0.4879  Z=   +0.5  P=0.3234
+  Parkinson|IBD              GSE111629 vs GSE112611 probes 288933  rho=+0.1742  sign 0.5466  Z=   +4.8  P=0.0020
+  Schizophrenia|IBD          GSE84727  vs GSE112611 probes 279992  rho=+0.1839  sign 0.5309  Z=   +2.2  P=0.0140
+  Schizophrenia|IBD          GSE80417  vs GSE112611 probes 289046  rho=+0.1337  sign 0.5176  Z=   +1.7  P=0.0379
+  Alzheimer|IBD              GSE338167 vs GSE112611 probes 261738  rho=+0.1077  sign 0.5099  Z=   +3.1  P=0.0060
+  Depression|IBD             GSE198904 vs GSE112611 probes 278120  rho=+0.1553  sign 0.5378  Z=   +4.0  P=0.0020
+  Depression|IBD             GSE273970 vs GSE112611 probes 288831  rho=+0.1687  sign 0.5345  Z=   +2.9  P=0.0020
+
+---- Residualising GSE144858 (in 9 pairs) ----
+  Correlation with the coefficients of part 1: 1.000000
+  PC-Alzheimer               GSE338167 vs GSE144858 probes 350743  rho=+0.1351  sign 0.5589  Z=   +6.1  P=0.0020
+  Parkinson|Alzheimer        GSE145361 vs GSE144858 probes 382321  rho=+0.1560  sign 0.5297  Z=   +6.6  P=0.0020
+  Parkinson|Alzheimer        GSE111629 vs GSE144858 probes 382025  rho=+0.1844  sign 0.5002  Z=   +7.5  P=0.0020
+  Schizophrenia|Alzheimer    GSE84727  vs GSE144858 probes 389161  rho=+0.4041  sign 0.6810  Z=   +8.2  P=0.0020
+  Schizophrenia|Alzheimer    GSE80417  vs GSE144858 probes 389140  rho=+0.3638  sign 0.6633  Z=   +8.2  P=0.0020
+  Alzheimer|Depression       GSE198904 vs GSE144858 probes 350415  rho=+0.2190  sign 0.5649  Z=   +6.9  P=0.0020
+  Alzheimer|Depression       GSE273970 vs GSE144858 probes 363110  rho=+0.1964  sign 0.5117  Z=   +7.3  P=0.0020
+  Alzheimer|IBD              GSE87648  vs GSE144858 probes 382321  rho=+0.0887  sign 0.5391  Z=   +3.9  P=0.0020
+  Alzheimer|IBD              GSE112611 vs GSE144858 probes 272979  rho=+0.1415  sign 0.5232  Z=   +6.6  P=0.0020
+
+---- Residualising GSE198904 (in 5 pairs) ----
+  Correlation with the coefficients of part 1: 1.000000
+  Parkinson|Depression       GSE145361 vs GSE198904 probes 362317  rho=+0.0496  sign 0.4913  Z=   +0.6  P=0.2914
+  Parkinson|Depression       GSE111629 vs GSE198904 probes 362047  rho=+0.1566  sign 0.5188  Z=   +5.9  P=0.0020
+  Schizophrenia|Depression   GSE84727  vs GSE198904 probes 363376  rho=+0.2858  sign 0.5784  Z=   +4.1  P=0.0020
+  Schizophrenia|Depression   GSE80417  vs GSE198904 probes 371493  rho=+0.2017  sign 0.5557  Z=   +2.6  P=0.0020
+  Alzheimer|Depression       GSE338167 vs GSE198904 probes 344677  rho=+0.1097  sign 0.5300  Z=   +3.4  P=0.0020
+
+---- Residualising GSE273970 (in 7 pairs) ----
+  Correlation with the coefficients of part 1: 1.000000
+  PC-Depression              GSE198904 vs GSE273970 probes 371956  rho=+0.1906  sign 0.5249  Z=   +4.4  P=0.0020
+  Parkinson|Depression       GSE145361 vs GSE273970 probes 379395  rho=+0.3836  sign 0.6380  Z=   +4.5  P=0.0020
+  Parkinson|Depression       GSE111629 vs GSE273970 probes 379096  rho=+0.2713  sign 0.6097  Z=   +7.3  P=0.0020
+  Schizophrenia|Depression   GSE84727  vs GSE273970 probes 376898  rho=+0.3746  sign 0.5472  Z=   +5.3  P=0.0020
+  Schizophrenia|Depression   GSE80417  vs GSE273970 probes 389697  rho=+0.3513  sign 0.5496  Z=   +5.3  P=0.0020
+  Alzheimer|Depression       GSE338167 vs GSE273970 probes 350811  rho=+0.3066  sign 0.5683  Z=   +5.9  P=0.0020
+  Depression|IBD             GSE87648  vs GSE273970 probes 379395  rho=+0.2928  sign 0.5629  Z=   +6.3  P=0.0020
+
+---- Residualising GSE338167 (in 3 pairs) ----
+  Correlation with the coefficients of part 1: 1.000000
+  Parkinson|Alzheimer        GSE145361 vs GSE338167 probes 362144  rho=+0.3946  sign 0.6130  Z=   +4.4  P=0.0020
+  Schizophrenia|Alzheimer    GSE84727  vs GSE338167 probes 363231  rho=+0.2665  sign 0.6025  Z=   +3.6  P=0.0020
+  Schizophrenia|Alzheimer    GSE80417  vs GSE338167 probes 371119  rho=+0.2860  sign 0.6041  Z=   +4.0  P=0.0020
+
+---- Residualising GSE80417 (in 2 pairs) ----
+  Correlation with the coefficients of part 1: 1.000000
+  PC-Schizophrenia           GSE84727  vs GSE80417  probes 403891  rho=+0.6470  sign 0.7647  Z=  +10.7  P=0.0020
+  Parkinson|Schizophrenia    GSE145361 vs GSE80417  probes 406309  rho=+0.4745  sign 0.6142  Z=   +5.0  P=0.0020
+
+---- Residualising GSE84727 (in 1 pairs) ----
+  Correlation with the coefficients of part 1: 1.000000
+  Parkinson|Schizophrenia    GSE145361 vs GSE84727  probes 393628  rho=+0.4155  sign 0.5964  Z=   +5.7  P=0.0020
+
+---- Residualising GSE87648 (in 6 pairs) ----
+  Correlation with the coefficients of part 1: 1.000000
+  Parkinson|IBD              GSE145361 vs GSE87648  probes 406653  rho=+0.2825  sign 0.5734  Z=   +6.3  P=0.0020
+  Parkinson|IBD              GSE111629 vs GSE87648  probes 406325  rho=+0.2955  sign 0.5633  Z=   +7.7  P=0.0020
+  Schizophrenia|IBD          GSE84727  vs GSE87648  probes 393628  rho=+0.1947  sign 0.5752  Z=   +1.9  P=0.0240
+  Schizophrenia|IBD          GSE80417  vs GSE87648  probes 406309  rho=+0.1850  sign 0.5683  Z=   +2.3  P=0.0060
+  Alzheimer|IBD              GSE338167 vs GSE87648  probes 362144  rho=+0.2991  sign 0.5951  Z=   +8.1  P=0.0020
+  Depression|IBD             GSE198904 vs GSE87648  probes 362317  rho=+0.1693  sign 0.5528  Z=   +3.4  P=0.0020
+
+=== 3. The two ends of the scale ===
+  Sex (forty-five pairs): median +0.2190, range +0.0389 to +0.6470, median sign concordance 0.5528
+    same platform, 18 pairs: median +0.2686 | cross-platform, 27 pairs: median +0.2017
+  Disease (five within-disease pairs): Parkinson +0.0430; Schizophrenia +0.0713; Alzheimer +0.0026; Depression -0.0089; IBD +0.1174
+  Disease (forty cross-disease pairs): median +0.0068, maximum +0.0484
+
+  Interpretation: sex, a truly shared exposure, gives concordance of the above magnitude under the same criterion, in the same cohorts and
+  across platforms and populations. The cross-disease concordance of disease is far below it, so 'not detectable'
+  is not a property of this design.
+
+=== Plotting ===
+  [figure] fig53_sex_vs_disease  7x5.5 in @600 dpi  png 305.2 KB
+
+==============================================
+Status: completed normally
+End: 2026-11-10 03:31:00   elapsed 92.7 min
+Warnings: 1
+  - package ‘limma’ was built under R version 4.4.2
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

@@ -1,0 +1,82 @@
+==============================================
+Script: 24_overlap_null
+Start: 2026-09-15 02:22:25
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:ggplot2 -> Position
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+Loaded 4 result sets and 4 design matrices
+
+==== PD x IBD (comorbid pair)  common probes 406653 ====
+  Residualising GSE87648...
+  Correlation between P values recomputed by residualisation and limma results = 1.0000
+  top   500: observed overlap    3, permutation null mean    0.6 (hypergeometric expectation   0.6), fold (vs permutation)  4.65, P = 0.0549
+  top  1000: observed overlap   15, permutation null mean    2.5 (hypergeometric expectation   2.5), fold (vs permutation)  6.08, P = 0.0140
+  top  5000: observed overlap  234, permutation null mean   59.6 (hypergeometric expectation  61.5), fold (vs permutation)  3.92, P = 0.0080
+
+==== PD x SCZ (negative-control pair)  common probes 406653 ====
+  Residualising GSE152027...
+  Correlation between P values recomputed by residualisation and limma results = 1.0000
+  top   500: observed overlap    1, permutation null mean    0.6 (hypergeometric expectation   0.6), fold (vs permutation)  1.76, P = 0.4156
+  top  1000: observed overlap    6, permutation null mean    2.5 (hypergeometric expectation   2.5), fold (vs permutation)  2.41, P = 0.0729
+  top  5000: observed overlap   81, permutation null mean   61.4 (hypergeometric expectation  61.5), fold (vs permutation)  1.32, P = 0.0849
+
+==== IBD x SCZ (negative-control pair)  common probes 406653 ====
+  Correlation between P values recomputed by residualisation and limma results = 1.0000
+  top   500: observed overlap   15, permutation null mean    0.7 (hypergeometric expectation   0.6), fold (vs permutation) 22.62, P = 0.0010
+  top  1000: observed overlap   30, permutation null mean    2.5 (hypergeometric expectation   2.5), fold (vs permutation) 12.23, P = 0.0010
+  top  5000: observed overlap  188, permutation null mean   61.1 (hypergeometric expectation  61.5), fold (vs permutation)  3.08, P = 0.0010
+
+==== IBD x IBD(paed) (within-disease positive pair)  common probes 289139 ====
+  Residualising GSE112611...
+  Correlation between P values recomputed by residualisation and limma results = 0.9999
+  top   500: observed overlap  143, permutation null mean    0.8 (hypergeometric expectation   0.9), fold (vs permutation) 171.88, P = 0.0010
+  top  1000: observed overlap  259, permutation null mean    3.5 (hypergeometric expectation   3.5), fold (vs permutation) 74.81, P = 0.0010
+  top  5000: observed overlap 1061, permutation null mean   85.6 (hypergeometric expectation  86.5), fold (vs permutation) 12.39, P = 0.0010
+
+=== What the overlap contains: association with cell composition, smoking and age ===
+  Control samples of the reference cohort GSE87648; per-site strength of correlation with the three axes
+  PD x IBD (overlap 234)
+     correlation with neutrophil fraction: overlap median 0.495, overall median 0.076, P = <2e-16
+     correlation with smoking score: overlap median 0.102, overall median 0.053, P = <2e-16
+     correlation with age    : overlap median 0.171, overall median 0.078, P = <2e-16
+  PD x SCZ (overlap 81)
+     correlation with neutrophil fraction: overlap median 0.487, overall median 0.076, P = <2e-16
+     correlation with smoking score: overlap median 0.093, overall median 0.053, P = 7.74e-07
+     correlation with age    : overlap median 0.130, overall median 0.078, P = 1.96e-09
+  IBD x SCZ (overlap 188)
+     correlation with neutrophil fraction: overlap median 0.413, overall median 0.076, P = <2e-16
+     correlation with smoking score: overlap median 0.089, overall median 0.053, P = 4.85e-14
+     correlation with age    : overlap median 0.106, overall median 0.078, P = 2.49e-06
+  IBD x IBD(paed) (overlap 1061)
+     correlation with neutrophil fraction: overlap median 0.401, overall median 0.079, P = <2e-16
+     correlation with smoking score: overlap median 0.087, overall median 0.055, P = <2e-16
+     correlation with age    : overlap median 0.103, overall median 0.074, P = <2e-16
+
+=== Plotting ===
+  [figure] fig32_overlap_permutation  10x4.8 in @600 dpi  png 281.2 KB
+  [figure] fig33_overlap_axes  10x4.4 in @600 dpi  png 331.3 KB
+
+==============================================
+Status: completed normally
+End: 2026-09-15 03:19:35   elapsed 57.2 min
+Warnings: 1
+  - longer object length is not a multiple of shorter object length
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

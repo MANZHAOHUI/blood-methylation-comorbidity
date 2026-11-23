@@ -1,0 +1,59 @@
+==============================================
+Script: 38_rebuild_changed_ewas
+Start: 2026-09-17 21:44:53
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:ggplot2 -> Position
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+Of the ten sets determined by 37, to rebuild: 1: GSE145361
+
+==== GSE145361  K from 30 to 50 ====
+  Probes 406653, samples 1638
+  Covariates: sex, age, smoking, ct_CD4Tnv, ct_CD4Tmem, ct_Bmem, ct_Bnv, ct_Treg, ct_CD8Tmem, ct_CD8Tnv, ct_Eos, ct_NK, ct_Neu, ct_Mono, batch
+  Original design: samples 1638, parameters 213, batch term yes
+  Computing principal components on the full matrix ...
+  Time: 6.0 min
+  Components associated with group: 12 removed; used: 50
+  In the model: controls 787, cases 851; parameters 233, residual degrees of freedom 1405
+  lambda = 1.355; determined by 37: 1.355, difference 0.0000
+  Genomic control: applied; probes with FDR < 0.05: 5
+  Rebuilt and overwritten: results and design matrix of GSE145361
+
+=== Final settings of the ten cohorts ===
+         gse round K_new lambda_new genomic_control       disease
+10 GSE144858     2     5  1.0719240           FALSE     alzheimer
+9  GSE338167     2     0  0.9924039           FALSE     alzheimer
+7  GSE198904     2    50  1.3063141            TRUE    depression
+8  GSE273970     2     0  1.0806026           FALSE    depression
+4  GSE112611     1     0  1.0264635           FALSE           ibd
+3   GSE87648     1     5  1.0862433           FALSE           ibd
+2  GSE111629     1     0  1.0105158           FALSE     parkinson
+1  GSE145361     1    50  1.3553921            TRUE     parkinson
+6   GSE80417     2     5  1.0930966           FALSE schizophrenia
+5   GSE84727     2    20  1.0993047           FALSE schizophrenia
+
+The per-cohort analyses of the ten sets are final; pairwise comparisons can start.
+
+==============================================
+Status: completed normally
+End: 2026-09-17 21:55:45   elapsed 10.9 min
+Warnings: 1
+  - package ‘limma’ was built under R version 4.4.2
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

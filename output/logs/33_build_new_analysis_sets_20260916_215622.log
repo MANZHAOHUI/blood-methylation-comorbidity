@@ -1,0 +1,94 @@
+==============================================
+Script: 33_build_new_analysis_sets
+Start: 2026-09-16 21:56:22
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+=== 1. Unified probe universe filtered according to D2 (450K annotation as the full set) ===
+G3;Loading required package: S4Vectors
+gG3;Loading required package: stats4
+gG3;Loading required package: BiocGenerics
+gG3;
+Attaching package: ‘BiocGenerics’
+
+gG3;The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+gG3;The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind, colnames, dirname, do.call, duplicated, eval, evalq,
+    Filter, Find, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mget, order, paste, pmax, pmax.int,
+    pmin, pmin.int, Position, rank, rbind, Reduce, rownames, sapply, saveRDS, setdiff, table, tapply, union, unique,
+    unsplit, which.max, which.min
+
+gG3;
+Attaching package: ‘S4Vectors’
+
+gG3;The following objects are masked from ‘package:data.table’:
+
+    first, second
+
+gG3;The following object is masked from ‘package:utils’:
+
+    findMatches
+
+gG3;The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+g  Annotation object: DFrame, 
+  cg probes: 482421
+  Sex-chromosome probes: 11551
+  MAF at CpG or SBE > 0.01: 17290
+  48639-non-specific-probes-Illumina450k.csv: 29233
+  HumanMethylation450_15017482_v.1.1_hg19_bowtie_multimap.txt: 33132
+  Cross-reactive and multi-mapping in total: 38616, of which on 450K: 38616
+  Probe universe after filtering: 418809 (removed 63612, 13.2%)
+
+==== GSE84727 (schizophrenia, 450K) ====
+  Exists, skipped (set FORCE to rebuild)
+==== GSE80417 (schizophrenia, 450K) ====
+  Complete cases 636: controls 304, cases 332
+  Reading GSE80417_normalizedBetas.csv.gz (2.45 GB)
+    delimiter comma; header 676 fields, data rows 676 fields
+    time 0.6 min; 483636 rows x 676 columns
+  Single-column matrix
+  Mapping strategy: description raw value, success rate 1.000
+  Analysis samples obtained: 636 (controls 304, cases 332)
+  Intersection with the probe universe: 483636 -> 417939
+  Missing rate above 0.05: removed 0, remaining 417939
+  beta quantiles 1%/50%/99%: 0.033 / 0.578 / 0.958
+  Saved (1.86 GB)
+
+==== GSE198904 (depression, EPIC) ====
+  Exists, skipped (set FORCE to rebuild)
+==== GSE273970 (depression, EPIC) ====
+  Exists, skipped (set FORCE to rebuild)
+==== GSE338167 (alzheimer, EPICv2) ====
+  Exists, skipped (set FORCE to rebuild)
+==== GSE144858 (alzheimer, 450K) ====
+  Exists, skipped (set FORCE to rebuild)
+=== Summary ===
+       gse       disease platform n_sample n_probe n_control n_case
+1 GSE80417 schizophrenia     450K      636  417939       304    332
+
+==============================================
+Status: completed normally
+End: 2026-09-16 21:58:21   elapsed 2.0 min
+Warnings: none
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

@@ -1,0 +1,141 @@
+==============================================
+Script: 15_model_selection
+Start: 2026-09-14 03:46:19
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:ggplot2 -> Position
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+==== GSE111629 (PD replication) ====
+  Probes 49949, samples 572
+  Candidate methylation principal components: 60, associated with group: 3 removed, usable 57
+  without cells  K=0  parameters 74  Residual degrees of freedom: 498  lambda = 1.164  VIF of group = 1.47
+  without cells  K=5  parameters 79  Residual degrees of freedom: 493  lambda = 1.402  VIF of group = 1.48
+  without cells  K=10  parameters 84  Residual degrees of freedom: 488  lambda = 1.352  VIF of group = 1.50
+  without cells  K=20  parameters 94  Residual degrees of freedom: 478  lambda = 1.240  VIF of group = 1.59
+  without cells  K=30  parameters 104  Residual degrees of freedom: 468  lambda = 1.224  VIF of group = 1.62
+  without cells  K=50  parameters 124  Residual degrees of freedom: 448  lambda = 1.212  VIF of group = 1.68
+  with cells  K=0  parameters 85  Residual degrees of freedom: 487  lambda = 1.001  VIF of group = 1.57
+  with cells  K=5  parameters 90  Residual degrees of freedom: 482  lambda = 1.075  VIF of group = 1.58
+  with cells  K=10  parameters 95  Residual degrees of freedom: 477  lambda = 1.022  VIF of group = 1.61
+  with cells  K=20  parameters 105  Residual degrees of freedom: 467  lambda = 1.023  VIF of group = 1.67
+  with cells  K=30  parameters 115  Residual degrees of freedom: 457  lambda = 1.007  VIF of group = 1.72
+  with cells  K=50  parameters 135  Residual degrees of freedom: 437  lambda = 1.028  VIF of group = 1.77
+
+==== GSE112611 (IBD paediatric) ====
+  Probes 38675, samples 238
+  Candidate methylation principal components: 60, associated with group: 4 removed, usable 56
+  without cells  K=0  parameters 58  Residual degrees of freedom: 180  lambda = 2.109  VIF of group = 1.25
+  without cells  K=5  parameters 63  Residual degrees of freedom: 175  lambda = 2.627  VIF of group = 1.36
+  without cells  K=10  parameters 68  Residual degrees of freedom: 170  lambda = 2.691  VIF of group = 1.42
+  without cells  K=20  parameters 78  Residual degrees of freedom: 160  lambda = 2.905  VIF of group = 1.57
+  without cells  K=30  parameters 88  Residual degrees of freedom: 150  lambda = 3.241  VIF of group = 1.67
+  without cells  K=50  parameters 108  Residual degrees of freedom: 130  lambda = 3.090  VIF of group = 2.02
+  with cells  K=0  parameters 69  Residual degrees of freedom: 169  lambda = 1.022  VIF of group = 2.00
+  with cells  K=5  parameters 74  Residual degrees of freedom: 164  lambda = 1.086  VIF of group = 2.06
+  with cells  K=10  parameters 79  Residual degrees of freedom: 159  lambda = 1.101  VIF of group = 2.14
+  with cells  K=20  parameters 89  Residual degrees of freedom: 149  lambda = 1.139  VIF of group = 2.38
+  with cells  K=30  parameters 99  Residual degrees of freedom: 139  lambda = 1.123  VIF of group = 2.66
+  with cells  K=50  parameters 119  Residual degrees of freedom: 119  lambda = 1.169  VIF of group = 3.14
+
+==== GSE145361 (PD discovery) ====
+  Probes 50000, samples 1638
+  Candidate methylation principal components: 60, associated with group: 9 removed, usable 51
+  without cells  K=0  parameters 172  Residual degrees of freedom: 1466  lambda = 11.772  VIF of group = 1.16
+  without cells  K=5  parameters 177  Residual degrees of freedom: 1461  lambda = 12.831  VIF of group = 1.17
+  without cells  K=10  parameters 182  Residual degrees of freedom: 1456  lambda = 12.853  VIF of group = 1.18
+  without cells  K=20  parameters 192  Residual degrees of freedom: 1446  lambda = 12.544  VIF of group = 1.21
+  without cells  K=30  parameters 202  Residual degrees of freedom: 1436  lambda = 12.360  VIF of group = 1.23
+  without cells  K=50  parameters 222  Residual degrees of freedom: 1416  lambda = 12.971  VIF of group = 1.26
+  with cells  K=0  parameters 183  Residual degrees of freedom: 1455  lambda = 3.224  VIF of group = 1.28
+  with cells  K=5  parameters 188  Residual degrees of freedom: 1450  lambda = 1.735  VIF of group = 1.31
+  with cells  K=10  parameters 193  Residual degrees of freedom: 1445  lambda = 1.531  VIF of group = 1.34
+  with cells  K=20  parameters 203  Residual degrees of freedom: 1435  lambda = 1.453  VIF of group = 1.37
+  with cells  K=30  parameters 213  Residual degrees of freedom: 1425  lambda = 1.385  VIF of group = 1.40
+  with cells  K=50  parameters 233  Residual degrees of freedom: 1405  lambda = 1.403  VIF of group = 1.42
+
+==== GSE152027 (Negative control) ====
+  Probes 50000, samples 493
+  Candidate methylation principal components: 60, associated with group: 7 removed, usable 53
+  without cells  K=0  parameters 81  Residual degrees of freedom: 412  lambda = 1.588  VIF of group = 1.79
+  without cells  K=5  parameters 86  Residual degrees of freedom: 407  lambda = 1.929  VIF of group = 1.80
+  without cells  K=10  parameters 91  Residual degrees of freedom: 402  lambda = 1.832  VIF of group = 1.86
+  without cells  K=20  parameters 101  Residual degrees of freedom: 392  lambda = 1.912  VIF of group = 1.94
+  without cells  K=30  parameters 111  Residual degrees of freedom: 382  lambda = 1.915  VIF of group = 2.04
+  without cells  K=50  parameters 131  Residual degrees of freedom: 362  lambda = 1.836  VIF of group = 2.33
+  with cells  K=0  parameters 92  Residual degrees of freedom: 401  lambda = 1.516  VIF of group = 2.18
+  with cells  K=5  parameters 97  Residual degrees of freedom: 396  lambda = 1.448  VIF of group = 2.21
+  with cells  K=10  parameters 102  Residual degrees of freedom: 391  lambda = 1.337  VIF of group = 2.25
+  with cells  K=20  parameters 112  Residual degrees of freedom: 381  lambda = 1.296  VIF of group = 2.30
+  with cells  K=30  parameters 122  Residual degrees of freedom: 371  lambda = 1.277  VIF of group = 2.38
+  with cells  K=50  parameters 142  Residual degrees of freedom: 351  lambda = 1.187  VIF of group = 2.75
+
+==== GSE72774 (PD sensitivity) ====
+  Probes 49957, samples 508
+  Candidate methylation principal components: 60, associated with group: 1 removed, usable 59
+  without cells  K=0  parameters 5  Residual degrees of freedom: 503  lambda = 1.592  VIF of group = 1.03
+  without cells  K=5  parameters 10  Residual degrees of freedom: 498  lambda = 1.431  VIF of group = 1.07
+  without cells  K=10  parameters 15  Residual degrees of freedom: 493  lambda = 1.459  VIF of group = 1.08
+  without cells  K=20  parameters 25  Residual degrees of freedom: 483  lambda = 1.495  VIF of group = 1.13
+  without cells  K=30  parameters 35  Residual degrees of freedom: 473  lambda = 1.477  VIF of group = 1.15
+  without cells  K=50  parameters 55  Residual degrees of freedom: 453  lambda = 1.466  VIF of group = 1.19
+  with cells  K=0  parameters 16  Residual degrees of freedom: 492  lambda = 1.211  VIF of group = 1.12
+  with cells  K=5  parameters 21  Residual degrees of freedom: 487  lambda = 1.144  VIF of group = 1.16
+  with cells  K=10  parameters 26  Residual degrees of freedom: 482  lambda = 1.083  VIF of group = 1.19
+  with cells  K=20  parameters 36  Residual degrees of freedom: 472  lambda = 1.096  VIF of group = 1.23
+  with cells  K=30  parameters 46  Residual degrees of freedom: 462  lambda = 1.095  VIF of group = 1.26
+  with cells  K=50  parameters 66  Residual degrees of freedom: 442  lambda = 1.114  VIF of group = 1.30
+
+==== GSE87648 (IBD main) ====
+  Probes 50000, samples 382
+  Candidate methylation principal components: 60, associated with group: 6 removed, usable 54
+  without cells  K=0  parameters 6  Residual degrees of freedom: 374  lambda = 2.034  VIF of group = 1.01
+  without cells  K=5  parameters 11  Residual degrees of freedom: 369  lambda = 2.726  VIF of group = 1.02
+  without cells  K=10  parameters 16  Residual degrees of freedom: 364  lambda = 3.739  VIF of group = 1.08
+  without cells  K=20  parameters 26  Residual degrees of freedom: 354  lambda = 4.197  VIF of group = 1.12
+  without cells  K=30  parameters 36  Residual degrees of freedom: 344  lambda = 4.404  VIF of group = 1.22
+  without cells  K=50  parameters 56  Residual degrees of freedom: 324  lambda = 4.983  VIF of group = 1.34
+  with cells  K=0  parameters 17  Residual degrees of freedom: 363  lambda = 0.634  VIF of group = 1.26
+  with cells  K=5  parameters 22  Residual degrees of freedom: 358  lambda = 1.094  VIF of group = 1.28
+  with cells  K=10  parameters 27  Residual degrees of freedom: 353  lambda = 1.285  VIF of group = 1.30
+  with cells  K=20  parameters 37  Residual degrees of freedom: 343  lambda = 1.226  VIF of group = 1.36
+  with cells  K=30  parameters 47  Residual degrees of freedom: 333  lambda = 1.161  VIF of group = 1.48
+  with cells  K=50  parameters 67  Residual degrees of freedom: 313  lambda = 1.109  VIF of group = 1.67
+
+=== Setting closest to 1 for each data set ===
+  GSE111629  without cells: K = 0  lambda = 1.164  VIF = 1.47
+  GSE111629  with cells: K = 0  lambda = 1.001  VIF = 1.57
+  GSE112611  without cells: K = 0  lambda = 2.109  VIF = 1.25
+  GSE112611  with cells: K = 0  lambda = 1.022  VIF = 2.00
+  GSE145361  without cells: K = 0  lambda = 11.772  VIF = 1.16
+  GSE145361  with cells: K = 30  lambda = 1.385  VIF = 1.40
+  GSE152027  without cells: K = 0  lambda = 1.588  VIF = 1.79
+  GSE152027  with cells: K = 50  lambda = 1.187  VIF = 2.75
+  GSE72774  without cells: K = 5  lambda = 1.431  VIF = 1.07
+  GSE72774  with cells: K = 10  lambda = 1.083  VIF = 1.19
+  GSE87648  without cells: K = 0  lambda = 2.034  VIF = 1.01
+  GSE87648  with cells: K = 5  lambda = 1.094  VIF = 1.28
+
+=== Plotting ===
+  [figure] fig17_lambda_vs_npc  10x6 in @600 dpi  png 513.8 KB
+  [figure] fig18_vif_group  10x6 in @600 dpi  png 412.9 KB
+
+==============================================
+Status: completed normally
+End: 2026-09-14 04:01:49   elapsed 15.5 min
+Warnings: 1
+  - package ‘limma’ was built under R version 4.4.2
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

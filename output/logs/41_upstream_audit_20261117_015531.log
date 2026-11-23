@@ -1,0 +1,185 @@
+==============================================
+Script: 41_upstream_audit
+Start: 2026-11-17 01:55:31
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:ggplot2 -> Position
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+G3;Loading required package: S4Vectors
+gG3;Loading required package: stats4
+gG3;Loading required package: BiocGenerics
+gG3;
+Attaching package: ‘BiocGenerics’
+
+gG3;The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+gG3;The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind, colnames, dirname, do.call, duplicated,
+    eval, evalq, Filter, Find, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mget,
+    order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rownames, sapply, saveRDS,
+    setdiff, table, tapply, union, unique, unsplit, which.max, which.min
+
+gG3;
+Attaching package: ‘S4Vectors’
+
+gG3;The following objects are masked from ‘package:data.table’:
+
+    first, second
+
+gG3;The following object is masked from ‘package:utils’:
+
+    findMatches
+
+gG3;The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+gX-chromosome probes in the 450K annotation: 11232
+
+==== GSE145361 (parkinson) ====
+  Recorded sex: M=925; REF=713
+  Source: rds/GSE145361_beta.rds (485237 x 1889)
+  Column names translated to GSMs via the sample mapping table of 06, success rate 1.000
+  X probes in the matrix: 11229; usable samples 1638 / 1638
+  Proportion of X probes with intermediate methylation: cluster centres 0.103 and 0.477, distance 0.374
+  Inferred female: 713; compared with the recorded 'REF', concordance 1.0000
+  Concordance after random shuffling: 0.5165 (control: if close to the line above, the test is invalid)
+  Decision: Passed:
+
+==== GSE111629 (parkinson) ====
+  Recorded sex: M=323; REF=249
+  Source: rds/GSE111629_beta.rds (485512 x 573)
+  Column names translated to GSMs via the sample mapping table of 06, success rate 0.998
+  X probes in the matrix: 11232; usable samples 572 / 572
+  Proportion of X probes with intermediate methylation: cluster centres 0.102 and 0.506, distance 0.404
+  Inferred female: 249; compared with the recorded 'REF', concordance 1.0000
+  Concordance after random shuffling: 0.5070 (control: if close to the line above, the test is invalid)
+  Decision: Passed:
+
+==== GSE84727 (schizophrenia) ====
+  Recorded sex: M=602; REF=245
+  Source: raw/GSE84727_normalisedBetas.csv.gz
+  X probes in the matrix: 0; usable samples 847 / 847
+  [FAIL] too few X probes, verification not possible
+==== GSE80417 (schizophrenia) ====
+  Recorded sex: M=377; REF=259
+  Source: raw/GSE80417_normalizedBetas.csv.gz
+  X probes in the matrix: 11169; usable samples 636 / 636
+  Proportion of X probes with intermediate methylation: cluster centres 0.150 and 0.551, distance 0.401
+  Inferred female: 259; compared with the recorded 'REF', concordance 1.0000
+  Concordance after random shuffling: 0.5189 (control: if close to the line above, the test is invalid)
+  Decision: Passed:
+
+==== GSE338167 (alzheimer) ====
+  Recorded sex: M=202; REF=419
+  Source: raw/GSE338167_beta_matrix_normalized.txt.gz
+  X probes in the matrix: 0; usable samples 621 / 621
+  [FAIL] too few X probes, verification not possible
+==== GSE144858 (alzheimer) ====
+  Recorded sex: M=68; REF=121
+  Source: raw/GSE144858_series_matrix.txt.gz
+  X probes in the matrix: 9647; usable samples 189 / 189
+  Proportion of X probes with intermediate methylation: cluster centres 0.173 and 0.584, distance 0.411
+  Inferred female: 121; compared with the recorded 'REF', concordance 1.0000
+  Concordance after random shuffling: 0.5344 (control: if close to the line above, the test is invalid)
+  Decision: Passed:
+
+==== GSE198904 (depression) ====
+  Recorded sex: M=163; REF=266
+  Source: raw/GSE198904_DHRC_Matrix_processed.txt.gz
+  X probes in the matrix: 0; usable samples 429 / 429
+  [FAIL] too few X probes, verification not possible
+==== GSE273970 (depression) ====
+  Recorded sex: M=132; REF=151
+  Source: raw/GSE273970_Processed_Data.txt.gz
+  X probes in the matrix: 10220; usable samples 283 / 283
+  Proportion of X probes with intermediate methylation: cluster centres 0.093 and 0.490, distance 0.397
+  Inferred female: 149; compared with the recorded 'REF', concordance 0.9929
+  Concordance after random shuffling: 0.5477 (control: if close to the line above, the test is invalid)
+  Decision: Passed:
+
+==== GSE87648 (ibd) ====
+  Recorded sex: M=194; REF=184
+  Source: rds/GSE87648_beta.rds (460398 x 382)
+  Column names translated to GSMs via the sample mapping table of 06, success rate 1.000
+  X probes in the matrix: 10961; usable samples 378 / 378
+  Proportion of X probes with intermediate methylation: cluster centres 0.204 and 0.595, distance 0.392
+  Inferred female: 200; compared with the recorded 'REF', concordance 0.9471
+  Concordance after random shuffling: 0.4868 (control: if close to the line above, the test is invalid)
+  Decision: [FAIL]  The correspondence between samples and phenotypes is in doubt; all results of this cohort need to be re-checked
+
+==== GSE112611 (ibd) ====
+  Recorded sex: M=136; REF=102
+  Source: rds/GSE112611_beta.rds (807511 x 804)
+  Column names translated to GSMs via the sample mapping table of 06, success rate 1.000(plus 402 detection P value columns, not used)
+  X probes in the matrix: 9400; usable samples 238 / 238
+  Proportion of X probes with intermediate methylation: cluster centres 0.102 and 0.440, distance 0.339
+  Inferred female: 102; compared with the recorded 'REF', concordance 1.0000
+  Concordance after random shuffling: 0.4706 (control: if close to the line above, the test is invalid)
+  Decision: Passed:
+
+=== Summary of the sex check ===
+         gse       disease    n separation concordance concordance_shuffled  verdict
+2  GSE145361     parkinson 1638  0.3737413   1.0000000            0.5164835     Passed:
+1  GSE111629     parkinson  572  0.4037193   1.0000000            0.5069930     Passed:
+21  GSE80417 schizophrenia  636  0.4013376   1.0000000            0.5188679     Passed:
+22 GSE144858     alzheimer  189  0.4113348   1.0000000            0.5343915     Passed:
+23 GSE273970    depression  283  0.3968761   0.9929329            0.5477032     Passed:
+24  GSE87648           ibd  378  0.3916098   0.9470899            0.4867725 [FAIL]
+25 GSE112611           ibd  238  0.3387727   1.0000000            0.4705882     Passed:
+
+  Passed: 6 / 7
+  [ACTION NEEDED] GSE87648
+
+=== Validation evidence of each cohort that is independent of this pipeline ===
+  'Independent' means that the evidence does not rest on the internal consistency of this pipeline but agrees with external facts.
+  GSE111629  sex check 1.0000    DNAm age agrees with recorded age
+  GSE112611  sex check 1.0000    DNAm age agrees with recorded age (narrow age range, weaker evidence); higher neutrophils in cases
+  GSE144858  sex check 1.0000    DNAm age agrees with recorded age
+  GSE145361  sex check 1.0000    agrees with the published summary statistics of Vallerga et al. (rho=0.581)
+  GSE198904  sex check not finished  DNAm age agrees with recorded age
+  GSE273970  sex check 0.9929    none: age only in ten-year groups, no external comparison so far
+  GSE338167  sex check not finished  DNAm age agrees with recorded age
+  GSE80417   sex check 1.0000    DNAm age agrees with recorded age; higher smoking score in cases, in line with the literature
+  GSE84727   sex check not finished  DNAm age agrees with recorded age; higher smoking score in cases, in line with the literature
+  GSE87648   sex check 0.9471    DNAm age agrees with recorded age; higher neutrophils in cases fit inflammatory bowel disease
+
+  Note: agreement of DNAm age with recorded age verifies two things at once - the correspondence between probe names and values
+  is correct (the clock takes coefficients by probe; a shift would not give ages), and the correspondence between samples and phenotypes is correct
+  (the ages compared come from the records). GSE273970 has no external comparison on either side; the sex check of this step
+  is its only independent evidence.
+
+=== GSE273970: does DNAm age agree with the ten-year age groups? ===
+  This cohort has no numeric age but ten-year groups, which allow a test of the rank order.
+  Distribution of groups: 21-30=49; 31-40=67; 41-50=89; 51-60=56; 61-70=14; 71-80=8
+  Spearman correlation between group midpoints and DNAm age = 0.904
+    21-30      n= 49  median DNAm age 27.1
+    31-40      n= 67  median DNAm age 36.8
+    41-50      n= 89  median DNAm age 43.8
+    51-60      n= 56  median DNAm age 50.8
+    61-70      n= 14  median DNAm age 55.7
+    71-80      n=  8  median DNAm age 61.2
+  Decision: pass, rank order agrees
+
+==============================================
+Status: completed normally
+End: 2026-11-17 02:03:02   elapsed 7.5 min
+Warnings: none
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

@@ -1,0 +1,168 @@
+==============================================
+Script: 37_K_reselect_full
+Start: 2026-09-17 20:34:27
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:ggplot2 -> Position
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+==== GSE145361 (round 1, current K = 30) ====
+  Probes 406653, samples 1638
+  Covariates: sex, age, smoking, ct_CD4Tnv, ct_CD4Tmem, ct_Bmem, ct_Bnv, ct_Treg, ct_CD8Tmem, ct_CD8Tnv, ct_Eos, ct_NK, ct_Neu, ct_Mono, batch
+  Saved design: samples 1638, parameters 213, of which principal components 30, batch term yes
+  Model comparison passed (sample number and batch term agree; expected parameters at K=0: 183)
+  K= 0  parameters 183  residual df 1455  lambda = 3.197
+  K=0 is outside the interval; computing principal components on the full matrix ...
+  Time: 6.5 min
+  Components associated with group: 12 removed, usable 63
+  K= 5  parameters 188  residual df 1450  lambda = 1.722
+  K=10  parameters 193  residual df 1445  lambda = 1.548
+  K=20  parameters 203  residual df 1435  lambda = 1.456
+  K=30  parameters 213  residual df 1425  lambda = 1.378
+  K=50  parameters 233  residual df 1405  lambda = 1.355
+  Determined: K = 50, lambda = 1.355, genomic control applied   [differs from the current K=30 ; the EWAS of this cohort must be rebuilt]
+
+==== GSE111629 (round 1, current K = 0) ====
+  Probes 406325, samples 572
+  Covariates: sex, age, smoking, ct_CD4Tnv, ct_CD4Tmem, ct_Bmem, ct_Bnv, ct_Treg, ct_CD8Tmem, ct_CD8Tnv, ct_Eos, ct_NK, ct_Neu, ct_Mono, batch
+  Saved design: samples 572, parameters 85, of which principal components 0, batch term yes
+  Model comparison passed (sample number and batch term agree; expected parameters at K=0: 85)
+  K= 0  parameters  85  residual df  487  lambda = 1.011
+  K=0 is within the interval; settled by D12, no principal components needed
+  Determined: K = 0, lambda = 1.011, genomic control not applied   same as current, no rebuild needed
+
+==== GSE87648 (round 1, current K = 5) ====
+  Probes 406653, samples 382
+  Covariates: sex, age, smoking, ct_CD4Tnv, ct_CD4Tmem, ct_Bmem, ct_Bnv, ct_Treg, ct_CD8Tmem, ct_CD8Tnv, ct_Eos, ct_NK, ct_Neu, ct_Mono, batch
+  Saved design: samples 380, parameters 22, of which principal components 5, batch term yes
+  Model comparison passed (sample number and batch term agree; expected parameters at K=0: 17)
+  K= 0  parameters  17  residual df  363  lambda = 0.633
+  K=0 is outside the interval; computing principal components on the full matrix ...
+  Time: 0.4 min
+  Components associated with group: 6 removed, usable 69
+  K= 5  parameters  22  residual df  358  lambda = 1.086
+  within the interval; by D12 the smallest K is taken and no larger K is tried
+  Determined: K = 5, lambda = 1.086, genomic control not applied   same as current, no rebuild needed
+
+==== GSE112611 (round 1, current K = 0) ====
+  Probes 289139, samples 238
+  Smoking score: not included for this cohort
+  Covariates: sex, age, ct_CD4Tnv, ct_CD4Tmem, ct_Bmem, ct_Bnv, ct_Treg, ct_CD8Tmem, ct_CD8Tnv, ct_Eos, ct_NK, ct_Neu, ct_Mono, batch
+  Saved design: samples 238, parameters 69, of which principal components 0, batch term yes
+  Model comparison passed (sample number and batch term agree; expected parameters at K=0: 69)
+  K= 0  parameters  69  residual df  169  lambda = 1.026
+  K=0 is within the interval; settled by D12, no principal components needed
+  Determined: K = 0, lambda = 1.026, genomic control not applied   same as current, no rebuild needed
+
+==== GSE84727 (round 2, current K = 20) ====
+  Probes 404159, samples 847
+  Covariates: sex, age, smoking, ct_CD4Tnv, ct_CD4Tmem, ct_Bmem, ct_Bnv, ct_Treg, ct_CD8Tmem, ct_CD8Tnv, ct_Eos, ct_NK, ct_Neu, ct_Mono, batch
+  Saved design: samples 847, parameters 114, of which principal components 20, batch term yes
+  Model comparison passed (sample number and batch term agree; expected parameters at K=0: 94)
+  K= 0  parameters  94  residual df  753  lambda = 1.228
+  K=0 is outside the interval; computing principal components on the full matrix ...
+  Time: 1.9 min
+  Components associated with group: 14 removed, usable 61
+  K= 5  parameters  99  residual df  748  lambda = 1.258
+  K=10  parameters 104  residual df  743  lambda = 1.217
+  K=20  parameters 114  residual df  733  lambda = 1.099
+  within the interval; by D12 the smallest K is taken and no larger K is tried
+  Determined: K = 20, lambda = 1.099, genomic control not applied   same as current, no rebuild needed
+
+==== GSE80417 (round 2, current K = 5) ====
+  Probes 417939, samples 636
+  Covariates: sex, age, smoking, ct_CD4Tnv, ct_CD4Tmem, ct_Bmem, ct_Bnv, ct_Treg, ct_CD8Tmem, ct_CD8Tnv, ct_Eos, ct_NK, ct_Neu, ct_Mono, batch
+  Saved design: samples 636, parameters 95, of which principal components 5, batch term yes
+  Model comparison passed (sample number and batch term agree; expected parameters at K=0: 90)
+  K= 0  parameters  90  residual df  546  lambda = 1.310
+  K=0 is outside the interval; computing principal components on the full matrix ...
+  Time: 1.3 min
+  Components associated with group: 13 removed, usable 62
+  K= 5  parameters  95  residual df  541  lambda = 1.093
+  within the interval; by D12 the smallest K is taken and no larger K is tried
+  Determined: K = 5, lambda = 1.093, genomic control not applied   same as current, no rebuild needed
+
+==== GSE198904 (round 2, current K = 50) ====
+  Probes 371956, samples 429
+  Covariates: sex, age, smoking, ct_CD4Tnv, ct_CD4Tmem, ct_Bmem, ct_Bnv, ct_Treg, ct_CD8Tmem, ct_CD8Tnv, ct_Eos, ct_NK, ct_Neu, ct_Mono, batch
+  Saved design: samples 429, parameters 137, of which principal components 50, batch term yes
+  Model comparison passed (sample number and batch term agree; expected parameters at K=0: 87)
+  K= 0  parameters  87  residual df  342  lambda = 1.935
+  K=0 is outside the interval; computing principal components on the full matrix ...
+  Time: 0.4 min
+  Components associated with group: 10 removed, usable 65
+  K= 5  parameters  92  residual df  337  lambda = 1.700
+  K=10  parameters  97  residual df  332  lambda = 1.580
+  K=20  parameters 107  residual df  322  lambda = 1.412
+  K=30  parameters 117  residual df  312  lambda = 1.401
+  K=50  parameters 137  residual df  292  lambda = 1.306
+  Determined: K = 50, lambda = 1.306, genomic control applied   same as current, no rebuild needed
+
+==== GSE273970 (round 2, current K = 0) ====
+  Probes 390523, samples 283
+  Covariates: sex, age, smoking, ct_CD4Tnv, ct_CD4Tmem, ct_Bmem, ct_Bnv, ct_Treg, ct_CD8Tmem, ct_CD8Tnv, ct_Eos, ct_NK, ct_Neu, ct_Mono, batch
+  Saved design: samples 283, parameters 51, of which principal components 0, batch term yes
+  Model comparison passed (sample number and batch term agree; expected parameters at K=0: 51)
+  K= 0  parameters  51  residual df  232  lambda = 1.081
+  K=0 is within the interval; settled by D12, no principal components needed
+  Determined: K = 0, lambda = 1.081, genomic control not applied   same as current, no rebuild needed
+
+==== GSE338167 (round 2, current K = 0) ====
+  Probes 371448, samples 621
+  Covariates: sex, age, smoking, ct_CD4Tnv, ct_CD4Tmem, ct_Bmem, ct_Bnv, ct_Treg, ct_CD8Tmem, ct_CD8Tnv, ct_Eos, ct_NK, ct_Neu, ct_Mono, batch, ethnicity, cohort
+  Saved design: samples 621, parameters 106, of which principal components 0, batch term yes
+  Model comparison passed (sample number and batch term agree; expected parameters at K=0: 106)
+  K= 0  parameters 106  residual df  515  lambda = 0.992
+  K=0 is within the interval; settled by D12, no principal components needed
+  Determined: K = 0, lambda = 0.992, genomic control not applied   same as current, no rebuild needed
+
+==== GSE144858 (round 2, current K = 5) ====
+  Probes 389403, samples 189
+  Covariates: sex, age, smoking, ct_CD4Tnv, ct_CD4Tmem, ct_Bmem, ct_Bnv, ct_Treg, ct_CD8Tmem, ct_CD8Tnv, ct_Eos, ct_NK, ct_Neu, ct_Mono
+  Saved design: samples 189, parameters 21, of which principal components 5, batch term none
+  Model comparison passed (sample number and batch term agree; expected parameters at K=0: 16)
+  K= 0  parameters  16  residual df  173  lambda = 0.909
+  K=0 is outside the interval; computing principal components on the full matrix ...
+  Time: 0.1 min
+  Components associated with group: 1 removed, usable 74
+  K= 5  parameters  21  residual df  168  lambda = 1.072
+  within the interval; by D12 the smallest K is taken and no larger K is tried
+  Determined: K = 5, lambda = 1.072, genomic control not applied   same as current, no rebuild needed
+
+=== Determined settings ===
+         gse round K_current K_new lambda_new genomic_control changed
+1  GSE145361     1        30    50  1.3553921            TRUE    TRUE
+2  GSE111629     1         0     0  1.0105158           FALSE   FALSE
+3   GSE87648     1         5     5  1.0862433           FALSE   FALSE
+4  GSE112611     1         0     0  1.0264635           FALSE   FALSE
+5   GSE84727     2        20    20  1.0993047           FALSE   FALSE
+6   GSE80417     2         5     5  1.0930966           FALSE   FALSE
+7  GSE198904     2        50    50  1.3063141            TRUE   FALSE
+8  GSE273970     2         0     0  1.0806026           FALSE   FALSE
+9  GSE338167     2         0     0  0.9924039           FALSE   FALSE
+10 GSE144858     2         5     5  1.0719240           FALSE   FALSE
+
+Cohorts whose EWAS must be rebuilt: 1 (GSE145361)
+
+==============================================
+Status: completed normally
+End: 2026-09-17 21:37:31   elapsed 63.1 min
+Warnings: 1
+  - package ‘limma’ was built under R version 4.4.2
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

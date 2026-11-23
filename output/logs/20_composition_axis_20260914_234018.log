@@ -1,0 +1,90 @@
+==============================================
+Script: 20_composition_axis
+Start: 2026-09-14 23:40:18
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+=== Composition effects of each cohort ===
+  GSE145361 (PD discovery): controls 787, cases 851, cell types 12
+     cell types with FDR<0.05: 11: CD4Tnv(-0.39), Baso(-0.11), CD4Tmem(-0.45), Bnv(-0.72), Treg(-0.11), CD8Tmem(-0.15), CD8Tnv(-0.49), Eos(-1.18), NK(-0.08), Neu(+0.27), Mono(-0.12)
+  GSE111629 (PD replication): controls 237, cases 335, cell types 12
+     cell types with FDR<0.05: 5: CD4Tnv(-0.73), Baso(-0.20), Eos(-0.57), Neu(+0.15), Mono(-0.21)
+  GSE72774 (PD sensitivity): controls 219, cases 289, cell types 12
+     cell types with FDR<0.05: 8: CD4Tnv(-0.61), Baso(-0.18), CD4Tmem(-0.40), Bnv(-0.30), Eos(-0.65), NK(-0.09), Neu(+0.20), Mono(-0.19)
+  GSE87648 (IBD main): controls 176, cases 204, cell types 12
+     cell types with FDR<0.05: 8: CD4Tnv(-0.47), CD4Tmem(-0.57), CD8Tmem(-0.80), CD8Tnv(-0.86), Eos(-1.02), NK(-0.82), Neu(+0.46), Mono(-0.35)
+  GSE112611 (IBD paediatric): controls 74, cases 164, cell types 12
+     cell types with FDR<0.05: 12: CD4Tnv(-0.71), Baso(-1.22), CD4Tmem(-0.85), Bmem(-1.33), Bnv(-1.30), Treg(-0.36), CD8Tmem(-1.69), CD8Tnv(-2.32), Eos(-0.87), NK(-1.99), Neu(+0.91), Mono(-0.66)
+  GSE152027 (Negative control): controls 203, cases 290, cell types 12
+     cell types with FDR<0.05: 4: Bmem(-0.48), Bnv(+0.34), CD8Tmem(-0.36), Eos(-1.23)
+
+=== Pairwise concordance ===
+==== PC1  positive control: GSE145361 vs GSE111629 ====
+  Cell types 12; Spearman rho = 0.517, Pearson r = 0.602, sign concordance 10 / 12
+  Null rho: mean 0.002, SD 0.383
+  Empirical P: rho 0.102; sign concordance 0.118; Z = 1.35
+
+==== PC2  positive control: GSE87648 vs GSE112611 ====
+  Cell types 12; Spearman rho = 0.650, Pearson r = 0.791, sign concordance 12 / 12
+  Null rho: mean 0.002, SD 0.335
+  Empirical P: rho 0.022; sign concordance 0.0562; Z = 1.94
+
+==== M1  primary criterion: GSE145361 vs GSE87648 ====
+  Cell types 12; Spearman rho = 0.483, Pearson r = 0.607, sign concordance 12 / 12
+  Null rho: mean -0.002, SD 0.336
+  Empirical P: rho 0.0811; sign concordance 0.0106; Z = 1.44
+
+==== M2  secondary: GSE111629 vs GSE87648 ====
+  Cell types 12; Spearman rho = 0.252, Pearson r = 0.428, sign concordance 10 / 12
+  Null rho: mean 0.003, SD 0.316
+  Empirical P: rho 0.232; sign concordance 0.117; Z = 0.79
+
+==== NC1  negative control: GSE145361 vs GSE152027 ====
+  Cell types 12; Spearman rho = 0.063, Pearson r = 0.485, sign concordance 6 / 12
+  Null rho: mean 0.000, SD 0.336
+  Empirical P: rho 0.438; sign concordance 0.571; Z = 0.19
+
+==== NC2  negative control: GSE87648 vs GSE152027 ====
+  Cell types 12; Spearman rho = 0.238, Pearson r = 0.463, sign concordance 6 / 12
+  Null rho: mean 0.003, SD 0.321
+  Empirical P: rho 0.256; sign concordance 0.581; Z = 0.73
+
+=== Summary ===
+  pair     kind        rho       dir         z      p_rho
+1  PC1 positive control 0.51748252 0.8333333 1.3452306 0.10198980
+2  PC2 positive control 0.65034965 1.0000000 1.9383592 0.02199780
+3   M1   primary criterion 0.48251748 1.0000000 1.4390893 0.08109189
+4   M2     secondary 0.25174825 0.8333333 0.7870572 0.23167683
+5  NC1 negative control 0.06293706 0.5000000 0.1865318 0.43825617
+6  NC2 negative control 0.23776224 0.5000000 0.7320615 0.25557444
+
+=== Plotting ===
+  [figure] fig25_composition_effects  9x4.4 in @600 dpi  png 308 KB
+  [figure] fig26_composition_null  10x6 in @600 dpi  png 320.7 KB
+
+==============================================
+Status: completed normally
+End: 2026-09-14 23:49:53   elapsed 9.6 min
+Warnings: 7
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE76nnn/GSE76105/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE76nnn/GSE76105/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE76nnn/GSE76105/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE67nnn/GSE67751/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE218nnn/GSE218186/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE218nnn/GSE218186/matrix/': HTTP status was '503 Service Unavailable'
+  - cannot open URL 'https://ftp.ncbi.nlm.nih.gov/geo/series/GSE218nnn/GSE218186/matrix/': HTTP status was '503 Service Unavailable'
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

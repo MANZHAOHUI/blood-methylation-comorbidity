@@ -1,0 +1,70 @@
+==============================================
+Script: 10_qc_figures
+Start: 2026-09-10 21:55:37
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+==============================================
+
+G3;Installing plotting dependencies: ggplot2, ragg, patchwork
+g- Querying repositories for available source packages ... Done!
+The following package(s) will be installed:
+- ggplot2     [4.0.3]
+- gtable      [0.3.6]
+- isoband     [0.3.0]
+- patchwork   [1.3.2]
+- ragg        [1.5.2]
+- S7          [0.2.2]
+- systemfonts [1.3.2]
+- textshaping [1.0.5]
+These packages will be installed into "~/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32".
+
+# Installing packages --------------------------------------------------------
+[32m✔[0m patchwork 1.3.2                          [linked from cache]
+[32m✔[0m ragg 1.5.2                               [linked from cache]
+[32m✔[0m gtable 0.3.6                             [linked from cache]
+[32m✔[0m ggplot2 4.0.3                            [linked from cache]
+[32m✔[0m isoband 0.3.0                            [linked from cache]
+[32m✔[0m S7 0.2.2                                 [linked from cache]
+[32m✔[0m textshaping 1.0.5                        [linked from cache]
+[32m✔[0m systemfonts 1.3.2                        [linked from cache]
+Successfully installed 8 packages in 40 milliseconds.
+Reading 6 analysis objects
+Processing GSE111629: 406653 probes x 572 samples
+  PC1 explains 11.5%, PC2 explains 7.8%
+Processing GSE112611: 375137 probes x 238 samples
+  PC1 explains 27.2%, PC2 explains 19.6%
+Processing GSE145361: 406653 probes x 1638 samples
+  PC1 explains 15.2%, PC2 explains 8.4%
+Processing GSE152027: 406653 probes x 493 samples
+  PC1 explains 14.7%, PC2 explains 9.7%
+Processing GSE72774: 406653 probes x 508 samples
+  PC1 explains 11.2%, PC2 explains 7.5%
+Processing GSE87648: 406653 probes x 382 samples
+  PC1 explains 45.6%, PC2 explains 10%
+
+=== Plotting ===
+  [figure] fig01_cohort_composition  8x4.6 in @600 dpi  png 196.3 KB
+  [figure] fig02_age_distribution  8x4.6 in @600 dpi  png 346.5 KB
+  [figure] fig03_sex_composition  9x3.6 in @600 dpi  png 157.6 KB
+  [figure] fig04_beta_density  7x4.2 in @600 dpi  png 529 KB
+  [figure] fig05_sample_missingness  7x4 in @600 dpi  png 106.6 KB
+  [figure] fig06_pca_by_cohort  9x6 in @600 dpi  png 2342.9 KB
+
+Figures written: C:/blood_methylation_project/output/figures
+
+==============================================
+Status: completed normally
+End: 2026-09-10 21:58:26   elapsed 2.8 min
+Warnings: 1
+  - running command '"C:/PROGRA~1/R/R-44~1.1/bin/x64/R" CMD INSTALL "C:\Users\user\AppData\Local\Temp\RtmpIncUz2/maxprobes.tar.gz"' had status 1
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

@@ -1,0 +1,100 @@
+==============================================
+Script: 36_final_ewas_panel2
+Start: 2026-09-17 04:27:27
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:ggplot2 -> Position
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+Selected settings of 35 loaded: 6
+==== GSE84727 (schizophrenia)  K = 20 ====
+  Probes 404159 (removed for missing values: 0), samples 847
+  Batch: arrays 79
+  Computing sample principal components on the full matrix ...
+  Time: 1.7 min; the first 45 components explain cumulatively 28.2%
+  Components associated with group: 12 excluded; used: 20
+  In the model: controls 433, cases 414; parameters 114, residual degrees of freedom 733
+  lambda on the full matrix = 1.099; estimated by 35 on the subset 1.204, difference 0.105
+  Genomic control: not applied; probes with FDR < 0.05: 0
+
+==== GSE80417 (schizophrenia)  K = 5 ====
+  Probes 417939 (removed for missing values: 0), samples 636
+  Batch: arrays 75
+  Computing sample principal components on the full matrix ...
+  Time: 1.0 min; the first 30 components explain cumulatively 25.0%
+  Components associated with group: 12 excluded; used: 5
+  In the model: controls 304, cases 332; parameters 95, residual degrees of freedom 541
+  lambda on the full matrix = 1.093; estimated by 35 on the subset 1.080, difference 0.013
+  Genomic control: not applied; probes with FDR < 0.05: 3
+
+==== GSE198904 (depression)  K = 50 ====
+  Probes 371956 (removed for missing values: 0), samples 429
+  Batch: arrays 72
+  Computing sample principal components on the full matrix ...
+  Time: 0.4 min; the first 75 components explain cumulatively 49.2%
+  Components associated with group: 10 excluded; used: 50
+  In the model: controls 68, cases 361; parameters 137, residual degrees of freedom 292
+  lambda on the full matrix = 1.306; estimated by 35 on the subset 1.418, difference 0.112
+  Genomic control: applied; probes with FDR < 0.05: 80
+
+==== GSE273970 (depression)  K = 0 ====
+  Probes 390523 (removed for missing values: 0), samples 283
+  Batch: arrays 36
+  In the model: controls 147, cases 136; parameters 51, residual degrees of freedom 232
+  lambda on the full matrix = 1.081; estimated by 35 on the subset 1.068, difference 0.012
+  Genomic control: not applied; probes with FDR < 0.05: 0
+
+==== GSE338167 (alzheimer)  K = 0 ====
+  Probes 371448 (removed for missing values: 0), samples 621
+  Batch: arrays 87
+  Additional covariate 'ethnicity'3 levels
+  Additional covariate 'cohort'5 levels
+  Collinear columns removed: 2cohortNHW, cohortREAAADI
+  In the model: controls 308, cases 313; parameters 106, residual degrees of freedom 515
+  lambda on the full matrix = 0.992; estimated by 35 on the subset 1.005, difference 0.012
+  Genomic control: not applied; probes with FDR < 0.05: 0
+
+==== GSE144858 (alzheimer)  K = 5 ====
+  Probes 389403 (removed for missing values: 0), samples 189
+  No batch term
+  Computing sample principal components on the full matrix ...
+  Time: 0.1 min; the first 30 components explain cumulatively 49.2%
+  Components associated with group: 0 excluded; used: 5
+  In the model: controls 96, cases 93; parameters 21, residual degrees of freedom 168
+  lambda on the full matrix = 1.072; estimated by 35 on the subset 1.061, difference 0.011
+  Genomic control: not applied; probes with FDR < 0.05: 0
+
+=== Summary ===
+        gse       disease  K n_control n_case n_probe lambda_full lambda_subset    gc n_fdr05
+1  GSE84727 schizophrenia 20       433    414  404159   1.0993047      1.203851 FALSE       0
+2  GSE80417 schizophrenia  5       304    332  417939   1.0930966      1.080138 FALSE       3
+3 GSE198904    depression 50        68    361  371956   1.3063141      1.418054  TRUE      80
+4 GSE273970    depression  0       147    136  390523   1.0806026      1.068426 FALSE       0
+5 GSE338167     alzheimer  0       308    313  371448   0.9924039      1.004807 FALSE       0
+6 GSE144858     alzheimer  5        96     93  389403   1.0719240      1.060908 FALSE       0
+
+=== Plotting ===
+  [figure] fig40_qq_panel2  10x6 in @600 dpi  png 739.3 KB
+
+==============================================
+Status: completed normally
+End: 2026-09-17 04:40:08   elapsed 12.7 min
+Warnings: 1
+  - package ‘limma’ was built under R version 4.4.2
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

@@ -1,0 +1,168 @@
+==============================================
+Script: 03c_fix_gse198904
+Start: 2026-09-16 07:41:35
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+Samples: 655; diagnosis and sub-study fields both found: TRUE
+
+=== Sub-study x diagnosis ===
+  Cohort 1: Excluded=0; HC=32; MDD=0; Not depressed=0; OBSERVEMDD0001=191
+  Cohort 2: Excluded=2; HC=68; MDD=361; Not depressed=1; OBSERVEMDD0001=0
+
+=== Sample title examples of each sub-study (to decide which matrix file it corresponds to) ===
+  Cohort 2 (432 samples): 201172200060_R08C01 | 201172200055_R06C01 | 201810150072_R03C01 | 201800470034_R07C01
+  Cohort 1 (223 samples): 201810150012_R01C01 | 201810150049_R08C01 | 201800470028_R08C01 | 201810150012_R03C01
+
+Usable sub-study: Cohort 2
+  Included: 429 samples: controls 68, cases 361
+
+=== Fetching the headers of the two candidate files (2 MB each) ===
+  DHRC             columns   864;  858 match Cohort 2,    6 match Cohort 1
+    column name examples: 201172200001_R02C01 | 201172200001_R02C01 | 201172200001_R03C01 | 201172200001_R03C01
+  OBSERVEMDD0001   columns   449;    0 match Cohort 2,  446 match Cohort 1
+    column name examples: 201502860006_R03C01 | 201502860006_R03C01 | 201502860006_R04C01 | 201502860006_R04C01
+
+  Decision: Cohort 2 corresponds to GSE198904_DHRC_Matrix_processed.txt.gz (lead in matches: 852)
+
+Sample list written, to be used by step 30 via the keep column
+
+=== Downloading GSE198904_DHRC_Matrix_processed.txt.gz ===
+  finished and passed the gzip check
+G3;Log: C:/blood_methylation_project/output/logs/30_ingest_new_cohorts_20260916_080329.log
+g==============================================
+Script: 30_ingest_new_cohorts
+Start: 2026-09-16 08:03:29
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+==== GSE84727 (schizophrenia, 450K) ====
+  Header GSE84727_series_matrix.txt.gz; data GSE84727_normalisedBetas.csv.gz (2.66 GB)
+  Samples 847
+  Raw values of the group field: 1=433; 2=414
+  Included: 847, removed 0 (neither case nor control, or not in the specified sub-study)
+  Parsed: controls 433, cases 414
+  Expected: controls 433, cases 414  pass
+  Sex: F=245; M=602
+  Age: convertible to numeric 665 / 847, range 18.3 to 80.7
+  Data block: 5000 rows (trial read), 848 columns
+  Columns per sample: 1.00 (single)
+  Proportion of values between 0 and 1: 1.000 (looks like beta values)
+  Probe names: starting with cg 5000 / 5000; with suffix 0
+
+==== GSE80417 (schizophrenia, 450K) ====
+  Header GSE80417_series_matrix.txt.gz; data GSE80417_normalizedBetas.csv.gz (2.45 GB)
+  Samples 675
+  Raw values of the group field: 2=353; 1=322
+  Included: 675, removed 0 (neither case nor control, or not in the specified sub-study)
+  Parsed: controls 322, cases 353
+  Expected: controls 322, cases 353  pass
+  Sex: F=279; M=396
+  Age: convertible to numeric 638 / 675, range 18.0 to 891.0
+  Data block: 5000 rows (trial read), 676 columns
+  Columns per sample: 1.00 (single)
+  Proportion of values between 0 and 1: 1.000 (looks like beta values)
+  Probe names: starting with cg 5000 / 5000; with suffix 0
+
+==== GSE198904 (depression, EPIC) ====
+  Header GSE198904_series_matrix.txt.gz; data GSE198904_DHRC_Matrix_processed.txt.gz (1.41 GB)
+  Samples 655
+  Raw values of the group field: MDD=361; OBSERVEMDD0001=191; HC=100; Excluded=2; Not depressed=1
+  Restricted by 'cohort = Cohort 2': 461 reduced to 429
+  Included: 429, removed 226 (neither case nor control, or not in the specified sub-study)
+  Parsed: controls 68, cases 361
+  Expected: controls 68, cases 361  pass
+  [KEY CHECK] cross-tabulation of sub-study and group (both sub-studies must contain cases and controls, 
+             otherwise case-control status and sub-study are completely confounded and the data set is unusable):
+    Cohort 2: case=361; control=68
+  Sex: F=445; M=210
+  Age: convertible to numeric 653 / 655, range 18.0 to 68.0
+  Data block: 5000 rows (trial read), 865 columns
+  Columns per sample: 1.32  [NOTE] not an integer; manual inspection needed
+  Proportion of values between 0 and 1: 1.000 (looks like beta values)
+  Probe names: starting with cg 5000 / 5000; with suffix 0
+
+==== GSE273970 (depression, EPIC) ====
+  Header GSE273970_series_matrix.txt.gz; data GSE273970_Processed_Data.txt.gz (1.97 GB)
+  Samples 283
+  Raw values of the group field: normal=147; major depressive disorder=136
+  Included: 283, removed 0 (neither case nor control, or not in the specified sub-study)
+  Parsed: controls 147, cases 136
+  Expected: controls 147, cases 136  pass
+  Sex: female=151; male=132
+  Age: this cohort only has ten-year groups; DNAm age is used according to the plan, not extracted here
+  Data block: 5000 rows (trial read), 567 columns
+  Columns per sample: 2.00 (paired, beta and detection P value side by side)
+  Proportion of values between 0 and 1: 1.000 (looks like beta values)
+  Probe names: starting with cg 5000 / 5000; with suffix 0
+
+==== GSE338167 (alzheimer, EPICv2) ====
+  Header GSE338167_series_matrix.txt.gz; data GSE338167_beta_matrix_normalized.txt.gz (3.95 GB)
+  Samples 621
+  Raw values of the group field: Alzheimer's disease=313; Healthy control=308
+  Included: 621, removed 0 (neither case nor control, or not in the specified sub-study)
+  Parsed: controls 308, cases 313
+  Expected: controls 308, cases 313  pass
+  Sex: Female=419; Male=202
+  Age: convertible to numeric 621 / 621, range 53.0 to 98.0
+  Data block: 5000 rows (trial read), 622 columns
+  Columns per sample: 1.00 (single)
+  Proportion of values between 0 and 1: 1.000 (looks like beta values)
+  Probe names: starting with cg 5000 / 5000; with suffix 5000  -> EPIC v2 naming; suffixes must be stripped before intersecting
+
+==== GSE144858 (alzheimer, 450K) ====
+  Header GSE144858_series_matrix.txt.gz; data GSE144858_series_matrix.txt.gz (0.48 GB)
+  Samples 300
+  Raw values of the group field: mild cognitive impairment=111; control=96; Alzheimer's disease=93
+  Included: 189, removed 111 (neither case nor control, or not in the specified sub-study)
+  Parsed: controls 96, cases 93
+  Expected: controls 96, cases 93  pass
+  Sex: Female=180; Male=120
+  Age: convertible to numeric 300 / 300, range 52.0 to 90.0
+  Data block: 5000 rows (trial read), 301 columns
+  Columns per sample: 1.00 (single)
+  Proportion of values between 0 and 1: 1.000 (looks like beta values)
+  Probe names: starting with cg 5000 / 5000; with suffix 0
+
+=== Summary ===
+        gse       disease platform n_total n_control n_case cols_per_sample beta_like
+1  GSE84727 schizophrenia     450K     847       433    414        1.000000         1
+2  GSE80417 schizophrenia     450K     675       322    353        1.000000         1
+3 GSE198904    depression     EPIC     655        68    361        1.319084         1
+4 GSE273970    depression     EPIC     283       147    136        2.000000         1
+5 GSE338167     alzheimer   EPICv2     621       308    313        1.000000         1
+6 GSE144858     alzheimer     450K     300        96     93        1.000000         1
+  probe_suffix pass
+1        FALSE TRUE
+2        FALSE TRUE
+3        FALSE TRUE
+4        FALSE TRUE
+5         TRUE TRUE
+6        FALSE TRUE
+
+All checks passed; analysis sets can be built and the common probes recomputed
+
+==============================================
+Status: completed normally
+End: 2026-09-16 08:07:56   elapsed 4.5 min
+Warnings: none
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

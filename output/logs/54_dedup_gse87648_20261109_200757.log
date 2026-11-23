@@ -1,0 +1,71 @@
+==============================================
+Script: 54_dedup_gse87648
+Start: 2026-11-09 20:07:57
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:ggplot2 -> Position
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+=== 1. Determine the samples to exclude ===
+  Exclusion list exists (2 samples); reused, not decided again
+  removed 2 samples (group: control, control); list written
+
+=== 2. Archive the results and design matrix from before de-duplication ===
+  GSE87648_ewas_final.rds already in the archive directory, not overwritten
+  GSE87648_design.rds already in the archive directory, not overwritten
+
+=== 3. Re-determine K after de-duplication and rebuild the model ===
+  Probes 406653, samples 380 (analysis set before de-duplication 382)
+  Covariates: sex, age, smoking, ct_CD4Tnv, ct_CD4Tmem, ct_Bmem, ct_Bnv, ct_Treg, ct_CD8Tmem, ct_CD8Tnv, ct_Eos, ct_NK, ct_Neu, ct_Mono, batch
+  Design before de-duplication: samples 380, parameters 22, batch term yes
+  Model comparison passed: in the model 378 = before de-duplication 380 minus 2 samples
+  K= 0  parameters  17  residual df  361  lambda = 0.630
+  K=0 is outside the interval; computing principal components on the full matrix ...
+  Time: 0.6 min
+  Components associated with group: 6 removed, usable 69
+  K= 5  parameters  22  residual df  356  lambda = 1.081
+  within the interval; by D12 the smallest K is taken and no larger K is tried
+  Determined: K = 5, lambda = 1.081, genomic control not applied (before de-duplication K = 5, lambda = 1.086, not applied)
+  In the model: controls 174, cases 204; parameters 22, residual degrees of freedom 356
+  Probes with FDR < 0.05: 1980 (before de-duplication 1983)
+  Written back: GSE87648 results and design matrix (378 samples)
+
+=== 4. Comparison with the results before de-duplication ===
+  Pearson correlation of the effect vector with that before de-duplication 0.9999 (406653 probes)
+  Within-disease concordance with GSE112611 (observed values only): before de-duplication +0.1161, after +0.1174; the formal P value is recomputed by step 45
+                               item       before        after
+1                  samples_in_model  380.0000000  378.0000000
+2                          controls  176.0000000  174.0000000
+3                             cases  204.0000000  204.0000000
+4                                 K    5.0000000    5.0000000
+5                            lambda    1.0862433    1.0805508
+6                   genomic_control    0.0000000    0.0000000
+7                      fdr05_probes 1983.0000000 1980.0000000
+8           within_IBD_rho_observed    0.1161246    0.1174423
+9 effect_vector_cor_before_vs_after           NA    0.9998804
+
+The final model table of the ten sets was written to output/54_dedup/final_model_table.csv; step 53 reads the frozen inflation factors from it.
+Next, re-run steps 39 to 53 in the order given by step 55.
+
+==============================================
+Status: completed normally
+End: 2026-11-09 20:09:58   elapsed 2.0 min
+Warnings: 1
+  - package ‘limma’ was built under R version 4.4.2
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

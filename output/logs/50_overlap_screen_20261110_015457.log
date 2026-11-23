@@ -1,0 +1,51 @@
+==============================================
+Script: 50_overlap_screen
+Start: 2026-11-10 01:54:57
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:ggplot2 -> Position
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+---- GSE145361 ----
+  Probes with genotype shape: 426; samples 1638
+---- GSE111629 ----
+  Probes with genotype shape: 396; samples 572
+
+=== Distribution of concordance ===
+  GSE145361    sample pairs  1340703  median 0.4131  99% 0.4695  99.9% 0.4883  maximum 0.5329
+  GSE111629    sample pairs   163306  median 0.4091  99% 0.4697  99.9% 0.4874  maximum 0.5631
+  cross-cohort    sample pairs   936936  median 0.4068  99% 0.4720  99.9% 0.4938  maximum 0.5621
+  Probes shared by the two sets: 322
+
+  Within-cohort upper tail (99.9% quantile), the larger of the two = 0.4883
+  Cross-cohort value at the same quantile = 0.4938, 1.01 times the former (criterion: at most 1.10 times)
+  Decision: no large-scale overlap seen
+
+  What this screen can exclude: large-scale sharing of individuals between the two Parkinson's disease cohorts.
+  What it cannot exclude: individual duplicate samples. The public matrices do not retain enough genotype information 
+  for pairwise identification; this is stated in the limitations.
+=== Plotting ===
+  [figure] fig52_overlap_screen  8x5 in @600 dpi  png 362.9 KB
+
+==============================================
+Status: completed normally
+End: 2026-11-10 01:58:19   elapsed 3.4 min
+Warnings: 1
+  - package ‘limma’ was built under R version 4.4.2
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

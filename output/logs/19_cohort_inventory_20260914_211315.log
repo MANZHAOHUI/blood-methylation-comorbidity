@@ -1,0 +1,66 @@
+==============================================
+Script: 19_cohort_inventory
+Start: 2026-09-14 21:13:15
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+=== Searching candidate series ===
+  GPL13534 (450K) series found: 1732
+  GPL21145 (EPIC v1) series found: 1456
+  GPL33022 (EPIC v2) series found: 149
+  Candidates after de-duplication: 3180
+
+=== Retrieving series summaries ===
+  Retrieved 1000 / 3180
+  Retrieved 2000 / 3180
+  Retrieved 3000 / 3180
+  Series retrieved: 3180
+
+=== Tagging and filtering ===
+  Mentioning blood: 650; of which explicitly whole blood / peripheral blood: 259
+  Matching an exclusion term: 1103
+  Matching a disease term: 446
+  Candidates (mention blood, no exclusion term, a disease term, samples >= 80): 49
+
+=== Number of candidate cohorts per disease ===
+  major depression             candidates  7 (whole blood  7), samples in total  3256, largest set 1129
+  obesity                      candidates  3 (whole blood  3), samples in total  1409, largest set 1129
+  HIV                          candidates  5 (whole blood  3), samples in total  1127, largest set  413
+  inflammatory bowel disease   candidates  3 (whole blood  3), samples in total  1026, largest set  402
+  COVID                        candidates  3 (whole blood  3), samples in total   829, largest set  574
+  asthma                       candidates  4 (whole blood  2), samples in total  1442, largest set  986
+  Parkinson                    candidates  2 (whole blood  2), samples in total   592, largest set  508
+  multiple sclerosis           candidates  3 (whole blood  2), samples in total   474, largest set  279
+  heart failure                candidates  2 (whole blood  2), samples in total   200, largest set  104
+  coronary artery disease      candidates  4 (whole blood  1), samples in total  1897, largest set 1202
+  rheumatoid arthritis         candidates  4 (whole blood  1), samples in total  1033, largest set  689
+  systemic lupus               candidates  4 (whole blood  1), samples in total   875, largest set  434
+  ALS                          candidates  1 (whole blood  1), samples in total   122, largest set  122
+  schizophrenia                candidates  1 (whole blood  1), samples in total    95, largest set   95
+  Graves disease               candidates  2 (whole blood  0), samples in total   440, largest set  305
+  systemic sclerosis           candidates  1 (whole blood  0), samples in total   128, largest set  128
+  Alzheimer                    candidates  1 (whole blood  0), samples in total   106, largest set  106
+
+Three tables written: all series / candidate series / summary by disease
+Note: this stage relies entirely on keyword matching in titles and summaries and yields candidates only.
+True case and control numbers require stage 2, which reads the series matrix headers.
+
+==============================================
+Status: completed normally
+End: 2026-09-14 21:14:30   elapsed 1.2 min
+Warnings: none
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

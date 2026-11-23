@@ -1,0 +1,71 @@
+==============================================
+Script: 26_shared_core
+Start: 2026-09-15 04:40:11
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:ggplot2 -> Position
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+Loaded 5 EWAS result sets; composition axis 406653 sites
+
+=== 1. Extract the shared sites unrelated to composition ===
+  Shared sites in Q1 and Q2 together: 136
+  Sign concordance: 0.346 (47 / 136)
+  Median |r| with the neutrophil fraction: shared sites 0.031, all 0.101
+  Genes involved: 120
+  First 40: ARHGAP22, ARHGAP24, ARHGEF10L, BAT1, BCL11A, BIK, BLNK, BRD9, C12orf61, C16orf52, C16orf88, C1orf21, C2CD2, CAMTA1, CAPZB, CC2D1B, CCDC138, CEP78, CHKB, CHKB-CPT1B, CMIP, CNBP, DAXX, DDB2, DDR1, DEK, DYNLRB2, EPB49, FCER2, FKBP5, FLOT1, FLRT2, FNIP2, FNTB, FOXK1, FOXK2, GABARAP, GALNT9, GCLC, GLOD4
+  Genomic clustering: 136 sites fall into 133 blocks more than 1 kb apart and 133 blocks more than 10 kb apart
+    mean number of sites per block 1.02; a value close to 1 means the sites are independent and the evidence does not rest on a few regions
+    top five chromosomes: chr1=19; chr6=13; chr10=9; chr16=9; chr17=9
+
+=== 2. Validation in independent cohorts with both sides replaced ===
+  Shared sites that can be matched in the replication cohorts: 97 / 136
+  In the replication cohorts: sign concordance 0.485, Spearman rho -0.023
+  Null (same number of sites drawn at random from the same strata): mean sign concordance 0.470, mean rho -0.062
+  Empirical P: sign 0.436; rho 0.346
+
+=== 3. Stratify by other variables to confirm that the low-stratum enrichment is not created by the stratification variable ===
+  Stratified by variance: 
+     Q1  overlap  100, null   32.9, fold  3.04, P = 0.0010
+     Q2  overlap   95, null   32.8, fold  2.90, P = 0.0010
+     Q3  overlap   98, null   33.0, fold  2.97, P = 0.0020
+     Q4  overlap   97, null   32.4, fold  3.00, P = 0.0230
+     Q5  overlap   89, null   31.3, fold  2.84, P = 0.0360
+  Stratified by age: 
+     Q1  overlap   80, null   32.4, fold  2.47, P = 0.0150
+     Q2  overlap   92, null   32.1, fold  2.87, P = 0.0120
+     Q3  overlap   93, null   32.2, fold  2.89, P = 0.0100
+     Q4  overlap  108, null   32.0, fold  3.38, P = 0.0050
+     Q5  overlap  106, null   32.1, fold  3.30, P = 0.0080
+  Stratified by smoking: 
+     Q1  overlap  103, null   32.5, fold  3.17, P = 0.0010
+     Q2  overlap  101, null   32.2, fold  3.14, P = 0.0020
+     Q3  overlap   95, null   32.0, fold  2.97, P = 0.0050
+     Q4  overlap   97, null   32.3, fold  3.00, P = 0.0090
+     Q5  overlap   74, null   31.6, fold  2.34, P = 0.0280
+
+=== Plotting ===
+  [figure] fig35_alt_axis_strata  10x4.4 in @600 dpi  png 255.3 KB
+
+==============================================
+Status: completed normally
+End: 2026-09-15 04:56:17   elapsed 16.1 min
+Warnings: 1
+  - longer object length is not a multiple of shorter object length
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

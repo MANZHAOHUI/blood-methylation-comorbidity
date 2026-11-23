@@ -1,0 +1,168 @@
+==============================================
+Script: 43_bimodality_qc
+Start: 2026-11-16 20:39:52
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+==== GSE145361 (Parkinson's disease) ====
+  Samples 1638; proportion of intermediate probes: median 0.1152, median absolute deviation 0.0134
+  Criterion: median + 3 median absolute deviations = 0.1555; above it: 83 (5.1%)
+  Value range of suspect samples: 0.1558 to 0.2419
+  Group taken from column 'group', ID taken from column 'geo_accession'
+    suspect: case=20; control=63
+    normal: case=831; control=724
+    Fisher's exact test against group: p = 0.000000198  [NOTE] suspect samples are unevenly distributed between the groups; removal would change the composition of the two groups
+
+==== GSE111629 (Parkinson's disease) ====
+  Samples 572; proportion of intermediate probes: median 0.1124, median absolute deviation 0.0105
+  Criterion: median + 3 median absolute deviations = 0.1437; above it: 19 (3.3%)
+  Value range of suspect samples: 0.1438 to 0.1951
+  Group taken from column 'group', ID taken from column 'geo_accession'
+    suspect: case=16; control=3
+    normal: case=319; control=234
+    Fisher's exact test against group: p = 0.0304  [NOTE] suspect samples are unevenly distributed between the groups; removal would change the composition of the two groups
+
+==== GSE84727 (schizophrenia) ====
+  Samples 847; proportion of intermediate probes: median 0.1483, median absolute deviation 0.0096
+  Criterion: median + 3 median absolute deviations = 0.1772; above it: 14 (1.7%)
+  Value range of suspect samples: 0.1778 to 0.1867
+  Group taken from column 'group', ID taken from column 'gsm'
+    suspect: case=6; control=8
+    normal: case=408; control=425
+    Fisher's exact test against group: p = 0.79  Balanced distribution; removal amounts to a random reduction in sample size
+
+==== GSE80417 (schizophrenia) ====
+  Samples 636; proportion of intermediate probes: median 0.1445, median absolute deviation 0.0124
+  Criterion: median + 3 median absolute deviations = 0.1816; above it: 10 (1.6%)
+  Value range of suspect samples: 0.1840 to 0.2007
+  Group taken from column 'group', ID taken from column 'gsm'
+    suspect: case=4; control=6
+    normal: case=328; control=298
+    Fisher's exact test against group: p = 0.531  Balanced distribution; removal amounts to a random reduction in sample size
+
+==== GSE338167 (Alzheimer's disease) ====
+  Samples 621; proportion of intermediate probes: median 0.1085, median absolute deviation 0.0122
+  Criterion: median + 3 median absolute deviations = 0.1452; above it: 13 (2.1%)
+  Value range of suspect samples: 0.1455 to 0.1770
+  Group taken from column 'group', ID taken from column 'gsm'
+    suspect: case=6; control=7
+    normal: case=307; control=301
+    Fisher's exact test against group: p = 0.787  Balanced distribution; removal amounts to a random reduction in sample size
+
+==== GSE144858 (Alzheimer's disease) ====
+  Samples 189; proportion of intermediate probes: median 0.1605, median absolute deviation 0.0178
+  Criterion: median + 3 median absolute deviations = 0.2139; above it: 2 (1.1%)
+  Value range of suspect samples: 0.2155 to 0.2164
+  Group taken from column 'group', ID taken from column 'gsm'
+    suspect: case=0; control=2
+    normal: case=93; control=94
+    Fisher's exact test against group: p = 0.497  Balanced distribution; removal amounts to a random reduction in sample size
+
+==== GSE198904 (depression) ====
+  Samples 429; proportion of intermediate probes: median 0.1644, median absolute deviation 0.0109
+  Criterion: median + 3 median absolute deviations = 0.1970; above it: 8 (1.9%)
+  Value range of suspect samples: 0.1971 to 0.2152
+  Group taken from column 'group', ID taken from column 'gsm'
+    suspect: case=5; control=3
+    normal: case=356; control=65
+    Fisher's exact test against group: p = 0.118  Balanced distribution; removal amounts to a random reduction in sample size
+
+==== GSE273970 (depression) ====
+  Samples 283; proportion of intermediate probes: median 0.1088, median absolute deviation 0.0091
+  Criterion: median + 3 median absolute deviations = 0.1361; above it: 9 (3.2%)
+  Value range of suspect samples: 0.1362 to 0.1509
+  Group taken from column 'group', ID taken from column 'gsm'
+    suspect: case=5; control=4
+    normal: case=131; control=143
+    Fisher's exact test against group: p = 0.742  Balanced distribution; removal amounts to a random reduction in sample size
+
+==== GSE87648 (inflammatory bowel disease) ====
+  Analysis set: 382 samples, of which 4 are not in the model and do not take part: GSM2337618, GSM2337422, GSM2337462, GSM2337317
+  Samples 378; proportion of intermediate probes: median 0.1731, median absolute deviation 0.0408
+  Criterion: median + 3 median absolute deviations = 0.2956; above it: 22 (5.8%)
+  Value range of suspect samples: 0.2970 to 0.4231
+  Group taken from column 'group', ID taken from column 'geo_accession'
+    suspect: case=5; control=17
+    normal: case=199; control=157
+    Fisher's exact test against group: p = 0.00336  [NOTE] suspect samples are unevenly distributed between the groups; removal would change the composition of the two groups
+
+==== GSE112611 (inflammatory bowel disease) ====
+  Samples 238; proportion of intermediate probes: median 0.1034, median absolute deviation 0.0097
+  Criterion: median + 3 median absolute deviations = 0.1324; above it: 21 (8.8%)
+  Value range of suspect samples: 0.1333 to 0.2077
+  Group taken from column 'group', ID taken from column 'geo_accession'
+    suspect: case=14; control=7
+    normal: case=150; control=67
+    Fisher's exact test against group: p = 0.808  Balanced distribution; removal amounts to a random reduction in sample size
+
+=== Summary ===
+         gse      disease    n median_frac    mad_frac    cutoff n_flag pct_flag        fisher_p group_tested     worst
+1  GSE145361     Parkinson's disease 1638   0.1151800 0.013447182 0.1555215     83 5.067155 0.0000001977128         TRUE 0.2418600
+2  GSE111629     Parkinson's disease  572   0.1123700 0.010450769 0.1437223     19 3.321678 0.0303697719109         TRUE 0.1951400
+3   GSE84727   schizophrenia  847   0.1482600 0.009636900 0.1771707     14 1.652893 0.7895290192088         TRUE 0.1866800
+4   GSE80417   schizophrenia  636   0.1445000 0.012379710 0.1816391     10 1.572327 0.5312656124474         TRUE 0.2007000
+5  GSE338167 Alzheimer's disease  621   0.1084600 0.012246276 0.1451988     13 2.093398 0.7868229599268         TRUE 0.1770400
+6  GSE144858 Alzheimer's disease  189   0.1605000 0.017791200 0.2138736      2 1.058201 0.4974670719352         TRUE 0.2164000
+7  GSE198904       depression  429   0.1643600 0.010882284 0.1970069      8 1.864802 0.1180528226031         TRUE 0.2151800
+8  GSE273970       depression  283   0.1088200 0.009103164 0.1361295      9 3.180212 0.7419725298104         TRUE 0.1509200
+9   GSE87648   inflammatory bowel disease  378   0.1731200 0.040830804 0.2956124     22 5.820106 0.0033575562087         TRUE 0.4230600
+10 GSE112611   inflammatory bowel disease  238   0.1034245 0.009673908 0.1324462     21 8.823529 0.8084785233515         TRUE 0.2076864
+   worst_vs_median
+1         2.099844
+2         1.736584
+3         1.259139
+4         1.388927
+5         1.632307
+6         1.348287
+7         1.309199
+8         1.386877
+9         2.443738
+10        2.008097
+
+  Suspect in the ten sets together: 201 / 5831 (samples in the model) (3.4%)
+  Differences in median level between cohorts: 0.1034 to 0.1731
+  Note: the median level differs between cohorts anyway (platform, normalisation and submitter processing differ), 
+        so the criterion uses the within-cohort median and median absolute deviation, without a uniform threshold.
+
+  Cohorts with completed group test: 10 / 10
+  [ACTION NEEDED] suspect samples are related to group: GSE145361(p=1.98e-07), GSE111629(p=0.0304), GSE87648(p=0.00336); removal would change the composition of the two groups and must be judged separately.
+
+=== How much worse are the suspect samples: worst value relative to the cohort median ===
+  GSE87648   median 0.1731  worst 0.4231  higher by +144%  suspect 22
+  GSE145361  median 0.1152  worst 0.2419  higher by +110%  suspect 83
+  GSE112611  median 0.1034  worst 0.2077  higher by +101%  suspect 21
+  GSE111629  median 0.1124  worst 0.1951  higher by +74%  suspect 19
+  GSE338167  median 0.1085  worst 0.1770  higher by +63%  suspect 13
+  GSE80417   median 0.1445  worst 0.2007  higher by +39%  suspect 10
+  GSE273970  median 0.1088  worst 0.1509  higher by +39%  suspect 9
+  GSE144858  median 0.1605  worst 0.2164  higher by +35%  suspect 2
+  GSE198904  median 0.1644  worst 0.2152  higher by +31%  suspect 8
+  GSE84727   median 0.1483  worst 0.1867  higher by +26%  suspect 14
+  Interpretation: values higher by 20-30%, i.e. the tail of the distribution, are not bad samples; only values more than twice as high
+        are qualitatively different. Uniform removal by the relative criterion would discard many good samples to remove a few truly bad ones.
+
+=== Plotting ===
+  [figure] fig46_bimodality_qc  9x6.5 in @600 dpi  png 1441.8 KB
+
+Next, to be decided manually: whether suspect samples are removed. If so, the EWAS of the affected cohorts must be rebuilt 
+and the pairs involving them recomputed; the expected direction is that within-disease concordance may rise.
+
+==============================================
+Status: completed normally
+End: 2026-11-16 20:43:08   elapsed 3.3 min
+Warnings: none
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

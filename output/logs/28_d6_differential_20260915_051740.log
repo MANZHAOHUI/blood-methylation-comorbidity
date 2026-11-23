@@ -1,0 +1,78 @@
+==============================================
+Script: 28_d6_differential
+Start: 2026-09-15 05:17:40
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:ggplot2 -> Position
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+Loaded 4 result sets
+
+==== D6-1  primary criterion (PD as the shared side) ====
+  Shared side GSE145361; target GSE87648; negative control GSE152027
+  Probes common to the three: 406653
+  Observed: rho with target = -0.0106, rho with negative control = +0.0259, difference D = -0.0365
+  Residualising GSE145361 ...
+  Time: 3.6 min
+  Correlation between coefficients recomputed by residualisation and limma = 1.000000
+  1000 permutations, time 66.6 min
+  Null: mean -0.0007, SD 0.0263; one-sided empirical P = 0.8971, Z = -1.36
+
+==== D6-2  primary criterion (IBD as the shared side) ====
+  Shared side GSE87648; target GSE145361; negative control GSE152027
+  Probes common to the three: 406653
+  Observed: rho with target = -0.0106, rho with negative control = +0.0197, difference D = -0.0302
+  Residualising GSE87648 ...
+  Time: 0.2 min
+  Correlation between coefficients recomputed by residualisation and limma = 1.000000
+  1000 permutations, time 4.0 min
+  Null: mean +0.0004, SD 0.0293; one-sided empirical P = 0.8412, Z = -1.05
+
+==== PWR  power check (within-disease replication vs negative control) ====
+  Shared side GSE87648; target GSE112611; negative control GSE152027
+  Probes common to the three: 289139
+  Observed: rho with target = +0.1161, rho with negative control = +0.0187, difference D = +0.0974
+  Residualising GSE87648 ...
+  Time: 0.2 min
+  Correlation between coefficients recomputed by residualisation and limma = 1.000000
+  1000 permutations, time 3.6 min
+  Null: mean -0.0014, SD 0.0269; one-sided empirical P = 0.0010, Z = +3.68
+
+=== Summary ===
+  test                           kind  rho_target rho_control           D         z
+1 D6-1          primary criterion (PD as the shared side) -0.01056855  0.02594045 -0.03650900 -1.361649
+2 D6-2         primary criterion (IBD as the shared side) -0.01056855  0.01966861 -0.03023715 -1.046761
+3  PWR power check (within-disease replication vs negative control)  0.11612462  0.01873557  0.09738905  3.675822
+            p
+1 0.897102897
+2 0.841158841
+3 0.000999001
+
+Interpretation: D6 requires the two primary-criterion rows to be significantly positive. If the power-check row is significantly positive, 
+      the test has power, and a non-significant primary criterion can be read as a true negative.
+
+=== Plotting ===
+  [figure] fig38_d6_differential  10x4.2 in @600 dpi  png 220.6 KB
+
+==============================================
+Status: completed normally
+End: 2026-09-15 06:36:05   elapsed 78.4 min
+Warnings: 1
+  - longer object length is not a multiple of shorter object length
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

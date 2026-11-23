@@ -1,0 +1,123 @@
+==============================================
+Script: 35_model_selection_panel2
+Start: 2026-09-17 04:15:56
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:ggplot2 -> Position
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+==== GSE84727 (schizophrenia) ====
+  Age source: DNAm age, missing 0 samples
+  Batch: taken from 'characteristics_ch1', arrays 79
+  Probes used to estimate the inflation factor: 50000, samples 847
+  Candidate principal components: 70, associated with group: 14 removed, usable 56
+  K= 0  parameters  94  residual df  753  lambda = 1.236
+  K= 5  parameters  99  residual df  748  lambda = 1.243
+  K=10  parameters 104  residual df  743  lambda = 1.217
+  K=20  parameters 114  residual df  733  lambda = 1.204
+  K=30  parameters 124  residual df  723  lambda = 1.230
+  K=50  parameters 144  residual df  703  lambda = 1.233
+  None falls into the interval; K closest to 1: K = 20, lambda = 1.204; genomic control is applied in the formal analysis according to D13
+
+==== GSE80417 (schizophrenia) ====
+  Age source: chronological age, missing 0 samples
+  Batch: taken from 'description', arrays 75
+  Probes used to estimate the inflation factor: 50000, samples 636
+  Candidate principal components: 70, associated with group: 10 removed, usable 60
+  K= 0  parameters  90  residual df  546  lambda = 1.326
+  K= 5  parameters  95  residual df  541  lambda = 1.080
+  K=10  parameters 100  residual df  536  lambda = 1.124
+  K=20  parameters 110  residual df  526  lambda = 1.110
+  K=30  parameters 120  residual df  516  lambda = 1.132
+  K=50  parameters 140  residual df  496  lambda = 1.160
+  By D12, smallest K falling into 0.95 to 1.1: K = 5, lambda = 1.080
+
+==== GSE198904 (depression) ====
+  Age source: chronological age, missing 0 samples
+  Batch: taken from 'title', arrays 72
+  Probes used to estimate the inflation factor: 50000, samples 429
+  Candidate principal components: 70, associated with group: 13 removed, usable 57
+  K= 0  parameters  87  residual df  342  lambda = 1.914
+  K= 5  parameters  92  residual df  337  lambda = 1.695
+  K=10  parameters  97  residual df  332  lambda = 1.457
+  K=20  parameters 107  residual df  322  lambda = 1.428
+  K=30  parameters 117  residual df  312  lambda = 1.440
+  K=50  parameters 137  residual df  292  lambda = 1.418
+  None falls into the interval; K closest to 1: K = 50, lambda = 1.418; genomic control is applied in the formal analysis according to D13
+
+==== GSE273970 (depression) ====
+  Age source: DNAm age, missing 0 samples
+  Batch: taken from 'supplementary_file', arrays 36
+  Probes used to estimate the inflation factor: 50000, samples 283
+  Candidate principal components: 70, associated with group: 2 removed, usable 68
+  K= 0  parameters  51  residual df  232  lambda = 1.068
+  K= 5  parameters  56  residual df  227  lambda = 1.005
+  K=10  parameters  61  residual df  222  lambda = 1.018
+  K=20  parameters  71  residual df  212  lambda = 1.007
+  K=30  parameters  81  residual df  202  lambda = 1.013
+  K=50  parameters 101  residual df  182  lambda = 1.043
+  By D12, smallest K falling into 0.95 to 1.1: K = 0, lambda = 1.068
+
+==== GSE338167 (alzheimer) ====
+  Age source: chronological age, missing 0 samples
+  Batch: taken from 'title', arrays 87
+  Additional covariate 'ethnicity': AA=205; HISPANIC=283; NHW=133
+  Additional covariate 'cohort': CuADI=43; NHW=133; PERUVIAN=82; PRADI=158; REAAADI=205
+  Probes used to estimate the inflation factor: 50000, samples 621
+  Candidate principal components: 70, associated with group: 1 removed, usable 69
+  Collinear columns removed: 2cohortNHW, cohortREAAADI
+  K= 0  parameters 106  residual df  515  lambda = 1.005
+  K= 5  parameters 111  residual df  510  lambda = 1.062
+  K=10  parameters 116  residual df  505  lambda = 0.991
+  K=20  parameters 126  residual df  495  lambda = 0.994
+  K=30  parameters 136  residual df  485  lambda = 1.000
+  K=50  parameters 156  residual df  465  lambda = 0.999
+  By D12, smallest K falling into 0.95 to 1.1: K = 0, lambda = 1.005
+
+==== GSE144858 (alzheimer) ====
+  Age source: chronological age, missing 0 samples
+  Batch: no array barcode found in the header; this cohort has no batch term
+  Probes used to estimate the inflation factor: 50000, samples 189
+  Candidate principal components: 70, associated with group: 1 removed, usable 69
+  K= 0  parameters  16  residual df  173  lambda = 0.897
+  K= 5  parameters  21  residual df  168  lambda = 1.061
+  K=10  parameters  26  residual df  163  lambda = 1.037
+  K=20  parameters  36  residual df  153  lambda = 1.025
+  K=30  parameters  46  residual df  143  lambda = 1.021
+  K=50  parameters  66  residual df  123  lambda = 1.019
+  By D12, smallest K falling into 0.95 to 1.1: K = 5, lambda = 1.061
+
+=== Selected settings ===
+        gse       disease age_source has_batch  K   lambda genomic_control
+1  GSE84727 schizophrenia       dnam      TRUE 20 1.203851            TRUE
+2  GSE80417 schizophrenia     chrono      TRUE  5 1.080138           FALSE
+3 GSE198904    depression     chrono      TRUE 50 1.418054            TRUE
+4 GSE273970    depression       dnam      TRUE  0 1.068426           FALSE
+5 GSE338167     alzheimer     chrono      TRUE  0 1.004807           FALSE
+6 GSE144858     alzheimer     chrono     FALSE  5 1.060908           FALSE
+
+=== Plotting ===
+  [figure] fig39_lambda_ladder_panel2  10x6 in @600 dpi  png 545.7 KB
+
+==============================================
+Status: completed normally
+End: 2026-09-17 04:24:12   elapsed 8.3 min
+Warnings: 1
+  - package ‘limma’ was built under R version 4.4.2
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

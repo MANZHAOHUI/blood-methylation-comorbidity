@@ -1,0 +1,78 @@
+==============================================
+Script: 25_composition_strata
+Start: 2026-09-15 03:30:24
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:ggplot2 -> Position
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+Loaded 4 result sets
+=== Defining the composition axis with the control samples of GSE152027 ===
+  Control samples: 203 samples
+  Distribution of |r|: median 0.101, 80th percentile 0.223, maximum 0.923
+
+==== PD x IBD (comorbid pair) common probes 406653 ====
+  Median |r| with the neutrophil fraction per stratum: Q1 0.018; Q2 0.056; Q3 0.101; Q4 0.166; Q5 0.335
+  Residualising GSE87648 ...
+  Q1 (median |r| 0.018,  1626 per stratum): overlap   75, null mean   32.2, fold  2.33, P = 0.0020
+  Q2 (median |r| 0.056,  1626 per stratum): overlap   61, null mean   32.9, fold  1.86, P = 0.0020
+  Q3 (median |r| 0.101,  1626 per stratum): overlap   56, null mean   32.4, fold  1.73, P = 0.0080
+  Q4 (median |r| 0.166,  1626 per stratum): overlap   69, null mean   32.5, fold  2.12, P = 0.0060
+  Q5 (median |r| 0.335,  1626 per stratum): overlap   51, null mean   32.2, fold  1.58, P = 0.1417
+
+==== PD x SCZ (negative-control pair) common probes 406653 ====
+  Median |r| with the neutrophil fraction per stratum: Q1 0.018; Q2 0.056; Q3 0.101; Q4 0.166; Q5 0.335
+  Residualising GSE152027 ...
+  Q1 (median |r| 0.018,  1626 per stratum): overlap   41, null mean   32.3, fold  1.27, P = 0.0798
+  Q2 (median |r| 0.056,  1626 per stratum): overlap   39, null mean   32.2, fold  1.21, P = 0.1377
+  Q3 (median |r| 0.101,  1626 per stratum): overlap   36, null mean   32.6, fold  1.10, P = 0.2754
+  Q4 (median |r| 0.166,  1626 per stratum): overlap   33, null mean   32.6, fold  1.01, P = 0.5050
+  Q5 (median |r| 0.335,  1626 per stratum): overlap   48, null mean   32.1, fold  1.50, P = 0.0838
+
+==== IBD x SCZ (negative-control pair) common probes 406653 ====
+  Median |r| with the neutrophil fraction per stratum: Q1 0.018; Q2 0.056; Q3 0.101; Q4 0.166; Q5 0.335
+  Q1 (median |r| 0.018,  1626 per stratum): overlap   44, null mean   32.8, fold  1.34, P = 0.0439
+  Q2 (median |r| 0.056,  1626 per stratum): overlap   35, null mean   32.5, fold  1.08, P = 0.3673
+  Q3 (median |r| 0.101,  1626 per stratum): overlap   45, null mean   32.2, fold  1.40, P = 0.0259
+  Q4 (median |r| 0.166,  1626 per stratum): overlap   51, null mean   32.4, fold  1.57, P = 0.0060
+  Q5 (median |r| 0.335,  1626 per stratum): overlap  101, null mean   32.0, fold  3.16, P = 0.0020
+
+==== IBD x IBD(paed) (within-disease positive pair) common probes 289139 ====
+  Median |r| with the neutrophil fraction per stratum: Q1 0.017; Q2 0.054; Q3 0.098; Q4 0.163; Q5 0.335
+  Residualising GSE112611 ...
+  Q1 (median |r| 0.017,  1156 per stratum): overlap   72, null mean   23.4, fold  3.07, P = 0.0020
+  Q2 (median |r| 0.054,  1156 per stratum): overlap   96, null mean   23.1, fold  4.15, P = 0.0020
+  Q3 (median |r| 0.098,  1156 per stratum): overlap  115, null mean   23.0, fold  4.99, P = 0.0020
+  Q4 (median |r| 0.163,  1156 per stratum): overlap  168, null mean   23.2, fold  7.23, P = 0.0020
+  Q5 (median |r| 0.335,  1156 per stratum): overlap  385, null mean   23.1, fold 16.67, P = 0.0020
+
+=== Interpretation ===
+  If the enrichment of cross-disease pairs is concentrated in Q5 (the stratum most related to composition) 
+  while within-disease replication holds from Q1 to Q5, 'shared signature = composition residual' holds.
+  If cross-disease pairs are also enriched in Q1 and Q2, there is true sharing unrelated to composition.
+
+=== Plotting ===
+  [figure] fig34_strata_overlap  11x4.8 in @600 dpi  png 339.9 KB
+
+==============================================
+Status: completed normally
+End: 2026-09-15 03:41:41   elapsed 11.3 min
+Warnings: 1
+  - longer object length is not a multiple of shorter object length
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

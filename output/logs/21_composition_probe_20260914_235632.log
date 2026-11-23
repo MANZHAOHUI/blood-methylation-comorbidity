@@ -1,0 +1,95 @@
+==============================================
+Script: 21_composition_probe
+Start: 2026-09-14 23:56:32
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:ggplot2 -> Position
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+=== 1. Is the sharing merely neutrophils up, lymphocytes down? ===
+Cell types: CD4Tnv, Baso, CD4Tmem, Bmem, Bnv, Treg, CD8Tmem, CD8Tnv, Eos, NK, Neu, Mono
+Neutrophil effect in each cohort: GSE145361 +0.27; GSE111629 +0.15; GSE72774 +0.20; GSE87648 +0.46; GSE112611 +0.91; GSE152027 -0.03
+
+  PC1 positive control  GSE145361 vs GSE111629
+     all twelve types    n=12  rho=+0.517  sign 0.83  P(sign)=0.1182
+     without neutrophils    n=11  rho=+0.373  sign 0.82  P(sign)=0.1219
+     without neutrophils and eosinophils n=10  rho=+0.212  sign 0.80  P(sign)=0.1402
+     lymphocyte subsets only n= 8  rho=+0.310  sign 0.75  P(sign)=0.2078
+  PC2 positive control  GSE87648 vs GSE112611
+     all twelve types    n=12  rho=+0.650  sign 1.00  P(sign)=0.0590
+     without neutrophils    n=11  rho=+0.545  sign 1.00  P(sign)=0.0605
+     without neutrophils and eosinophils n=10  rho=+0.733  sign 1.00  P(sign)=0.0709
+     lymphocyte subsets only n= 8  rho=+0.810  sign 1.00  P(sign)=0.0853
+  M1 primary criterion  GSE145361 vs GSE87648
+     all twelve types    n=12  rho=+0.483  sign 1.00  P(sign)=0.0125
+     without neutrophils    n=11  rho=+0.327  sign 1.00  P(sign)=0.0094
+     without neutrophils and eosinophils n=10  rho=+0.103  sign 1.00  P(sign)=0.0124
+     lymphocyte subsets only n= 8  rho=+0.000  sign 1.00  P(sign)=0.0181
+  M2 secondary  GSE111629 vs GSE87648
+     all twelve types    n=12  rho=+0.252  sign 0.83  P(sign)=0.1230
+     without neutrophils    n=11  rho=+0.027  sign 0.82  P(sign)=0.1206
+     without neutrophils and eosinophils n=10  rho=-0.236  sign 0.80  P(sign)=0.1483
+     lymphocyte subsets only n= 8  rho=-0.214  sign 0.75  P(sign)=0.2224
+  NC1 negative control  GSE145361 vs GSE152027
+     all twelve types    n=12  rho=+0.063  sign 0.50  P(sign)=0.5720
+     without neutrophils    n=11  rho=+0.100  sign 0.55  P(sign)=0.5066
+     without neutrophils and eosinophils n=10  rho=-0.200  sign 0.50  P(sign)=0.6053
+     lymphocyte subsets only n= 8  rho=-0.286  sign 0.50  P(sign)=0.6164
+  NC2 negative control  GSE87648 vs GSE152027
+     all twelve types    n=12  rho=+0.238  sign 0.50  P(sign)=0.5577
+     without neutrophils    n=11  rho=+0.291  sign 0.55  P(sign)=0.5061
+     without neutrophils and eosinophils n=10  rho=+0.055  sign 0.50  P(sign)=0.6054
+     lymphocyte subsets only n= 8  rho=-0.071  sign 0.50  P(sign)=0.6237
+
+=== 2. Levodopa sensitivity (GSE72774) ===
+  Daily levodopa dose: median 0, maximum 2300, non-zero 252 samples
+  Effects per cell type before and after adjustment: 
+     CD4Tnv    before -0.607   after -0.543   change +0.065
+     Baso      before -0.181   after +0.010   change +0.191
+     CD4Tmem   before -0.403   after -0.280   change +0.123
+     Bmem      before -0.230   after -0.170   change +0.060
+     Bnv       before -0.301   after -0.178   change +0.122
+     Treg      before +0.021   after +0.064   change +0.044
+     CD8Tmem   before -0.153   after -0.089   change +0.064
+     CD8Tnv    before +0.130   after +0.231   change +0.102
+     Eos       before -0.650   after -0.492   change +0.159
+     NK        before -0.088   after -0.098   change -0.010
+     Neu       before +0.201   after +0.180   change -0.021
+     Mono      before -0.193   after -0.139   change +0.054
+  Correlation between the two effect vectors = 0.973
+  After adjustment for levodopa, concordance of this cohort with the IBD main set: rho = 0.224, sign 0.75, P(sign) = 0.203
+
+=== 3. Re-estimation with the seven-cell-type reference matrix ===
+  Reference matrix 333 probes x 7 types: B, NK, CD4T, CD8T, Mono, Neutro, Eosino
+  GSE145361 finished, median row sum 1.000
+  GSE111629 finished, median row sum 1.000
+  GSE72774 finished, median row sum 1.000
+Error in Y[ok, , drop = FALSE] : (subscript) logical subscript too long
+In addition: Warning message:
+In stats::complete.cases(d) & stats::complete.cases(Y) :
+  longer object length is not a multiple of shorter object length
+
+---------- Script stopped on an error ----------
+Error message: Error in Y[ok, , drop = FALSE] : (subscript) logical subscript too long
+Call stack:
+No traceback available 
+
+==============================================
+Status: stopped on error
+End: 2026-09-15 00:34:55   elapsed 38.4 min
+Warnings: 1
+  - longer object length is not a multiple of shorter object length
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

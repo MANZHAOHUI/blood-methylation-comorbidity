@@ -1,0 +1,116 @@
+==============================================
+Script: 45_positive_controls_stable
+Start: 2026-11-09 20:09:59
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:ggplot2 -> Position
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+==== Parkinson: fixed GSE145361, permuted GSE111629 ====
+  Residualisation time 1.4 min; matrix 572 x 406325
+    permutation 2000 / 10000, elapsed 22.8 min
+    permutation 4000 / 10000, elapsed 39.1 min
+    permutation 6000 / 10000, elapsed 57.9 min
+    permutation 8000 / 10000, elapsed 78.2 min
+    permutation 10000 / 10000, elapsed 100.3 min
+  probes 406325  rho=+0.0430  sign 0.5069
+  null mean +0.00005  SD 0.02357  -> Z=+1.82
+  permutation P = 0.0335, Monte Carlo standard error 0.0018 (95% interval 0.0300 to 0.0370)
+  Decision: Passed:
+  Detection limit: one-sided 5% critical rho = 0.0388; 80% power requires rho >= 0.0586
+
+==== Schizophrenia: fixed GSE84727, permuted GSE80417 ====
+  Residualisation time 1.8 min; matrix 636 x 417939
+    permutation 2000 / 10000, elapsed 15.5 min
+    permutation 4000 / 10000, elapsed 29.9 min
+    permutation 6000 / 10000, elapsed 44.4 min
+    permutation 8000 / 10000, elapsed 60.4 min
+    permutation 10000 / 10000, elapsed 85.7 min
+  probes 403891  rho=+0.0713  sign 0.5269
+  null mean +0.00014  SD 0.02138  -> Z=+3.33
+  permutation P = 0.0001, Monte Carlo standard error 0.0001 (95% interval 0.0000 to 0.0003)
+  Decision: Passed:
+  Detection limit: one-sided 5% critical rho = 0.0353; 80% power requires rho >= 0.0533
+
+==== Alzheimer: fixed GSE338167, permuted GSE144858 ====
+  Residualisation time 0.3 min; matrix 189 x 389403
+    permutation 2000 / 10000, elapsed 9.5 min
+    permutation 4000 / 10000, elapsed 19.0 min
+    permutation 6000 / 10000, elapsed 28.2 min
+    permutation 8000 / 10000, elapsed 37.9 min
+    permutation 10000 / 10000, elapsed 47.4 min
+  probes 350743  rho=+0.0026  sign 0.5011
+  null mean +0.00009  SD 0.00987  -> Z=+0.26
+  permutation P = 0.3968, Monte Carlo standard error 0.0049 (95% interval 0.3872 to 0.4063)
+  Decision: fail
+  Detection limit: one-sided 5% critical rho = 0.0163; 80% power requires rho >= 0.0246
+
+==== Depression: fixed GSE198904, permuted GSE273970 ====
+  Residualisation time 0.5 min; matrix 283 x 390523
+    permutation 2000 / 10000, elapsed 12.5 min
+    permutation 4000 / 10000, elapsed 24.1 min
+    permutation 6000 / 10000, elapsed 32.3 min
+    permutation 8000 / 10000, elapsed 38.7 min
+    permutation 10000 / 10000, elapsed 44.9 min
+  probes 371956  rho=-0.0089  sign 0.4992
+  null mean +0.00017  SD 0.01658  -> Z=-0.55
+  permutation P = 0.6969, Monte Carlo standard error 0.0046 (95% interval 0.6879 to 0.7059)
+  Decision: fail
+  Detection limit: one-sided 5% critical rho = 0.0274; 80% power requires rho >= 0.0414
+
+==== IBD: fixed GSE87648, permuted GSE112611 ====
+  Residualisation time 0.3 min; matrix 238 x 289139
+    permutation 2000 / 10000, elapsed 4.0 min
+    permutation 4000 / 10000, elapsed 7.9 min
+    permutation 6000 / 10000, elapsed 11.8 min
+    permutation 8000 / 10000, elapsed 15.7 min
+    permutation 10000 / 10000, elapsed 19.8 min
+  probes 289139  rho=+0.1174  sign 0.5350
+  null mean -0.00033  SD 0.02533  -> Z=+4.65
+  permutation P = 0.0001, Monte Carlo standard error 0.0001 (95% interval 0.0000 to 0.0003)
+  Decision: Passed:
+  Detection limit: one-sided 5% critical rho = 0.0413; 80% power requires rho >= 0.0626
+
+=== Five within-disease positive controls (10000 permutations) ===
+  Parkinson      rho=+0.0430  Z=+1.82  P=0.0335±0.0018  Passed:
+  Schizophrenia  rho=+0.0713  Z=+3.33  P=0.0001±0.0001  Passed:
+  Alzheimer      rho=+0.0026  Z=+0.26  P=0.3968±0.0049  fail
+  Depression     rho=-0.0089  Z=-0.55  P=0.6969±0.0046  fail
+  IBD            rho=+0.1174  Z=+4.65  P=0.0001±0.0001  Passed:
+
+  Passed: 3, borderline 0, fail 2 / 5
+
+=== Effect sizes that can be excluded for each disorder ===
+  Parkinson      critical rho 0.0388; 80% power requires rho >= 0.0586; observed +0.0430
+  Schizophrenia  critical rho 0.0353; 80% power requires rho >= 0.0533; observed +0.0713
+  Alzheimer      critical rho 0.0163; 80% power requires rho >= 0.0246; observed +0.0026
+  Depression     critical rho 0.0274; 80% power requires rho >= 0.0414; observed -0.0089
+  IBD            critical rho 0.0413; 80% power requires rho >= 0.0626; observed +0.1174
+  Note: for disorders that fail, one can only say 'no concordance above this limit is detectable in this design', 
+        not 'there is no concordance'. The two statements must be kept apart in the paper.
+
+=== Plotting ===
+  [figure] fig48_positive_controls_10k  10x6 in @600 dpi  png 259.7 KB
+
+==============================================
+Status: completed normally
+End: 2026-11-10 01:12:50   elapsed 302.9 min
+Warnings: 1
+  - package ‘limma’ was built under R version 4.4.2
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

@@ -1,0 +1,105 @@
+==============================================
+Script: 23_template_falsepositive
+Start: 2026-09-15 02:11:38
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:ggplot2 -> Position
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+EWAS results loaded: 5
+G3;Loading required package: S4Vectors
+gG3;Loading required package: stats4
+gG3;Loading required package: BiocGenerics
+gG3;
+Attaching package: ‘BiocGenerics’
+
+gG3;The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+gG3;The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind, colnames, dirname, do.call, duplicated, eval, evalq,
+    Filter, Find, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mget, order, paste, pmax, pmax.int,
+    pmin, pmin.int, Position, rank, rbind, Reduce, rownames, sapply, saveRDS, setdiff, table, tapply, union, unique,
+    unsplit, which.max, which.min
+
+gG3;
+Attaching package: ‘S4Vectors’
+
+gG3;The following object is masked from ‘package:utils’:
+
+    findMatches
+
+gG3;The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+gAnnotation loaded: 485512 rows, used to map sites to genes
+
+==== PD x IBD (comorbid pair)  common probes 406653 ====
+  top   500 each: overlap    3 (random expectation   0.6, fold 4.88), same direction 0.67, genes involved 3
+  top  1000 each: overlap   15 (random expectation   2.5, fold 6.10), same direction 0.67, genes involved 13
+  top  5000 each: overlap  234 (random expectation  61.5, fold 3.81), same direction 0.64, genes involved 183
+  top 10000 each: overlap  658 (random expectation 245.9, fold 2.68), same direction 0.62, genes involved 509
+  P < 0.05   each:  41769 and  28400 sites, overlap 4296 (expectation 2917.1, fold 1.47), same direction 0.50, genes 2819
+  P < 0.01   each:  14781 and   9535 sites, overlap  841 (expectation 346.6, fold 2.43), same direction 0.56, genes 636
+  P < 0.001  each:   3970 and   3208 sites, overlap  140 (expectation  31.3, fold 4.47), same direction 0.66, genes 115
+
+==== PD x SCZ (negative-control pair)  common probes 406653 ====
+  top   500 each: overlap    1 (random expectation   0.6, fold 1.63), same direction 0.00, genes involved 1
+  top  1000 each: overlap    6 (random expectation   2.5, fold 2.44), same direction 0.50, genes involved 6
+  top  5000 each: overlap   81 (random expectation  61.5, fold 1.32), same direction 0.53, genes involved 70
+  top 10000 each: overlap  301 (random expectation 245.9, fold 1.22), same direction 0.57, genes involved 255
+  P < 0.05   each:  41769 and  29758 sites, overlap 3364 (expectation 3056.6, fold 1.10), same direction 0.58, genes 2504
+  P < 0.01   each:  14781 and   7642 sites, overlap  350 (expectation 277.8, fold 1.26), same direction 0.60, genes 305
+  P < 0.001  each:   3970 and   1118 sites, overlap   16 (expectation  10.9, fold 1.47), same direction 0.56, genes 14
+
+==== IBD x SCZ (negative-control pair)  common probes 406653 ====
+  top   500 each: overlap   15 (random expectation   0.6, fold 24.40), same direction 1.00, genes involved 9
+  top  1000 each: overlap   30 (random expectation   2.5, fold 12.20), same direction 1.00, genes involved 19
+  top  5000 each: overlap  188 (random expectation  61.5, fold 3.06), same direction 0.94, genes involved 138
+  top 10000 each: overlap  479 (random expectation 245.9, fold 1.95), same direction 0.83, genes involved 352
+  P < 0.05   each:  28400 and  29758 sites, overlap 2620 (expectation 2078.3, fold 1.26), same direction 0.66, genes 1876
+  P < 0.01   each:   9535 and   7642 sites, overlap  373 (expectation 179.2, fold 2.08), same direction 0.84, genes 276
+  P < 0.001  each:   3208 and   1118 sites, overlap   50 (expectation   8.8, fold 5.67), same direction 1.00, genes 34
+
+==== IBD x IBD(paed) (within-disease positive pair)  common probes 289139 ====
+  top   500 each: overlap  143 (random expectation   0.9, fold 165.39), same direction 1.00, genes involved 111
+  top  1000 each: overlap  259 (random expectation   3.5, fold 74.89), same direction 1.00, genes involved 194
+  top  5000 each: overlap 1061 (random expectation  86.5, fold 12.27), same direction 1.00, genes involved 712
+  top 10000 each: overlap 1801 (random expectation 345.9, fold 5.21), same direction 0.98, genes involved 1172
+  P < 0.05   each:  20512 and  17242 sites, overlap 3234 (expectation 1223.2, fold 2.64), same direction 0.94, genes 2009
+  P < 0.01   each:   6895 and   4680 sites, overlap 1154 (expectation 111.6, fold 10.34), same direction 0.99, genes 770
+  P < 0.001  each:   2324 and   1032 sites, overlap  369 (expectation   8.3, fold 44.49), same direction 1.00, genes 270
+
+=== A 'shared gene list' that could go straight into a paper ===
+  By the most common practice (intersecting the top 5000 sites of each disease): 
+  Shared sites: 234, genes involved: 183
+  First 30 genes: ABCG1, ADAMTS4, ALAD, AMZ2, ARHGAP24, ARHGAP9, ASAP1, BAT2, BCL11A, BNIP3, BTG2, C19orf76, C20orf199, C4orf34, C7orf50, C9orf139, CACNA1C, CCDC108, CCDC33, CCNY, CD38, CDADC1, CDH29, CEACAM8, CHD4, CIDEB, CLEC3B, CLRN1, CLYBL, CMIP
+  Reminder: this list comes from a pair of diseases judged not to share by three tests.
+        It looks entirely capable of supporting a paper, and that is exactly the problem.
+
+=== Plotting ===
+  [figure] fig30_template_overlap  10x4.6 in @600 dpi  png 380.3 KB
+  [figure] fig31_template_fold  10x4.6 in @600 dpi  png 385.5 KB
+
+==============================================
+Status: completed normally
+End: 2026-09-15 02:11:52   elapsed 0.2 min
+Warnings: 1
+  - longer object length is not a multiple of shorter object length
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

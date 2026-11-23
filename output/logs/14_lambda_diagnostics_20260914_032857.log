@@ -1,0 +1,117 @@
+==============================================
+Script: 14_lambda_diagnostics
+Start: 2026-09-14 03:28:57
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+Warning message:
+package ‘limma’ was built under R version 4.4.2 
+==== GSE111629 (PD replication) ====
+  Batch type: slide, levels 70, batches with a single group 14 (20%)
+  Test of independence between batch and group: p = 9.55e-12
+  Proportion of cases per batch: median 0.50, quartiles 0.40 to 0.83
+  Probes used to estimate lambda: 49949
+  Methylation principal components: 20, of which associated with group (p < 0.01): 2 not modelled, remaining 18
+  M0  group+sex+age  parameters 4  Residual degrees of freedom: 568  lambda = 1.638
+  M1  +cell fractions  parameters 15  Residual degrees of freedom: 557  lambda = 1.139
+  M2  +smoking  parameters 16  Residual degrees of freedom: 556  lambda = 1.254
+  M3  +batch  parameters 85  Residual degrees of freedom: 487  lambda = 1.001
+  M4  +genetic PCs  parameters 85  Residual degrees of freedom: 487  lambda = 1.001
+  M5  +methylation PCs  parameters 103  Residual degrees of freedom: 469  lambda = 1.015
+
+==== GSE112611 (IBD paediatric) ====
+  Batch type: slide, levels 55, batches with a single group 16 (29%)
+  Test of independence between batch and group: p = 0.764
+  Proportion of cases per batch: median 0.67, quartiles 0.60 to 1.00
+  Probes used to estimate lambda: 38675
+  Methylation principal components: 20, of which associated with group (p < 0.01): 1 not modelled, remaining 19
+  M0  group+sex+age  parameters 4  Residual degrees of freedom: 234  lambda = 2.476
+  M1  +cell fractions  parameters 15  Residual degrees of freedom: 223  lambda = 0.993
+  M2  +smoking  parameters 15  Residual degrees of freedom: 223  lambda = 0.993
+  M3  +batch  parameters 69  Residual degrees of freedom: 169  lambda = 1.022
+  M4  +genetic PCs  parameters 69  Residual degrees of freedom: 169  lambda = 1.022
+  M5  +methylation PCs  parameters 88  Residual degrees of freedom: 150  lambda = 1.127
+
+==== GSE145361 (PD discovery) ====
+  Batch type: slide, levels 168, batches with a single group 1 (1%)
+  Test of independence between batch and group: p = 0.696
+  Proportion of cases per batch: median 0.55, quartiles 0.40 to 0.60
+  Probes used to estimate lambda: 50000
+  Methylation principal components: 20, of which associated with group (p < 0.01): 7 not modelled, remaining 13
+  M0  group+sex+age  parameters 4  Residual degrees of freedom: 1634  lambda = 17.935
+  M1  +cell fractions  parameters 15  Residual degrees of freedom: 1623  lambda = 3.095
+  M2  +smoking  parameters 16  Residual degrees of freedom: 1622  lambda = 3.120
+  M3  +batch  parameters 183  Residual degrees of freedom: 1455  lambda = 3.224
+  M4  +genetic PCs  parameters 185  Residual degrees of freedom: 1453  lambda = 3.242
+  M5  +methylation PCs  parameters 198  Residual degrees of freedom: 1440  lambda = 1.697
+
+==== GSE152027 (Negative control) ====
+  Batch type: slide, levels 77, batches with a single group 0 (0%)
+  Test of independence between batch and group: p = 1
+  Proportion of cases per batch: median 0.57, quartiles 0.57 to 0.62
+  Probes used to estimate lambda: 50000
+  Methylation principal components: 20, of which associated with group (p < 0.01): 6 not modelled, remaining 14
+  M0  group+sex+age  parameters 4  Residual degrees of freedom: 489  lambda = 1.641
+  M1  +cell fractions  parameters 15  Residual degrees of freedom: 478  lambda = 1.657
+  M2  +smoking  parameters 16  Residual degrees of freedom: 477  lambda = 1.619
+  M3  +batch  parameters 92  Residual degrees of freedom: 401  lambda = 1.516
+  M4  +genetic PCs  parameters 92  Residual degrees of freedom: 401  lambda = 1.516
+  M5  +methylation PCs  parameters 106  Residual degrees of freedom: 387  lambda = 1.352
+
+==== GSE72774 (PD sensitivity) ====
+  No batch information
+  Probes used to estimate lambda: 49957
+  Methylation principal components: 20, of which associated with group (p < 0.01): 1 not modelled, remaining 19
+  M0  group+sex+age  parameters 4  Residual degrees of freedom: 504  lambda = 1.739
+  M1  +cell fractions  parameters 15  Residual degrees of freedom: 493  lambda = 1.149
+  M2  +smoking  parameters 16  Residual degrees of freedom: 492  lambda = 1.211
+  M3  +batch  parameters 16  Residual degrees of freedom: 492  lambda = 1.211
+  M4  +genetic PCs  parameters 16  Residual degrees of freedom: 492  lambda = 1.211
+  M5  +methylation PCs  parameters 35  Residual degrees of freedom: 473  lambda = 1.084
+
+==== GSE87648 (IBD main) ====
+  Batch type: scan date, levels 2, batches with a single group 0 (0%)
+  Test of independence between batch and group: p = 1
+  Proportion of cases per batch: median 0.53, quartiles 0.53 to 0.53
+  Probes used to estimate lambda: 50000
+  Methylation principal components: 20, of which associated with group (p < 0.01): 2 not modelled, remaining 18
+  M0  group+sex+age  parameters 4  Residual degrees of freedom: 376  lambda = 1.701
+  M1  +cell fractions  parameters 15  Residual degrees of freedom: 365  lambda = 0.477
+  M2  +smoking  parameters 16  Residual degrees of freedom: 364  lambda = 0.457
+  M3  +batch  parameters 17  Residual degrees of freedom: 363  lambda = 0.634
+  M4  +genetic PCs  parameters 17  Residual degrees of freedom: 363  lambda = 0.634
+  M5  +methylation PCs  parameters 35  Residual degrees of freedom: 345  lambda = 1.271
+
+=== Ladder summary ===
+         gse lambda.M0 lambda.M1 lambda.M2 lambda.M3 lambda.M4 lambda.M5
+1  GSE111629  1.638188 1.1386633 1.2544050 1.0011994 1.0011994  1.014627
+7  GSE112611  2.475991 0.9926001 0.9926001 1.0222401 1.0222401  1.126689
+13 GSE145361 17.935283 3.0950006 3.1200523 3.2239061 3.2423271  1.697155
+19 GSE152027  1.641348 1.6570374 1.6188223 1.5157839 1.5157839  1.352472
+25  GSE72774  1.739298 1.1489735 1.2108699 1.2108699 1.2108699  1.083607
+31  GSE87648  1.700732 0.4774193 0.4571295 0.6336305 0.6336305  1.270831
+
+=== Plotting ===
+  [figure] fig15_lambda_ladder  10x6 in @600 dpi  png 516.3 KB
+  [figure] fig16_batch_balance  10x5.5 in @600 dpi  png 282.5 KB
+
+==============================================
+Status: completed normally
+End: 2026-09-14 03:38:56   elapsed 10.0 min
+Warnings: 1
+  - package ‘limma’ was built under R version 4.4.2
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

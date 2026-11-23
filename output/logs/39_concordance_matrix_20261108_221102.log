@@ -1,0 +1,138 @@
+==============================================
+Script: 39_concordance_matrix
+Start: 2026-11-08 22:11:02
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+Results and design matrices of the ten cohorts loaded; sample sizes GSE145361=1638, GSE111629=572, GSE84727=847, GSE80417=636, GSE338167=621, GSE144858=189, GSE198904=429, GSE273970=283, GSE87648=378, GSE112611=238
+Pairs: within-disease 5, cross-disease 40, total 45
+Grouped by permuted cohort: GSE111629(4 pairs), GSE112611(8 pairs), GSE144858(9 pairs), GSE198904(5 pairs), GSE273970(7 pairs), GSE338167(3 pairs), GSE80417(2 pairs), GSE84727(1 pairs), GSE87648(6 pairs)
+
+==== Residualising GSE111629 (in 4 pairs) ====
+  Time: 1.6 min; residual matrix 572 x 406325
+  Correlation between coefficients recomputed by residualisation and limma results = 1.000000
+  PC-Parkinson               GSE145361 vs GSE111629 probes 406325  rho=+0.0430  sign 0.5069  Z=+1.81  P=0.0310
+  Parkinson|Schizophrenia    GSE84727  vs GSE111629 probes 393330  rho=+0.0352  sign 0.5174  Z=+2.47  P=0.0060
+  Parkinson|Schizophrenia    GSE80417  vs GSE111629 probes 405998  rho=+0.0392  sign 0.5195  Z=+2.19  P=0.0170
+  Parkinson|Alzheimer        GSE338167 vs GSE111629 probes 361860  rho=+0.0305  sign 0.5157  Z=+1.26  P=0.1039
+
+==== Residualising GSE112611 (in 8 pairs) ====
+  Time: 0.5 min; residual matrix 238 x 289139
+  Correlation between coefficients recomputed by residualisation and limma results = 1.000000
+  PC-IBD                     GSE87648  vs GSE112611 probes 289139  rho=+0.1174  sign 0.5350  Z=+4.55  P=0.0010
+  Parkinson|IBD              GSE145361 vs GSE112611 probes 289139  rho=+0.0044  sign 0.4967  Z=+0.14  P=0.4525
+  Parkinson|IBD              GSE111629 vs GSE112611 probes 288933  rho=-0.0494  sign 0.4796  Z=-1.47  P=0.9181
+  Schizophrenia|IBD          GSE84727  vs GSE112611 probes 279992  rho=+0.0169  sign 0.5039  Z=+0.91  P=0.1978
+  Schizophrenia|IBD          GSE80417  vs GSE112611 probes 289046  rho=+0.0002  sign 0.4962  Z=-0.00  P=0.4865
+  Alzheimer|IBD              GSE338167 vs GSE112611 probes 261738  rho=-0.0147  sign 0.4939  Z=-0.55  P=0.7073
+  Depression|IBD             GSE198904 vs GSE112611 probes 278120  rho=+0.0021  sign 0.5017  Z=+0.10  P=0.4585
+  Depression|IBD             GSE273970 vs GSE112611 probes 288831  rho=-0.0528  sign 0.4715  Z=-1.14  P=0.8661
+
+==== Residualising GSE144858 (in 9 pairs) ====
+  Time: 0.4 min; residual matrix 189 x 389403
+  Correlation between coefficients recomputed by residualisation and limma results = 1.000000
+  PC-Alzheimer               GSE338167 vs GSE144858 probes 350743  rho=+0.0026  sign 0.5011  Z=+0.27  P=0.3996
+  Parkinson|Alzheimer        GSE145361 vs GSE144858 probes 382321  rho=+0.0085  sign 0.5022  Z=+0.51  P=0.3047
+  Parkinson|Alzheimer        GSE111629 vs GSE144858 probes 382025  rho=-0.0194  sign 0.4939  Z=-1.30  P=0.9041
+  Schizophrenia|Alzheimer    GSE84727  vs GSE144858 probes 389161  rho=-0.0051  sign 0.4987  Z=-0.56  P=0.7033
+  Schizophrenia|Alzheimer    GSE80417  vs GSE144858 probes 389140  rho=+0.0063  sign 0.5025  Z=+0.77  P=0.2258
+  Alzheimer|Depression       GSE198904 vs GSE144858 probes 350415  rho=-0.0074  sign 0.4965  Z=-1.10  P=0.8561
+  Alzheimer|Depression       GSE273970 vs GSE144858 probes 363110  rho=+0.0073  sign 0.5036  Z=+0.67  P=0.2627
+  Alzheimer|IBD              GSE87648  vs GSE144858 probes 382321  rho=+0.0234  sign 0.5056  Z=+1.29  P=0.0999
+  Alzheimer|IBD              GSE112611 vs GSE144858 probes 272979  rho=+0.0263  sign 0.5091  Z=+1.30  P=0.0949
+
+==== Residualising GSE198904 (in 5 pairs) ====
+  Time: 1.6 min; residual matrix 429 x 371956
+  Correlation between coefficients recomputed by residualisation and limma results = 1.000000
+  Parkinson|Depression       GSE145361 vs GSE198904 probes 362317  rho=+0.0480  sign 0.5213  Z=+1.76  P=0.0400
+  Parkinson|Depression       GSE111629 vs GSE198904 probes 362047  rho=-0.0066  sign 0.4960  Z=-1.27  P=0.8921
+  Schizophrenia|Depression   GSE84727  vs GSE198904 probes 363376  rho=-0.0132  sign 0.4941  Z=-1.47  P=0.9241
+  Schizophrenia|Depression   GSE80417  vs GSE198904 probes 371493  rho=-0.0089  sign 0.4960  Z=-1.04  P=0.8511
+  Alzheimer|Depression       GSE338167 vs GSE198904 probes 344677  rho=-0.0185  sign 0.4904  Z=-2.01  P=0.9720
+
+==== Residualising GSE273970 (in 7 pairs) ====
+  Time: 0.7 min; residual matrix 283 x 390523
+  Correlation between coefficients recomputed by residualisation and limma results = 1.000000
+  PC-Depression              GSE198904 vs GSE273970 probes 371956  rho=-0.0089  sign 0.4992  Z=-0.53  P=0.6933
+  Parkinson|Depression       GSE145361 vs GSE273970 probes 379395  rho=+0.0157  sign 0.5209  Z=+0.71  P=0.2488
+  Parkinson|Depression       GSE111629 vs GSE273970 probes 379096  rho=+0.0348  sign 0.5145  Z=+1.14  P=0.1339
+  Schizophrenia|Depression   GSE84727  vs GSE273970 probes 376898  rho=+0.0324  sign 0.5101  Z=+1.62  P=0.0569
+  Schizophrenia|Depression   GSE80417  vs GSE273970 probes 389697  rho=+0.0484  sign 0.5170  Z=+2.31  P=0.0090
+  Alzheimer|Depression       GSE338167 vs GSE273970 probes 350811  rho=+0.0451  sign 0.5106  Z=+1.19  P=0.1269
+  Depression|IBD             GSE87648  vs GSE273970 probes 379395  rho=+0.0063  sign 0.4933  Z=+0.30  P=0.3766
+
+==== Residualising GSE338167 (in 3 pairs) ====
+  Time: 1.0 min; residual matrix 621 x 371448
+  Correlation between coefficients recomputed by residualisation and limma results = 1.000000
+  Parkinson|Alzheimer        GSE145361 vs GSE338167 probes 362144  rho=-0.0239  sign 0.4812  Z=-0.73  P=0.7762
+  Schizophrenia|Alzheimer    GSE84727  vs GSE338167 probes 363231  rho=+0.0316  sign 0.5141  Z=+1.50  P=0.0669
+  Schizophrenia|Alzheimer    GSE80417  vs GSE338167 probes 371119  rho=+0.0177  sign 0.5080  Z=+0.76  P=0.2218
+
+==== Residualising GSE80417 (in 2 pairs) ====
+  Time: 1.1 min; residual matrix 636 x 417939
+  Correlation between coefficients recomputed by residualisation and limma results = 1.000000
+  PC-Schizophrenia           GSE84727  vs GSE80417  probes 403891  rho=+0.0713  sign 0.5269  Z=+3.30  P=0.0010
+  Parkinson|Schizophrenia    GSE145361 vs GSE80417  probes 406309  rho=-0.0060  sign 0.4932  Z=-0.25  P=0.5854
+
+==== Residualising GSE84727 (in 1 pairs) ====
+  Time: 1.5 min; residual matrix 847 x 404159
+  Correlation between coefficients recomputed by residualisation and limma results = 1.000000
+  Parkinson|Schizophrenia    GSE145361 vs GSE84727  probes 393628  rho=-0.0205  sign 0.4878  Z=-0.84  P=0.7902
+
+==== Residualising GSE87648 (in 6 pairs) ====
+  Time: 0.5 min; residual matrix 378 x 406653
+  Correlation between coefficients recomputed by residualisation and limma results = 1.000000
+  Parkinson|IBD              GSE145361 vs GSE87648  probes 406653  rho=-0.0107  sign 0.4821  Z=-0.32  P=0.6184
+  Parkinson|IBD              GSE111629 vs GSE87648  probes 406325  rho=+0.0170  sign 0.5123  Z=+0.75  P=0.2338
+  Schizophrenia|IBD          GSE84727  vs GSE87648  probes 393628  rho=+0.0474  sign 0.5178  Z=+3.28  P=0.0010
+  Schizophrenia|IBD          GSE80417  vs GSE87648  probes 406309  rho=+0.0372  sign 0.5126  Z=+2.35  P=0.0090
+  Alzheimer|IBD              GSE338167 vs GSE87648  probes 362144  rho=+0.0400  sign 0.5207  Z=+1.99  P=0.0200
+  Depression|IBD             GSE198904 vs GSE87648  probes 362317  rho=-0.0162  sign 0.4919  Z=-1.36  P=0.8981
+
+=== Within-disease positive controls ===
+  PC-Parkinson               rho=+0.0430  sign 0.5069  Z=+1.81  P=0.0310
+  PC-IBD                     rho=+0.1174  sign 0.5350  Z=+4.55  P=0.0010
+  PC-Alzheimer               rho=+0.0026  sign 0.5011  Z=+0.27  P=0.3996
+  PC-Depression              rho=-0.0089  sign 0.4992  Z=-0.53  P=0.6933
+  PC-Schizophrenia           rho=+0.0713  sign 0.5269  Z=+3.30  P=0.0010
+  Reaching P < 0.05: 3 / 5. This row decides how all cross-disease results below are read: for a disorder without significant within-disease replication, 
+  a negative cross-disease result cannot be read as 'not shared', only as 'not detectable'.
+
+=== Cross-disease comparisons: the four pairings summarised by disease pair ===
+  parkinson-schizophrenia      rho of the four pairings: +0.035 +0.039 -0.006 -0.020; significant 2/4; direction inconsistent
+  parkinson-alzheimer          rho of the four pairings: +0.030 +0.008 -0.019 -0.024; significant 0/4; direction inconsistent
+  parkinson-ibd                rho of the four pairings: +0.004 -0.049 -0.011 +0.017; significant 0/4; direction inconsistent
+  schizophrenia-ibd            rho of the four pairings: +0.017 +0.000 +0.047 +0.037; significant 2/4; direction consistent
+  alzheimer-ibd                rho of the four pairings: -0.015 +0.023 +0.026 +0.040; significant 1/4; direction inconsistent
+  depression-ibd               rho of the four pairings: +0.002 -0.053 +0.006 -0.016; significant 0/4; direction inconsistent
+  schizophrenia-alzheimer      rho of the four pairings: -0.005 +0.006 +0.032 +0.018; significant 0/4; direction inconsistent
+  alzheimer-depression         rho of the four pairings: -0.007 +0.007 -0.018 +0.045; significant 0/4; direction inconsistent
+  parkinson-depression         rho of the four pairings: +0.048 -0.007 +0.016 +0.035; significant 1/4; direction inconsistent
+  schizophrenia-depression     rho of the four pairings: -0.013 -0.009 +0.032 +0.048; significant 1/4; direction inconsistent
+
+  Disease pairs with all four pairings significant and consistent in direction: 0 / 10
+  Interpretation: one or two significant pairings out of four are chance at the pairing level and do not support a claim of sharing.
+
+=== Plotting ===
+  [figure] fig41_concordance_all_pairs  9x9 in @600 dpi  png 302 KB
+  [figure] fig42_cross_disease_fourway  9x5.5 in @600 dpi  png 300.3 KB
+
+==============================================
+Status: completed normally
+End: 2026-11-09 02:34:27   elapsed 263.4 min
+Warnings: none
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

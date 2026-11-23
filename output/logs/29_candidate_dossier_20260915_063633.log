@@ -1,0 +1,769 @@
+==============================================
+Script: 29_candidate_dossier
+Start: 2026-09-15 06:36:33
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:ggplot2 -> Position
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+
+##############################################################
+###  included: Parkinson's disease
+##############################################################
+
+---------- GSE145361 ----------
+  Title: Epigenome analysis of Parkinson's disease and control samples from the Systema Genomics Parkinson's disease (SGPD) consortium
+  Summary: Genome wide DNA methylation association analysis of Parkinson's disease and control samples. The Illumina Infinium 450k Human DNA methylation Beadchip was used to obtain DNA methylation profiles across approximately 450,000 CpGs in blood samples. Samples included 1001 Parkinson's disease cases and 973 controls.
+  Design: Bisulphite converted DNA from the 1974 samples were hybridised to the Illumina Infinium 450k Human Methylation Beadchip. 85 samples failed QC and so were not included in the final dataset.
+  Submitter: Jacob,,Gratten / University of Queensland; PubMed 32144264
+  Platform: GPL13534; samples 1889
+  Tissue: whole-blood samples 1889 / 1889 (proportion 1.00)
+    top four source values: whole blood tissue: whole blood=1889
+  All characteristic fields: 
+    [gender] Male=1039; Female=850
+    [disease-state] Parkinson's disease=959; Control=930
+    [tissue] whole blood=1889
+  Sample title examples: 3998888019_R01C01 | 3998888019_R02C01 | 3998888019_R03C01
+  Array barcodes parsed: 1889
+  Supplementary files: 
+    GSE145361_RAW.tar (15.21 GB)
+    GSE145361_Vallerga2020_NCOMMS_AvgBeta_Matrix-file.txt.gz (6.80 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE111629 ----------
+  Title: Genome wide DNA methylation study of Parkinson's disease in whole blood samples
+  Summary: Genome wide DNA methylation profiling of whole blood and saliva samples in Parkinson's disease (PD) patients and PD-free controls. The Illumina Infinium 450k Human DNA methylation Beadchip was used to obtain DNA methylation profiles. Samples included 335 PD patients and 237 controls with blood DNA.
+  Design: Bisulphite converted DNA from the 572 samples were hybridised to the Illumina Infinium 450k Human Methylation Beadchip
+  Submitter: Ritz,,Beate / UCLA Fielding School of Public Health; PubMed 28851441
+  Platform: GPL13534; samples 572
+  Tissue: whole-blood samples 572 / 572 (proportion 1.00)
+    top four source values: X3999979001_R01C01 tissue: whole blood=1; X3999979001_R01C02 tissue: whole blood=1; X3999979001_R02C01 tissue: whole blood=1; X3999979001_R02C02 tissue: whole blood=1
+  All characteristic fields: 
+    [disease state] Parkinson's disease (PD)=335; PD-free control=237
+    [age] 55 distinct values (numeric or identifiers), e.g. 76, 73, 74
+    [gender] Male=323; Female=249
+    [ethnicity] Caucasian=508; Hispanic=64
+    [tissue] whole blood=572
+  Sample title examples: genomic DNA from 3999979001_R01C01 | genomic DNA from 3999979001_R01C02 | genomic DNA from 3999979001_R02C01
+  Array barcodes parsed: 572
+  Supplementary files: 
+    GSE111629_PEGblood_450kMethylationDataBackgroundNormalized.txt.gz (1.13 GB)
+    GSE111629_RAW.tar (4.75 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE72774 ----------
+  Title: DNA methylation profiles of human blood samples from Caucasian subjects with Parkinson's disease
+  Summary: Human DNA methylation Beadchip v1.2 was used to profile 508 whole blood samples.
+  Design: We analyzed whole blood samples from n=508 samples (289 subjects with PD and 219 control samples). The data come from The Parkinson's disease, Environment, and Genes (PEG) case-control study (wave 1) that aims to identify environmental risk factors (e.g. neurotoxic pesticide exposures) for Parkinson
+  Submitter: Steve,,Horvath / University of California, Los Angeles; PubMed 26655927
+  Platform: GPL13534; samples 508
+  Tissue: whole-blood samples 508 / 508 (proportion 1.00)
+    top four source values: Whole Blood=508
+  All characteristic fields: 
+    [Sex] male=281; female=227
+    [age] 277 distinct values (numeric or identifiers), e.g. 77, 70.9, 78
+    [ethnicity] Caucasian=508
+    [dnamage] 508 distinct values (numeric or identifiers), e.g. 34.11266009, 35.99852055, 36.34723481
+    [bioage4] 508 distinct values (numeric or identifiers), e.g. 1.376994547, 1.487205828, 1.504560655
+    [plasmablast] 508 distinct values (numeric or identifiers), e.g. 0.810265276, 1.086427342, 1.112993049
+    [cd8pcd28ncd45ran] 508 distinct values (numeric or identifiers), e.g. -3.312996535, 0.611578515, 0.932226107
+    [cd8.naive] 505 distinct values (numeric or identifiers), e.g. 0, 10.42586555, 103.265895
+    [cd4.naive] 471 distinct values (numeric or identifiers), e.g. 0, -2.67E-18, -6.94E-18
+    [cd8t] 462 distinct values (numeric or identifiers), e.g. 0, -1.36E-19, -1.73E-18
+    [cd4t] 506 distinct values (numeric or identifiers), e.g. 0, 0.003808145, 0.00495074
+    [nk] 502 distinct values (numeric or identifiers), e.g. 0, 0.000638099, 0.001643798
+    [bcell] 506 distinct values (numeric or identifiers), e.g. 0, -3.59E-19, 0.00295195
+    [mono] 508 distinct values (numeric or identifiers), e.g. 0.019191342, 0.021361822, 0.02706117
+    [gran] 312 distinct values (numeric or identifiers), e.g. PD, control, 0.142415372
+    [diseasestatus] PD=183; no=129; control=127; yes=69
+    [levodopastatus] 50 distinct values (numeric or identifiers), e.g. no, yes, 0
+    [levodopaperdayincludingagonists] 90 distinct values (numeric or identifiers), e.g. 0, 12, 300
+    [numberofyearsinschool] 23 distinct values (numeric or identifiers), e.g. former, never, 12
+    [smokingstatus] 89 distinct values (numeric or identifiers), e.g. never, former, 0
+    [packyearstotal] 126 distinct values (numeric or identifiers), e.g. 0, 1, 20
+    [familyhistoryofparkinsons] 0=265; 1=45
+  Sample title examples: PEGcaucasian: genomic DNA from whole blood of subject Sample1 | PEGcaucasian: genomic DNA from whole blood of subject Sample2 | PEGcaucasian: genomic DNA from whole blood of subject Sample3
+  Array barcodes parsed: 0(overlap cannot be checked with barcodes)
+  Supplementary files: 
+    GSE72774_RAW.tar (0.18 GB)
+    GSE72774_datBetaNormalized.csv.gz (1.86 GB)
+    GSE72774_datSignal.csv.gz (1.12 GB)
+    filelist.txt (0.00 GB)
+
+##############################################################
+###  included: inflammatory bowel disease
+##############################################################
+
+---------- GSE87648 ----------
+  Title: Integrative Epigenome-Wide Analysis Shows That DNA Methylation May Mediate Genetic Risk In Inflammatory Bowel Disease [Whole blood, Methylation profiling]
+  Summary: Epigenetic alterations may provide important insights into gene-environment interaction in inflammatory bowel disease (IBD). Here we observe  epigenome-wide DNA methylation differences in 240 newly-diagnosed IBD cases and 190 controls. These include 439 differentially methylated positions (DMPs) and 5 differentially methylated regions (DMRs), which we study in detail using whole genome bisulphite sequencing. We repli
+  Design: DNA methylation analysis of whole blood samples derived from patients with Inflammatory bowel disease (IBD) and controls. This is the unprocessed dataset containing 384 samples. During processing additional whole blood DNA samples were added from a separate dataset. This explains the discrepancy bet
+  Submitter: Nichols,,Ventham / Univerisity of Edinburgh; PubMed 27886173
+  Platform: GPL13534; samples 384
+  Tissue: whole-blood samples 384 / 384 (proportion 1.00)
+    top four source values: Whole blood=384
+  All characteristic fields: 
+    [cell type] Whole blood=384
+    [Sex] M=199; F=185
+    [smoking status] Never=171; Ex=107; Current=99; Don't know=4; HL=3
+    [simplified_diagnosis] CD=103; HL=102; UC=101; HS=75; 0=2; 54=1
+    [age] 63 distinct values (numeric or identifiers), e.g. 23, 27, 31
+    [patient_number] 380 distinct values (numeric or identifiers), e.g. 9050, 11/20/2014, 11/13/2014
+    [scan_date] 11/13/2014=191; 11/20/2014=190
+  Sample title examples: 2099CD [Whole blood] | P008846-20032013-TB-01 [Whole blood] | 0255HC [Whole blood]
+  Array barcodes parsed: 0(overlap cannot be checked with barcodes)
+  Supplementary files: 
+    GSE87648_RAW.tar (3.17 GB)
+    GSE87648_UnprocessedMethSignalIntensities.txt.gz (0.83 GB)
+    GSE87648_processedMethWb.txt.gz (1.32 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE112611 ----------
+  Title: Blood-Derived DNA Methylation Signatures of Crohn’s Disease and Severity of Intestinal Inflammation
+  Summary: Crohn’s disease is a relapsing inflammatory disorder with a variable clinical course. While most patients present with purely an inflammatory phenotype (B1) at diagnosis, a subgroup (~20%) rapidly progresses to complicated disease manifestations that include stricturing (B2) within 5 years. DNA methylation is a key epigenetic mechanism that can regulate gene expression and thereby influence the development and progre
+  Design: DNA methylation was assessed in peripheral blood from pediatric non-IBD controls and patients with Crohn's disease at two time points - at diagnosis and follow-up. Peripheral blood DNA was extracted, bisulfite converted and genome-wide DNA methylation was interrogated using the HumanMethylationEPIC
+  Submitter: Alicia,,Smith / Emory University; PubMed 30779925
+  Platform: GPL21145; samples 402
+  Tissue: whole-blood samples 402 / 402 (proportion 1.00)
+    top four source values: Peripheral Blood=402
+  All characteristic fields: 
+    [gender] Male=232; Female=170
+    [age] 236 distinct values (numeric or identifiers), e.g. 11.75, 15.83, 16
+    [diagnosis] Crohn's disease=328; non-IBD control=74
+    [baseline vs follow-up] BL=238; FU=164
+    [disease stage at diagnosis] NA=164; B1 inflammatory=150; non-IBD control=74; B2 stricturing=14
+    [disease stage at at follow up] NA=238; B1 inflammatory=95; B2 stricturing=69
+  Sample title examples: 13-040_At Dx | 13-040_24M | 01-093
+  Array barcodes parsed: 0(overlap cannot be checked with barcodes)
+  Supplementary files: 
+    GSE112611_RAW.tar (0.16 GB)
+    GSE112611_beta_values.txt.gz (2.50 GB)
+    GSE112611_methlyated_unmethylated.txt.gz (1.52 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE87650 ----------
+  Title: Integrative Epigenome-Wide Analysis Shows That DNA Methylation May Mediate Genetic Risk In Inflammatory Bowel Disease
+  Summary: This SuperSeries is composed of the SubSeries listed below.
+  Design: Refer to individual Series
+  Submitter: Nichols,,Ventham / Univerisity of Edinburgh; PubMed 27886173
+  Platform: GPL13534; samples 624
+  Tissue: whole-blood samples 449 / 624 (proportion 0.72)
+    top four source values: Whole blood=384; wh blood=65; monocytes=60; CD4=59
+  All characteristic fields: 
+    [Sex] Whole blood=384; M=153; F=87
+    [cell type] M=199; F=185; wh blood=65; monocytes=60; CD4=59; CD8=56
+    [full_diagnosis] Never=171; Ex=107; Current=99; UC=79; CD=77; HL=57; IB=14; HC=12; Don't know=4; OT=4
+    [simplified_diagnosis] CD=180; UC=180; HL=102; HC=84; HS=75; 0=2; 54=1
+    [age at sample] 118 distinct values (numeric or identifiers), e.g. 23, 27, 31
+    [patient_number] 440 distinct values (numeric or identifiers), e.g. 9050, 9026, 7821
+    [scan_date] 11/13/2014=191; 11/20/2014=190
+  Sample title examples: P008994-16102013-TDM-01 | P009050-10012014-TB-01_R1 | P009034-16122013-TD8-01
+  Array barcodes parsed: 0(overlap cannot be checked with barcodes)
+  Supplementary files: 
+    GSE87650_RAW.tar (5.48 GB)
+    GSE87650_processedMethCombinedWb.txt.gz (1.44 GB)
+    filelist.txt (0.00 GB)
+
+##############################################################
+###  schizophrenia
+##############################################################
+
+---------- GSE152027 ----------
+  Title: Blood DNA methylation profiles from schizophrenia cases, first episode psychosis patients and controls II
+  Summary: Genome-wide patterns of DNA methylation were quantified using the Illumina Infinium HumanMethylation450K BeadChip (“450K array”) in DNA samples isolated from blood for schizophrenia cases, first episode psychosis patients and controls. These samples were profiled as part of a wider study where they were meta-analysed with other cohorts.
+  Design: This data includes 800 adult samples profiled as part of a psychosis case control study design. Specifically it includes data for 290 schizophrenia cases, 307 first episode psychosis patients and 203 controls. All samples were recruited as part of IoPPN studies.
+  Submitter: Jonathan,,Mill / University of Exeter; PubMed 33646943
+  Platform: GPL13534; samples 800
+  Tissue: whole-blood samples 800 / 800 (proportion 1.00)
+    top four source values: Whole Blood=800
+  All characteristic fields: 
+    [status] FEP=307; SCZ=290; CON=203
+    [gender] M=503; F=296; 42=1
+    [ageatbloodcollection] 49 distinct values (numeric or identifiers), e.g. NA, 19, 23
+  Sample title examples: 10003885059_R01C01 Sample1 | 10003885059_R01C02 Sample2 | 10003885059_R02C01 Sample3
+  Array barcodes parsed: 800
+  Supplementary files: 
+    GSE152027_IOP_processed_signals.csv.gz (2.43 GB)
+    GSE152027_IOP_raw_Signal.csv.gz (2.25 GB)
+    GSE152027_RAW.tar (0.18 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE84727 ----------
+  Title: An integrated genetic-epigenetic analysis of schizophrenia: Evidence for co-localization of genetic associations and differential DNA methylation.
+  Summary: Abstract  Background: Schizophrenia is a severe, highly heritable, neuropsychiatric disorder characterized by episodic psychosis and altered cognitive function. Despite success in identifying genetic variants associated with schizophrenia, there remains uncertainty about the causal genes involved in disease pathogenesis and how their function is regulated. Insights into the functional complexity of the genome have fo
+  Design: 847 whole blood derived DNA samples (414 schizophrenia cases and 433 controls)  representing phase 2 of our meta-analysis. Bisulfite converted DNA from these samples were hybridised to the Illumina Infinium 450k Human Methylation Beadchip v1.0.
+  Submitter: Jonathan,,Mill / University of Exeter; PubMed 27572077
+  Platform: GPL13534; samples 847
+  Tissue: whole-blood samples 847 / 847 (proportion 1.00)
+    top four source values: control blood=433; case blood=414
+  All characteristic fields: 
+    [sentrixids] 847 distinct values (numeric or identifiers), e.g. 100973330060_R01C01, 100973330060_R02C01, 100973330060_R02C02
+    [Sex] M=602; F=245
+    [age] 364 distinct values (numeric or identifiers), e.g. NA, 37.6, 48.6
+    [disease_status] 1=433; 2=414
+  Sample title examples: 33262604 | 33261623 | 33262614
+  Array barcodes parsed: 0(overlap cannot be checked with barcodes)
+  Supplementary files: 
+    GSE84727_RAW.tar (0.18 GB)
+    GSE84727_detectionP.csv.gz (0.00 GB)
+    GSE84727_methylatedIntensities.csv.gz (0.84 GB)
+    GSE84727_normalisedBetas.csv.gz (2.66 GB)
+    GSE84727_rawBetas.csv.gz (3.07 GB)
+    GSE84727_unmethylatedIntensities.csv.gz (0.87 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE80417 ----------
+  Title: An integrated genetic-epigenetic analysis of schizophrenia: Evidence for co-localization of genetic associations and differential DNA methylation
+  Summary: Background: Schizophrenia is a severe, highly heritable, neuropsychiatric disorder characterized by episodic psychosis and altered cognitive function. Despite success in identifying genetic variants associated with schizophrenia, there remains uncertainty about the causal genes involved in disease pathogenesis and how their function is regulated. Insights into the functional complexity of the genome have focussed att
+  Design: 675 whole blood derived DNA samples (353 schizophrenia cases and 322 controls)  representing phase 1 of our meta-analysis. Bisulfite converted DNA from these samples were hybridized to the Illumina Infinium 450k Human Methylation Beadchip v1.0.
+  Submitter: Jonathan,,Mill / University of Exeter; PubMed 27572077
+  Platform: GPL13534; samples 675
+  Tissue: whole-blood samples 675 / 675 (proportion 1.00)
+    top four source values: case blood tissue: whole blood=353; control blood tissue: whole blood=322
+  All characteristic fields: 
+    [Sex] M=396; F=279
+    [age] 72 distinct values (numeric or identifiers), e.g. NA, 25, 34
+    [disease status] 2=353; 1=322
+    [tissue] whole blood=675
+  Sample title examples: C0301 | C0256 | C2342
+  Array barcodes parsed: 0(overlap cannot be checked with barcodes)
+  Supplementary files: 
+    GSE80417_RAW.tar (0.18 GB)
+    GSE80417_methylatedIntensities.csv.gz (0.67 GB)
+    GSE80417_normalizedBetas.csv.gz (2.45 GB)
+    GSE80417_rawBetas.csv.gz (2.43 GB)
+    GSE80417_unmethylatedIntensities.csv.gz (0.68 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE152026 ----------
+  Title: Blood DNA methylation profiles from first episode psychosis patients and controls I
+  Summary: Genome-wide patterns of DNA methylation were quantified using the Illumina Infinium HumanMethylationEPIC BeadChip (“EPIC array”) in DNA samples isolated from blood for schizophrenia cases, first episode psychosis patients and controls. These samples were profiled as part of a wider study where they were meta-analysed with other cohorts.
+  Design: This data includes 934 adult samples profiled as part of a psychosis case control study design. Specifically it includes data for 458 first-episode psychosis (FEP) cases and 558 controls recruited as part of the EU-GEI study.
+  Submitter: Jonathan,,Mill / University of Exeter; PubMed 33646943
+  Platform: GPL21145; samples 934
+  Tissue: whole-blood samples 934 / 934 (proportion 1.00)
+    top four source values: Whole Blood=934
+  All characteristic fields: 
+    [phenotype] Control=521; Case=413
+    [Sex] Male=512; Female=422
+    [age] 48 distinct values (numeric or identifiers), e.g. 21, 20, 22
+  Sample title examples: 200889820112_R01C01 Sample1 | 200889820112_R02C01 Sample2 | 200889820112_R03C01 Sample3
+  Array barcodes parsed: 934
+  Supplementary files: 
+    GSE152026_EUGEI_processed_signals.csv.gz (7.85 GB)
+    GSE152026_EUGEI_raw_Signal.csv.gz (5.46 GB)
+    GSE152026_RAW.tar (0.16 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE147221 ----------
+  Title: Blood DNA methylation profiles from schizophrenia cases and controls
+  Summary: Genome-wide patterns of DNA methylation were quantified using the Illumina Infinium HumanMethylation450 BeadChip (“450K array”) in DNA samples isolated from blood for schizophrenia cases and controls. This samples were profiled as part of a wider study where they were meta-analysed with other cohorts.
+  Design: This data includes 720 adult samples profiled as part of a schizophrenia case control study design. Specifically it includes data for 364 schizophrenia cases, 349 controls and 7 fully methylated controls.
+  Submitter: Jonathan,,Mill / University of Exeter; PubMed 33646943
+  Platform: GPL13534; samples 720
+  Tissue: whole-blood samples 713 / 720 (proportion 0.99)
+    top four source values: Blood - EDTA tube=364; Blood - buffy coat=349; Meth control=7
+  All characteristic fields: 
+    [Sex] M=507; F=206; NA=7
+    [consensus_diagnosis] Control=349; Schizophrenia=297; Schizoaffective Disorder=56; NA=7; Schizophrenia (Galway CP)=6; Schizophrenia (Galway PRCL SZ)=2; Schizoaffective Disorder (Galway SZ)=1; Schizoid PD=1; Schizophreniform Disorder=1
+    [status] Case=349; Control=345; case=15; NA=7; control=4
+    [age] 250 distinct values (numeric or identifiers), e.g. 32, 54, 47
+  Sample title examples: 200379120027_R01C01: genomic DNA from whole Blood | 200379120027_R02C01: genomic DNA from whole Blood | 200379120027_R03C01: genomic DNA from whole Blood
+  Array barcodes parsed: 720
+  Supplementary files: 
+    GSE147221_Dublin_blood_processed_signals.csv.gz (2.03 GB)
+    GSE147221_Dublin_blood_raw_Signal.csv.gz (2.20 GB)
+    GSE147221_RAW.tar (0.18 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE116378 ----------
+  Title: Genetic vulnerability to DUSP22 promotor hypermethylation is involved in the relation between in utero famine exposure and schizophrenia (DUTCHSCZ Data Set)
+  Summary: Epigenetic changes may account for the doubled risk to develop schizophrenia in individuals exposed to famine in utero. We therefore investigated DNA methylation in a unique sample of patients and healthy individuals conceived during the great famine in China. Subsequently we examined two case-control samples without famine exposure in whole blood and brain tissue. To shed light on the causality of the relation betwe
+  Design: Bisulphite converted DNA from whole blood of 49 healthy controls (CTR) and 15 schizophrenia patients (SCZ) was hybridised to the Illumina Infinium 450k Human Methylation Beadchip
+  Submitter: M,P,Boks / UMC Utrecht; PubMed 30131491
+  Platform: GPL13534; samples 64
+  Tissue: whole-blood samples 64 / 64 (proportion 1.00)
+    top four source values: Whole blood tissue: Whole blood=64
+  All characteristic fields: 
+    [tissue] Whole blood=64
+    [group] CTR=49; SCZ=15
+    [gender] F=51; M=13
+    [age] 32 distinct values (numeric or identifiers), e.g. 24, 22, 27
+    [cd8t] 61 distinct values (numeric or identifiers), e.g. 0, 0.0110678152340483, 0.0156641163194654
+    [cd4t] 64 distinct values (numeric or identifiers), e.g. 0.0684255536082044, 0.0696021425161845, 0.0789509972312139
+    [nk] 64 distinct values (numeric or identifiers), e.g. 0.0050119472319158, 0.0104629464387998, 0.0139195575594123
+    [bcell] 64 distinct values (numeric or identifiers), e.g. 0.0137954253780792, 0.0154769191926417, 0.0173443286906247
+    [mono] 64 distinct values (numeric or identifiers), e.g. 0.0397838197050893, 0.0413548168557025, 0.0549976505596998
+    [sentrix] 12 distinct values (numeric or identifiers), e.g. 9374342030, 9373550152, 9373551081
+    [position] 12 distinct values (numeric or identifiers), e.g. R03C01, R03C02, R04C02
+  Sample title examples: DUTCHSCZ-01: Blood_Control_1 | DUTCHSCZ-02: Blood_Control_2 | DUTCHSCZ-03: Blood_Control_3
+  Array barcodes parsed: 0(overlap cannot be checked with barcodes)
+  Supplementary files: 
+    GSE116378_DUTCHSCZ_Matrix_processed_betas.csv.gz (0.21 GB)
+    GSE116378_DUTCHSCZ_Matrix_signal_intensities.csv.gz (0.13 GB)
+    GSE116378_RAW.tar (0.18 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE116379 ----------
+  Title: Genetic vulnerability to DUSP22 promotor hypermethylation is involved in the relation between in utero famine exposure and schizophrenia (CHINFAM Data Set)
+  Summary: Epigenetic changes may account for the doubled risk to develop schizophrenia in individuals exposed to famine in utero. We therefore investigated DNA methylation in a unique sample of patients and healthy individuals conceived during the great famine in China. Subsequently we examined two case-control samples without famine exposure in whole blood and brain tissue. To shed light on the causality of the relation betwe
+  Design: Bisulphite converted DNA from whole blood of 54 non-famine exposed healthy controls (CTR_Non_famine), 51 non-famine schizophrenia patients (SCZ_Non_famine), 25 famine exposed healthy controls (CTR_Famine) and 50 famine exposed schizophrenia patients (SCZ_Famine) was hybridised to the Illumina Infini
+  Submitter: M,P,Boks / UMC Utrecht; PubMed 30131491
+  Platform: GPL13534; samples 153
+  Tissue: whole-blood samples 153 / 153 (proportion 1.00)
+    top four source values: Whole blood tissue: Whole blood=153
+  All characteristic fields: 
+    [tissue] Whole blood=153
+    [schizophrenia] FALSE=79; TRUE=74
+    [famine] No=105; Yes=48
+    [group] CTR_Non_Famine=54; SCZ_Non_Famine=51; CTR_Famine=25; SCZ_Famine=23
+    [gender] F=77; M=76
+    [age] 132 distinct values (numeric or identifiers), e.g. 45.78, 46.23, 50.74
+    [cd8t] 139 distinct values (numeric or identifiers), e.g. 0, 0.000445435324914833, 0.000483612114135164
+    [cd4t] 153 distinct values (numeric or identifiers), e.g. 0.0357830515365479, 0.0377479531208148, 0.0392497244867753
+    [nk] 153 distinct values (numeric or identifiers), e.g. 0.0256530190487192, 0.0315191996259618, 0.0316208751668344
+    [bcell] 153 distinct values (numeric or identifiers), e.g. 0, 0.00267560916571043, 0.00435397718357613
+    [mono] 153 distinct values (numeric or identifiers), e.g. 0.0282446745077844, 0.0327264617054335, 0.0349240226505587
+    [barfieldpc1] 153 distinct values (numeric or identifiers), e.g. -0.0713972770412019, -0.0716425589271375, -0.0717357455445589
+    [barfieldpc2] 153 distinct values (numeric or identifiers), e.g. -0.000112399647988706, -0.00122421430860857, -0.00184907934040619
+    [city] TRUE=119; FALSE=34
+    [sentrix] 16 distinct values (numeric or identifiers), e.g. 8691803041, 8454787052, 8454787053
+    [position] 12 distinct values (numeric or identifiers), e.g. R06C01, R04C01, R04C02
+  Sample title examples: CHINFAM-01: Blood_SCZ_Famine1 | CHINFAM-02: Blood_CTR_Non_Famine1 | CHINFAM-03: Blood_SCZ_Non_Famine1
+  Array barcodes parsed: 0(overlap cannot be checked with barcodes)
+  Supplementary files: 
+    GSE116379_CHINFAM_Matrix_processed_betas.csv.gz (0.33 GB)
+    GSE116379_CHINFAM_Matrix_signal_intensities.csv.gz (0.30 GB)
+    GSE116379_RAW.tar (0.18 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE116380 ----------
+  Title: Genetic vulnerability to DUSP22 promotor hypermethylation is involved in the relation between in utero famine exposure and schizophrenia
+  Summary: This SuperSeries is composed of the SubSeries listed below.
+  Design: Refer to individual Series
+  Submitter: M,P,Boks / UMC Utrecht; PubMed 30131491
+  Platform: GPL13534; samples 217
+  Tissue: whole-blood samples 217 / 217 (proportion 1.00)
+    top four source values: Whole blood tissue: Whole blood=217
+  All characteristic fields: 
+    [tissue] Whole blood=217
+    [group] FALSE=79; TRUE=74; CTR=49; SCZ=15
+    [gender] No=105; F=51; Yes=48; M=13
+    [age] 36 distinct values (numeric or identifiers), e.g. CTR_Non_Famine, SCZ_Non_Famine, CTR_Famine
+    [cd8t] 63 distinct values (numeric or identifiers), e.g. F, M, 0
+    [cd4t] 196 distinct values (numeric or identifiers), e.g. 45.78, 46.23, 50.74
+    [nk] 203 distinct values (numeric or identifiers), e.g. 0, 0.000445435324914833, 0.000483612114135164
+    [bcell] 217 distinct values (numeric or identifiers), e.g. 0.0137954253780792, 0.0154769191926417, 0.0173443286906247
+    [mono] 217 distinct values (numeric or identifiers), e.g. 0.0256530190487192, 0.0315191996259618, 0.0316208751668344
+    [sentrix] 165 distinct values (numeric or identifiers), e.g. 9374342030, 9373550152, 9373551081
+    [position] 165 distinct values (numeric or identifiers), e.g. R03C01, R03C02, R04C02
+    [barfieldpc1] 153 distinct values (numeric or identifiers), e.g. -0.0713972770412019, -0.0716425589271375, -0.0717357455445589
+    [barfieldpc2] 153 distinct values (numeric or identifiers), e.g. -0.000112399647988706, -0.00122421430860857, -0.00184907934040619
+    [city] TRUE=119; FALSE=34
+    [sentrix] 16 distinct values (numeric or identifiers), e.g. 8691803041, 8454787052, 8454787053
+    [position] 12 distinct values (numeric or identifiers), e.g. R06C01, R04C01, R04C02
+  Sample title examples: DUTCHSCZ-01: Blood_Control_1 | DUTCHSCZ-02: Blood_Control_2 | DUTCHSCZ-03: Blood_Control_3
+  Array barcodes parsed: 0(overlap cannot be checked with barcodes)
+  Supplementary files: 
+    GSE116380_RAW.tar (0.18 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE41169 ----------
+  Title: Blood DNA methylation profiles in a Dutch population
+  Summary: Genome wide DNA methylation profiling of whole blood in schizophrenia patients and healthy subjects of different ages. The Illumina Infinium 450k Human DNA methylation Beadchip v1.2 was used to obtain DNA methylation profiles across approximately 480,000 CpGs. Dataset included 62 schizophrenia patients and 33 healthy subjects from Dutch descent.
+  Design: Bisulphite converted DNA from the 96 samples were hybridised to the Illumina Infinium 450k Human Methylation Beadchip. Publication: Steve Horvath, Yafeng Zhang, Peter Langfelder, René S. Kahn, Marco P.M. Boks, Kristel van Eijk, Leonard H. van den Berg, Roel A. Ophoff. Aging effects on DNA methylatio
+  Submitter: Steve,,Horvath / University of California, Los Angeles; PubMed 23034122
+  Platform: GPL13534; samples 95
+  Tissue: whole-blood samples 95 / 95 (proportion 1.00)
+    top four source values: whole blood 1=1; whole blood 10=1; whole blood 11=1; whole blood 12=1
+  All characteristic fields: 
+    [gender] Male=67; Female=28
+    [sample type] whole blood=95
+    [plate] PLATE A=95
+    [sentrix barcode] 5773467012=12; 5773467014=12; 5773467015=12; 5773467019=12; 5773467020=12; 5773475011=12; 5773475014=12; 5773467003=11
+    [sentrix position] 12 distinct values (numeric or identifiers), e.g. R01C01, R01C02, R02C01
+    [well id] 95 distinct values (numeric or identifiers), e.g. A01, A02, A03
+    [age] 34 distinct values (numeric or identifiers), e.g. 32, 24, 25
+    [diseasestatus (1=control, 2=scz patient)] 2=62; 1=33
+    [used_in_analysis] yes=89; no=6
+  Sample title examples: genomic DNA from whole blood 6 | genomic DNA from whole blood 7 | genomic DNA from whole blood 8
+  Array barcodes parsed: 0(overlap cannot be checked with barcodes)
+  Supplementary files: 
+    GSE41169_RAW.tar (0.18 GB)
+    filelist.txt (0.00 GB)
+
+##############################################################
+###  depression
+##############################################################
+
+---------- GSE198904 ----------
+  Title: Meta-analysis of Epigenome Wide Association Studies of Major Depressive Disorder
+  Summary: EPIC array data were generated from 2 MDD case control cohorts. EWAS was performed in each cohort, followed by meta-analysis between the 2 cohort. Cohort 1: A total of 191 blood samples from 112 patients with MDD was collected up till the interim analysis (wave 1 samples) from an observational clinical study OBSERVEMDD0001 (ClinicalTrials.gov Identifier: NCT02489305) compared to 32 healthy controls; Cohort 2: The MDD
+  Design: Whole blood samples were collected, and DNA was extracted for methylation profiling. DNA methylation was measured using Infinium® MethylationEPIC BeadChip (Illumina, Inc., San Diego, CA, USA) at 850 000 CpG sites throughout the genome. Genomic DNA samples were bisulfite-converted using the EZ-DNA Me
+  Submitter: Qingqin,S,Li / Janssen R&D, LLC; PubMed 36319817
+  Platform: GPL21145; samples 655
+  Tissue: whole-blood samples 655 / 655 (proportion 1.00)
+    top four source values: blood=655
+  All characteristic fields: 
+    [diagnosis] MDD=361; OBSERVEMDD0001=191; HC=100; Excluded=2; Not depressed=1
+    [gender] F=445; M=210
+    [age] 49 distinct values (numeric or identifiers), e.g. 31, 57, 33
+    [cd8t] 648 distinct values (numeric or identifiers), e.g. 0, -5.18E-19, 0.00118550552009103
+    [cd4t] 655 distinct values (numeric or identifiers), e.g. 0.0133366983125213, 0.0239893523978102, 0.0245624125188821
+    [nk] 575 distinct values (numeric or identifiers), e.g. 0, -4.34E-19, 3.47E-18
+    [bcell] 644 distinct values (numeric or identifiers), e.g. 0, -4.34E-19, -8.67E-19
+    [mono] 655 distinct values (numeric or identifiers), e.g. 0, 0.000509171340605394, 0.00116150717407793
+    [gran] 655 distinct values (numeric or identifiers), e.g. 0.155863257887956, 0.22433264263688, 0.226288505697941
+    [eos] 204 distinct values (numeric or identifiers), e.g. 0, -3.47E-18, 3.47E-18
+    [subject] 364 distinct values (numeric or identifiers), e.g. 1021007, 1028002, 1028004
+    [sentrixid_position] 655 distinct values (numeric or identifiers), e.g. 201172200001_R02C01, 201172200001_R03C01, 201172200001_R04C01
+    [cohort] Cohort 2=432; Cohort 1=223
+  Sample title examples: 201172200060_R08C01 | 201172200055_R06C01 | 201810150072_R03C01
+  Array barcodes parsed: 655
+  Supplementary files: 
+    GSE198904_DHRC_Matrix_processed.txt.gz (1.41 GB)
+    GSE198904_DHRC_Matrix_signal_intensities.txt.gz (1.96 GB)
+    GSE198904_OBSERVEMDD0001_Matrix_processed.txt.gz (1.32 GB)
+    GSE198904_OBSERVEMDD0001_Matrix_signal_intensities.txt.gz (0.99 GB)
+    GSE198904_RAW.tar (0.16 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE273970 ----------
+  Title: Genome-wide DNA methylation profile of blood samples from patients with major depressive disorder.
+  Summary: In the present study, to identify DNA methylation alterations correlating to the heterogeneity of symptoms of major depressive disorder, 283 blood samples were subjected to genome-wide DNA methylation analysis using the latest high-density bead array.
+  Design: The aim of this study was to clarify the significance of DNA methylation profile of the blood samples in the heterogeneity of symptoms of major depressive disorder (MDD). Genome-wide DNA methylation analysis was performed using the Infinium MethylationEPIC BeadChip in 283 blood samples. Patients wit
+  Submitter: Yae,,Kanai / Keio University School of Medicine; PubMed 40174930
+  Platform: GPL21145; samples 283
+  Tissue: whole-blood samples 283 / 283 (proportion 1.00)
+    top four source values: blood sample of control patient=147; blood sample of patient with major depressive disorder=136
+  All characteristic fields: 
+    [disease state] normal=147; major depressive disorder=136
+    [Sex] female=151; male=132
+    [age bracket] 41-50=89; 31-40=67; 51-60=56; 21-30=49; 61-70=14; 71-80=8
+    [blood sample id] 281 distinct values (numeric or identifiers), e.g. C0835, C0869, C0039
+  Sample title examples: sample 1_genomic DNA from blood sample C0171 | sample 2_genomic DNA from blood sample C0310 | sample 3_genomic DNA from blood sample C0747
+  Array barcodes parsed: 0(overlap cannot be checked with barcodes)
+  Supplementary files: 
+    GSE273970_Processed_Data.txt.gz (1.97 GB)
+    GSE273970_RAW.tar (3.96 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE113725 ----------
+  Title: DNA methylation and inflammation marker profiles associated with a history of depression.
+  Summary: Depression is a common and disabling disorder, representing a major social and economic health issue. Moreover, depression is associated with the progression of diseases with an inflammatory etiology including many inflammatory-related disorders. At the molecular level, the mechanisms by which depression might promote the onset of these diseases and associated immune-dysfunction are not well understood. In this study
+  Design: DNA from whole blood from 194 individuals
+  Submitter: Therese,M,Murphy / University of Exeter; PubMed 29790996
+  Platform: GPL13534; samples 194
+  Tissue: whole-blood samples 194 / 194 (proportion 1.00)
+    top four source values: whole blood=194
+  All characteristic fields: 
+    [age] 38 distinct values (numeric or identifiers), e.g. 58, 49, 48
+    [groupid] 1=49; 2=49; 3=48; 4=48
+    [gender] F=144; M=50
+  Sample title examples: 3998998123_R01C01 | 3998998123_R02C01 | 3998998123_R03C01
+  Array barcodes parsed: 194
+  Supplementary files: 
+    GSE113725_RAW.tar (0.18 GB)
+    GSE113725_detectionP.csv.gz (0.00 GB)
+    GSE113725_methylatedIntensities.csv.gz (0.17 GB)
+    GSE113725_rawBetas.csv.gz (0.63 GB)
+    GSE113725_unmethylatedIntensities.csv.gz (0.18 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE200954 ----------
+  Title: Epigenome-wide association analysis on weighted life events in PD patients - discovery cohort
+  Summary: Background: Panic disorder (PD) is characterized by recurrent panic attacks and higher affection of women as compare to men. The lifetime prevalence of PD is about 2-3 % in the general population leading to tremendous distress and disability. Etiologically, genetic and environmental factors, such as stress, contribute to the onset and relapse of PD. In the present study, we investigated epigenome-wide DNA methylation
+  Design: DNAm was assessed by the Illumina HumanMethylation450 BeadChip. In a meta-analytic approach, epigenome-wide DNAm changes in association with weighted life events were analyzed in two PD cohorts (with a total sample size of 183 PD patients and 85 healthy controls). This is the data from the discovery
+  Submitter: Binder,,Elisabeth / Max-Planck-Institute Psychiatry; PubMed 35477560
+  Platform: GPL13534; samples 109
+  Tissue: whole-blood samples 109 / 109 (proportion 1.00)
+    top four source values: peripheral blood=109
+  All characteristic fields: 
+    [panic disorder case (1)-control(0)] 1=87; 0=22
+    [age] 35 distinct values (numeric or identifiers), e.g. 32, 41, 42
+    [genetic sex] F=65; M=44
+    [weighted life events] 76 distinct values (numeric or identifiers), e.g. 59, 34, 54
+  Sample title examples: peripheral blood (3999840095_R05C01) | peripheral blood (9989536110_R02C01) | peripheral blood (9989536119_R04C01)
+  Array barcodes parsed: 109
+  Supplementary files: 
+    GSE200954_RAW.tar (1.04 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE200956 ----------
+  Title: Epigenome-wide association analysis on weighted life events in PD patients - replication cohort
+  Summary: Background: Panic disorder (PD) is characterized by recurrent panic attacks and higher affection of women as compare to men. The lifetime prevalence of PD is about 2-3 % in the general population leading to tremendous distress and disability. Etiologically, genetic and environmental factors, such as stress, contribute to the onset and relapse of PD. In the present study, we investigated epigenome-wide DNA methylation
+  Design: DNAm was assessed by the Illumina HumanMethylation450 BeadChip. In a meta-analytic approach, epigenome-wide DNAm changes in association with weighted life events were analyzed in two PD cohorts (with a total sample size of 183 PD patients and 85 healthy controls). This is the data from the replicati
+  Submitter: Binder,,Elisabeth / Max-Planck-Institute Psychiatry; PubMed 35477560
+  Platform: GPL13534; samples 159
+  Tissue: whole-blood samples 159 / 159 (proportion 1.00)
+    top four source values: peripheral blood=159
+  All characteristic fields: 
+    [panic disorder case (1)-control(0)] 1=96; 0=63
+    [age] 42 distinct values (numeric or identifiers), e.g. 38, 34, 39
+    [genetic sex] Female=105; Male=54
+    [weighted life events] 97 distinct values (numeric or identifiers), e.g. 22, 73, 83
+  Sample title examples: peripheral blood (9611518026_R04C02) | peripheral blood (9611518019_R03C02) | peripheral blood (9259684060_R02C02)
+  Array barcodes parsed: 159
+  Supplementary files: 
+    GSE200956_RAW.tar (1.45 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE201287 ----------
+  Title: Genome-wide profiling of the DNA methylome in the peripheral blood of MDD patients
+  Summary: Genome wide DNA methylation profiling in the whole blood samples of healthy controls and major depression disorder (MDD) patients who have never been treated with depression medication. The Illumina Infinium 450k Human DNA methylation Beadchip can assay over 480K CpG sites with bisulfite-converted genomic DNA and has been widely used in methylome-wide association studies (MWAS). Samples included 40 healthy controls a
+  Design: Bisulphite converted DNA from the 80 samples were hybridized to the Illumina Infinium 450k Human Methylation Beadchip v1.0
+  Submitter: Zijing,,Liu / Chinese Academy of Medical Sciences; PubMed 35858435
+  Platform: GPL13534; samples 80
+  Tissue: whole-blood samples 80 / 80 (proportion 1.00)
+    top four source values: Blood tissue: Blood=80
+  All characteristic fields: 
+    [gender] Female=44; Male=36
+    [age] 34 distinct values (numeric or identifiers), e.g. 23, 25, 24
+    [disease state] Healthy=40; Major depressive disorder=40
+    [tissue] Blood=80
+  Sample title examples: Blood-major depressive disorder-rep1 | Blood-major depressive disorder-rep2 | Blood-major depressive disorder-rep3
+  Array barcodes parsed: 0(overlap cannot be checked with barcodes)
+  Supplementary files: 
+    GSE201287_RAW.tar (0.81 GB)
+    GSE201287_matrix_norm.txt.gz (0.30 GB)
+    filelist.txt (0.00 GB)
+
+##############################################################
+###  Alzheimer's disease
+##############################################################
+
+---------- GSE338167 ----------
+  Title: Methylation Clocks Do Not Predict Age or Alzheimer's Disease Risk Across Genetically Admixed Individuals
+  Summary: Epigenetic aging clocks based on DNA methylation patterns across the genome have emerged as a potential biomarker for risk of age-related diseases, like Alzheimer's disease (AD), and environmental and social stressors. However, methylation clocks have not been comprehensively validated in genetically diverse individuals. Here we evaluate a set of first-, second-, and third-generation methylation clocks in 621 AD pati
+  Design: Genome-wide DNA methylation profiling using Illumina Infinium MethylationEPIC BeadChip arrays on whole blood samples from 621 individuals across five cohorts (NHW, REAAADI, PRADI, CuADI, PERUVIAN), including 313 Alzheimer's disease cases and 308 age-matched controls of African American (n=205), Hisp
+  Submitter: Sebastián,,Cruz-González / UCSF
+  Platform: GPL33022; samples 621
+  Tissue: whole-blood samples 621 / 621 (proportion 1.00)
+    top four source values: whole blood tissue: whole blood=621
+  All characteristic fields: 
+    [Sex] Female=419; Male=202
+    [disease state] Alzheimer's disease=313; Healthy control=308
+    [tissue] whole blood=621
+    [ethnicity] HISPANIC=283; AA=205; NHW=133
+    [cohort] REAAADI=205; PRADI=158; NHW=133; PERUVIAN=82; CuADI=43
+    [age] 41 distinct values (numeric or identifiers), e.g. 77, 70, 79
+  Sample title examples: Whole blood DNA methylation, NHW CONTROL, 90yo M, 207097420061_R03C01 | Whole blood DNA methylation, AA CONTROL, 77yo M, 207097420010_R04C01 | Whole blood DNA methylation, NHW CONTROL, 90yo F, 207080910085_R07C01
+  Array barcodes parsed: 621
+  Supplementary files: 
+    GSE338167_RAW.tar (8.93 GB)
+    GSE338167_beta_matrix_normalized.txt.gz (3.95 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE144858 ----------
+  Title: An epigenome-wide association study of Alzheimer’s disease blood highlights robust DNA hypermethylation in the HOXB6 gene.
+  Summary: Alzheimer case-control samples originate from the EU funded AddNeuroMed Cohort, which is a large cross-European AD biomarker study relying on human blood as the source of DNA.
+  Design: Case-control design. Cases are Alzheimer's disease patients, individuals with mild cognitive impairment (MCI), or controls. The individuals with MCI can be further divided into individuals who had MCI at baseline blood extraction but progressed to AD within one year, or MCI individuals who didn't pr
+  Submitter: Katie,,Lunnon / University of Exeter; PubMed 32745807
+  Platform: GPL13534; samples 300
+  Tissue: whole-blood samples 300 / 300 (proportion 1.00)
+    top four source values: whole blood tissue: whole blood=300
+  All characteristic fields: 
+    [tissue] whole blood=300
+    [Sex] Female=180; Male=120
+    [age] 32 distinct values (numeric or identifiers), e.g. 76, 79, 72
+    [disease state] mild cognitive impairment=111; control=96; Alzheimer's disease=93
+    [disease state2] control=96; Alzheimer's disease=93; mild cognitive impairment stable=68; mild cognitive impairment to alzheimer's disease converter=39; unknown=4
+    [age<65.exclusion] Included=284; Excluded=16
+  Sample title examples: Genomic DNA from blood 1 | Genomic DNA from blood 2 | Genomic DNA from blood 3
+  Array barcodes parsed: 0(overlap cannot be checked with barcodes)
+  Supplementary files: 
+    GSE144858_Matrix_Signal_Intensities.csv.gz (0.65 GB)
+    GSE144858_RAW.tar (0.18 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE53740 ----------
+  Title: An Epigenetic Signature in Peripheral Blood Associated with Neurodegenerative Tauopathy and the Risk-Associated Haplotype on 17q21.31
+  Summary: Progressive supranuclear palsy (PSP) and frontotemporal dementia (FTD) are two neurodegenerative diseases linked, at the pathologic and genetic level, to the macrutubule associated protein tau. We identified and replicated a dose-dependent effect of the risk-associated H1 haplotype on methylation levels within the region in independent datasets in blood and brain. These data reveal that the H1 haplotype increases ris
+  Design: We studied epigenetic changes (DNA methylation levels) in peripheral blood from patients with PSP, FTD, and unaffected controls. Analysis of genome-wide methylation patterns revealed significant differentially methylated probes in patients versus unaffected controls.
+  Submitter: Giovanni,,Coppola / UCLA; PubMed 24603599
+  Platform: GPL13534; samples 384
+  Tissue: whole-blood samples 372 / 384 (proportion 0.97)
+    top four source values: 6229050001_R01C01 tissue: Peripheral Blood=1; 6229050001_R01C02 tissue: Peripheral Blood=1; 6229050001_R02C01 tissue: Peripheral Blood=1; 6229050001_R02C02 tissue: Peripheral Blood=1
+  All characteristic fields: 
+    [diagnosis] Control=193; FTD=121; PSP=43; AD=15; FTD/MND=7; Unknown=4; CBD=1
+    [gender] FEMALE=155; MALE=130; UNKNOWN=99
+    [race] 25 distinct values (numeric or identifiers), e.g. White, Chinese, Other Race
+    [age] 51 distinct values (numeric or identifiers), e.g. 65, 68, 71
+    [tau_a1] H1=332; H2=34; NA=14; H1D=1; H1E=1; H1I=1; H1U=1
+    [tau_a2] H1=263; H2=95; NA=10; 2=7; 1=5; H1B=1; H1I=1; H1L=1; H1M=1
+    [batch] 1=187; 2=185; Peripheral Blood=12
+    [tissue] Peripheral Blood=372
+  Sample title examples: 6229050001_R01C01 (batch1) | 6229050001_R01C02 (batch1) | 6229050001_R02C01 (batch1)
+  Array barcodes parsed: 384
+  Supplementary files: 
+    GSE53740_RAW.tar (0.18 GB)
+    GSE53740_rawSignals_and_detectionPval_batch1.csv.gz (0.43 GB)
+    GSE53740_rawSignals_and_detectionPval_batch2.csv.gz (0.48 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE156994 ----------
+  Title: Altered DNA methylation profiles in blood from patients with sporadic Creutzfeldt-Jakob disease
+  Summary: Prion diseases are fatal and transmissible neurodegenerative disorders caused by the misfolding and aggregation of prion protein. Although recent studies have implicated epigenetic variation in common neurodegenerative disorders, no study has yet explored their role in human prion diseases. Here we profiled genome-wide blood DNA methylation in the most common human prion disease, sporadic Creutzfeldt-Jakob disease (s
+  Design: 106 Control and 114 sCJD blood-derived DNA samples were bisulfite converted, sent to UCL Genomics for amplification and hybridization to the Illumina Infinium 450 Beadchip Array. iDAT files were analyzed using ChAMP and one sample (Control 52) was excluded from analysis due to poor detection p-value
+  Submitter: Luke,Child,Dabin / Indiana University; PubMed 32918118
+  Platform: GPL13534; samples 219
+  Tissue: whole-blood samples 219 / 219 (proportion 1.00)
+    top four source values: DNA from EDTA-stored blood tissue: blood=219
+  All characteristic fields: 
+    [sample_group] sCJD=114; CTRL=105
+    [age] 37 distinct values (numeric or identifiers), e.g. 69, 68, 67
+    [Sex] Female=116; Male=103
+    [codon129 genotype] MM=69; NA=64; MV=49; VV=37
+    [mrc scale] 19 distinct values (numeric or identifiers), e.g. 20, NA, 0
+    [tissue] blood=219
+  Sample title examples: Control1 | Control2 | Control3
+  Array barcodes parsed: 0(overlap cannot be checked with barcodes)
+  Supplementary files: 
+    GSE156994_Control52_3998426115_R04C02_Grn.idat.gz (0.00 GB)
+    GSE156994_Control52_3998426115_R04C02_Red.idat.gz (0.00 GB)
+    GSE156994_RAW.tar (1.90 GB)
+    GSE156994_sCJDvsCtrl_ChAMP_SampleSheet.csv.gz (0.00 GB)
+    filelist.txt (0.00 GB)
+
+##############################################################
+###  HIV infection
+##############################################################
+
+---------- GSE107082 ----------
+  Title: DNA methylation signatures of injection illicit drug use (IDU) and hepatitis C (HCV) predict HIV pathophysiologic frailty
+  Summary: This SuperSeries is composed of the SubSeries listed below.
+  Design: Refer to individual Series
+  Submitter: Ke,,Xu / Yale University; PubMed 29269866
+  Platform: GPL21145; samples 405
+  Tissue: whole-blood samples 405 / 405 (proportion 1.00)
+    top four source values: 201134840069_R05C01 tissue: whole blood=1; 201134840069_R07C01 tissue: whole blood=1; 201134840076_R01C01 tissue: whole blood=1; 201134840076_R04C01 tissue: whole blood=1
+  All characteristic fields: 
+    [age] 46 distinct values (numeric or identifiers), e.g. 46, 47, 48
+    [Sex] Male=405
+    [race] White=329; Other=45; Black=31
+    [hiv] 1=405
+    [idu] 0=305; 1=100
+    [hcv_dx] 0=305; 1=100
+    [smoking] 1=221; 0=177; NA=7
+    [artadherence] 1=314; 0=86; NA=5
+    [wbc_new] 86 distinct values (numeric or identifiers), e.g. 4.9, 5.1, 5.4
+    [cd8t_850k] 40 distinct values (numeric or identifiers), e.g. 0.16, 0.11, 0.12
+    [cd4t_850k] 26 distinct values (numeric or identifiers), e.g. 0, 0.09, 0.05
+    [gran_850k] 54 distinct values (numeric or identifiers), e.g. 0.38, 0.53, 0.54
+    [nk_850k] 27 distinct values (numeric or identifiers), e.g. 0.06, 0.07, 0.04
+    [bcell_850k] 27 distinct values (numeric or identifiers), e.g. 0.09, 0.1, 0.08
+    [mono_850k] 26 distinct values (numeric or identifiers), e.g. 0.09, 0.08, 0.11
+    [log10vl] 174 distinct values (numeric or identifiers), e.g. 1.69897000433602, 1.8750612633917, NA
+    [tissue] whole blood=405
+  Sample title examples: genomic DNA from 201172530004_R01C01 | genomic DNA from 201172530005_R01C01 | genomic DNA from 201172220008_R01C01
+  Array barcodes parsed: 405
+  Supplementary files: 
+    GSE107082_RAW.tar (0.17 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE217633 ----------
+  Title: Effect of HIV infection and antiretroviral therapy initiation on genome-wide DNA methylation patterns.
+  Summary: Background. Previous epigenome-wide association studies have shown that HIV infection can disrupt the host DNA methylation landscape. However, it remains unclear how antiretroviral therapy (ART) affects the HIV-induced epigenetic modifications.
+  Design: 185 individuals with HIV from the NEAT001/ANRS143 clinical trial (with pre-ART and post-ART samples [96 weeks of follow-up]) and 44 age-and-sex matched individuals without HIV were included
+  Submitter: Juan,Carlos,Silla-Castro / CNIC; PubMed 36640455
+  Platform: GPL21145; samples 413
+  Tissue: whole-blood samples 368 / 413 (proportion 0.89)
+    top four source values: CTL 20 =1; CTL1 =1; CTL10 =1; CTL11 =1
+  All characteristic fields: 
+    [individual] 229 distinct values (numeric or identifiers), e.g. PT1, PT10, PT100
+    [gender] male=367; female=46
+    [age] 399 distinct values (numeric or identifiers), e.g. 39, 27.52, 29
+    [treatment] NO=229; YES=184
+    [week] 0=185; 96=184; whole blood=44
+    [hiv_rna] 219 distinct values (numeric or identifiers), e.g. 20, control sample, 40
+    [years_hiv] 345 distinct values (numeric or identifiers), e.g. 1.95, 0.095, 0.17
+    [tissue] whole blood=368; sample post ART=1
+    [time] sample pre ART=185; sample post ART=183
+  Sample title examples: whole blood, PT1-preART | whole blood, PT3-preART | whole blood, PT4-preART
+  Array barcodes parsed: 0(overlap cannot be checked with barcodes)
+  Supplementary files: 
+    GSE217633_RAW.tar (5.75 GB)
+    GSE217633_preprocessSheet.tsv.gz (0.71 GB)
+    GSE217633_signalSheet.tsv.gz (3.07 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE67705 ----------
+  Title: Methylome-wide analysis of chronic HIV infected patients and healthy controls
+  Summary: Current therapy has turned HIV infection into a chronic condition. Clinically, some patients suffer prematurely from ailments associated with advanced age; however, the relationship between HIV and aging is unclear. Here we have collected a large cohort of HAART treated HIV+ subjects with both recent and chronic infection and recapitulated the shared phenotype of HIV and age. To further understand this signal, we app
+  Design: To determine whether HIV is associated with signs of aberrant biological aging, samples of whole blood were collected from HIV-infected, HAART-treated but otherwise healthy non-Hispanic white males (no hepatitis C co-infection, no diabetes, and strict adherence to therapy) and healthy non-Hispanic w
+  Submitter: Andrew,M,Gross / UCSD; PubMed 27105112
+  Platform: GPL13534; samples 284
+  Tissue: whole-blood samples 188 / 284 (proportion 0.66)
+    top four source values: HIV- patient FOX201 age (yrs): 31=2; HIV- patient FOX202 age (yrs): 34=2; HIV- patient FOX203 age (yrs): 46=2; HIV- patient FOX204 age (yrs): 28=2
+  All characteristic fields: 
+    [gender] 60 distinct values (numeric or identifiers), e.g. M, F, HIV- patient FOX201
+    [age] 41 distinct values (numeric or identifiers), e.g. male, 44, 43
+    [tissue] 35 distinct values (numeric or identifiers), e.g. whole blood, 52, 29
+    [diabetes] no=188; flow sorted CD4 t-cells=48; flow sorted neutrophils=48
+    [ethnicity] white=188
+  Sample title examples: genomic data from HIV- patient METI-1, whole blood | genomic data from HIV- patient METI-10, whole blood | genomic data from HIV- patient METI-11, whole blood
+  Array barcodes parsed: 0(overlap cannot be checked with barcodes)
+  Supplementary files: 
+    GSE67705_RAW.tar (0.18 GB)
+    GSE67705_matrix_processed_update.csv.gz (0.88 GB)
+    GSE67705_matrix_signal_update.csv.gz (0.65 GB)
+    filelist.txt (0.00 GB)
+
+---------- GSE67751 ----------
+  Title: Blood Illumina Inf 450 DNA methylation samples from HIV+ and HIV- human subjects
+  Summary: Genome wide DNA methylation profiles of cerebellum from HIV positive and HIV negative human subjects. The Illumina Infinium 450k Human DNA methylation Beadchip v1.2 was used to obtain DNA methylation profiles across approximately 486,000 CpGs. Dataset included 92 subjects from the USA.  The epigenetic clock software (Horvath 2013) was used to measure epigenetic age acceleration effects and to relate them to HIV statu
+  Design: Bisulphite converted DNA from the 92 samples were hybridised to the Illumina Infinium 450k Human Methylation Beadchip. HIV-1 status was related to an epigenetic measure of age acceleration.
+  Submitter: Steve,,Horvath / University of California, Los Angeles; PubMed 25969563
+  Platform: GPL13534; samples 92
+  Tissue: whole-blood samples 92 / 92 (proportion 1.00)
+    top four source values: whole blood tissue: blood=92
+  All characteristic fields: 
+    [tissue] blood=92
+    [age] 78 distinct values (numeric or identifiers), e.g. 41, 47.2, 50
+    [hivstatus] Negative=69; Positive=23
+    [gender] female=50; male=42
+    [dnamage] 92 distinct values (numeric or identifiers), e.g. 26.67715398, 28.92782585, 29.13337337
+    [ageaccelerationvscontrols] 92 distinct values (numeric or identifiers), e.g. -0.167715455516053, -0.206911455765045, -0.39312791771524
+    [ageaccelerationresidual] 92 distinct values (numeric or identifiers), e.g. -0.145192935285032, -0.174927184461242, -0.250976858806221
+    [exhausted cd8t cells] 92 distinct values (numeric or identifiers), e.g. 1.626795981, 1.73238253, 10.03440422
+    [naïve cd8 t cells] 92 distinct values (numeric or identifiers), e.g. -7.00846053, 113.0190104, 116.3950756
+    [naïve cd4 t cells] 92 distinct values (numeric or identifiers), e.g. -0.964914075, 102.4675655, 108.9029302
+    [cd8 t cells] 88 distinct values (numeric or identifiers), e.g. 0, 0.01442073, 0.015732252
+    [cd4 t cells] 92 distinct values (numeric or identifiers), e.g. -8.67E-19, 0, 0.020541135
+    [natural killer] 91 distinct values (numeric or identifiers), e.g. 0, 0.008858572, 0.011597697
+    [b cells] 92 distinct values (numeric or identifiers), e.g. 0.010002713, 0.017190699, 0.019315885
+    [monocytes] 92 distinct values (numeric or identifiers), e.g. 0.02706117, 0.036876706, 0.037311933
+    [granulocytes] 89 distinct values (numeric or identifiers), e.g. 0, 0.001274359, 0.015028017
+  Sample title examples: genomic DNA from blood sample 1 | genomic DNA from blood sample 2 | genomic DNA from blood sample 3
+  Array barcodes parsed: 0(overlap cannot be checked with barcodes)
+  Supplementary files: 
+    GSE67751_Explanation_of_characteristic_variables.pdf.gz (0.00 GB)
+    GSE67751_RAW.tar (0.18 GB)
+    GSE67751_datSignal_blood.csv.gz (0.21 GB)
+    filelist.txt (0.00 GB)
+
+Dossier written: C:/blood_methylation_project/output/29_dossier/candidate_dossier.csv
+Next: review this log in full and adjudicate each candidate to obtain the final list and the download manifest.
+
+==============================================
+Status: completed normally
+End: 2026-09-15 06:42:02   elapsed 5.5 min
+Warnings: 1
+  - longer object length is not a multiple of shorter object length
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

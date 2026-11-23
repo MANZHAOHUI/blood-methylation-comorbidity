@@ -1,0 +1,78 @@
+==============================================
+Script: 34b_age_source_check
+Start: 2026-09-17 03:42:50
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:S4Vectors -> %in%, anyDuplicated, append, as.data.frame, as.factor, as.list, as.matrix, as.table, by, cbind, colnames, colnames<-, do.call, droplevels, duplicated, eval, expand.grid, Filter, grep, grepl, I, intersect, is.unsorted, lapply, levels, match, merge, nchar, ncol, nrow, order, rank, rbind, Reduce, rep.int, rev, rownames, rownames<-, sapply, setdiff, setequal, sort, split, subset, substr, substring, summary, t, transform, union, unique, unname, with, within
+  package:BiocGenerics -> %in%, anyDuplicated, aperm, append, as.data.frame, as.list, as.vector, basename, cbind, colnames, colnames<-, dirname, do.call, duplicated, eval, evalq, Filter, Find, format, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mean, mget, ncol, NCOL, nrow, NROW, order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int, rownames, rownames<-, sapply, saveRDS, setdiff, sort, subset, t, table, tapply, union, unique, unlist, unsplit, which, which.max, which.min
+  package:stats4 -> plot, summary
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+=== 1. GSE84727: validating DNAm age in the 665 samples with chronological age ===
+  Comparable samples: 665 / 847
+  Correlation r = 0.940; mean difference +4.9 years; median absolute error 5.0 years
+    control: n = 405, r = 0.931, mean difference +5.0 years
+    case: n = 260, r = 0.949, mean difference +4.7 years
+  Interpretation: the proxy is considered usable at r of 0.85 or above; this case passes
+  Difference in estimation bias between the two groups: -0.39 years, p = 0.272  No difference in bias between the groups; the proxy introduces no group-related bias
+
+=== 2. Age source of the ten cohorts ===
+  GSE145361  Parkinson's disease round 1  uses DNAm age  no chronological age field in this cohort
+  GSE111629  Parkinson's disease round 1  uses chronological age  chronological age complete
+  GSE87648   inflammatory bowel disease round 1  uses chronological age  chronological age complete
+  GSE112611  inflammatory bowel disease round 1  uses chronological age  chronological age complete
+  GSE84727   schizophrenia round 2  uses DNAm age  chronological age missing in 21.5%, biased towards cases
+  GSE80417   schizophrenia round 2  uses chronological age  chronological age missing in 5.8%, unrelated to group
+  GSE198904  depression    round 2  uses chronological age  chronological age complete
+  GSE273970  depression    round 2  uses DNAm age  age only in ten-year groups
+  GSE338167  Alzheimer's disease round 2  uses chronological age  chronological age complete
+  GSE144858  Alzheimer's disease round 2  uses chronological age  chronological age complete
+
+  Using DNAm age: 3 sets, using chronological age: 7
+  Age source table written, to be cited by the study plan and the Methods
+
+=== 3. Two notes for the Methods ===
+  (1) In the two Alzheimer's disease cohorts DNAm age and chronological age correlate at only about 0.65, 
+      below the 0.82 to 0.94 of the other cohorts. Both use chronological age, so the analysis is unaffected; 
+      the low value may reflect compression of the Horvath clock at old age, plus the imputation of
+      1015 and 586 reference sites during normalisation.
+  (2) The number of usable sites for the smoking score differs between cohorts (163 to 187), which shifts the scores as a whole; 
+      they are not comparable across cohorts. As a within-cohort covariate the shift is absorbed by the intercept and does not matter.
+
+==============================================
+Status: completed normally
+End: 2026-09-17 03:42:50   elapsed 0.0 min
+Warnings: 13
+  - 205 CpG probes cannot be matched in horvath's ref probes, will set to NA
+  - 205 rows with more than 50 % entries missing;
+ mean imputation used for these rows
+  - package ‘cluster’ was built under R version 4.4.3
+  - 8 CpG probes cannot be matched in horvath's ref probes, will set to NA
+  - 8 rows with more than 50 % entries missing;
+ mean imputation used for these rows
+  - 1609 CpG probes cannot be matched in horvath's ref probes, will set to NA
+  - 1609 rows with more than 50 % entries missing;
+ mean imputation used for these rows
+  - 1062 CpG probes cannot be matched in horvath's ref probes, will set to NA
+  - 1062 rows with more than 50 % entries missing;
+ mean imputation used for these rows
+  - 1015 CpG probes cannot be matched in horvath's ref probes, will set to NA
+  - 1015 rows with more than 50 % entries missing;
+ mean imputation used for these rows
+  - 586 CpG probes cannot be matched in horvath's ref probes, will set to NA
+  - 586 rows with more than 50 % entries missing;
+ mean imputation used for these rows
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================
