@@ -1,0 +1,92 @@
+==============================================
+Script: 56_sex_exclusion_sensitivity
+Start: 2026-11-23 01:55:09
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+=== 1. Inputs ===
+Pairs involving GSE87648: 9 (GSE87648 permuted in 6, fixed in 3)
+Samples to exclude: 6 (controls 5, cases 1): GSM2337388, GSM2337421, GSM2337505, GSM2337493, GSM2337382, GSM2337286
+
+=== 2. GSE87648: primary model and model after exclusion ===
+  M matrix 406653 x 378, loaded in 0.5 min
+  GSE87648: recomputed coefficients against the stored limma results: r = 1.00000000, largest absolute difference 3.83e-15
+  Samples 378 -> 372; controls 174 -> 169, cases 204 -> 203
+  Parameters 22 -> 22; no column dropped
+  Pearson correlation of the effect vector before and after exclusion: 0.99398 (406653 probes)
+
+=== 3. Pairs in which GSE87648 is the permuted cohort ===
+    permutation 200 / 1000, elapsed 4.6 min
+    permutation 400 / 1000, elapsed 8.2 min
+    permutation 600 / 1000, elapsed 12.5 min
+    permutation 800 / 1000, elapsed 16.9 min
+    permutation 1000 / 1000, elapsed 20.8 min
+  Parkinson|IBD          GSE145361 vs GSE87648  probes 406653  primary rho=-0.0107 P=0.6184 | after exclusion rho=-0.0151 Z=-0.52 P=0.6973
+  Parkinson|IBD          GSE111629 vs GSE87648  probes 406325  primary rho=+0.0170 P=0.2338 | after exclusion rho=+0.0126 Z=+0.53 P=0.3037
+  Schizophrenia|IBD      GSE84727  vs GSE87648  probes 393628  primary rho=+0.0474 P=0.0010 | after exclusion rho=+0.0442 Z=+3.05 P=0.0010
+  Schizophrenia|IBD      GSE80417  vs GSE87648  probes 406309  primary rho=+0.0372 P=0.0090 | after exclusion rho=+0.0336 Z=+2.17 P=0.0160
+  Alzheimer|IBD          GSE338167 vs GSE87648  probes 362144  primary rho=+0.0400 P=0.0200 | after exclusion rho=+0.0435 Z=+2.18 P=0.0120
+  Depression|IBD         GSE198904 vs GSE87648  probes 362317  primary rho=-0.0162 P=0.8981 | after exclusion rho=-0.0170 Z=-1.59 P=0.9381
+
+=== 4. Pairs in which GSE87648 is the fixed cohort ===
+  ---- GSE112611 (PC-IBD, 10000 permutations) ----
+  M matrix 289139 x 238, loaded in 0.2 min
+  GSE112611: recomputed coefficients against the stored limma results: r = 1.00000000, largest absolute difference 1.31e-14
+    permutation 1000 / 10000, elapsed 4.6 min
+    permutation 2000 / 10000, elapsed 9.1 min
+    permutation 3000 / 10000, elapsed 13.3 min
+    permutation 4000 / 10000, elapsed 17.7 min
+    permutation 5000 / 10000, elapsed 22.4 min
+    permutation 6000 / 10000, elapsed 27.0 min
+    permutation 7000 / 10000, elapsed 31.6 min
+    permutation 8000 / 10000, elapsed 36.1 min
+    permutation 9000 / 10000, elapsed 40.2 min
+    permutation 10000 / 10000, elapsed 43.1 min
+  PC-IBD                 GSE87648  vs GSE112611 probes 289139  primary rho=+0.1174 P=0.0001 | after exclusion rho=+0.1113 Z=+3.85 P=0.0001
+  ---- GSE144858 (Alzheimer|IBD, 1000 permutations) ----
+  M matrix 389403 x 189, loaded in 0.1 min
+  GSE144858: recomputed coefficients against the stored limma results: r = 1.00000000, largest absolute difference 2.22e-15
+    permutation 1000 / 1000, elapsed 2.9 min
+  Alzheimer|IBD          GSE87648  vs GSE144858 probes 382321  primary rho=+0.0234 P=0.0999 | after exclusion rho=+0.0265 Z=+1.31 P=0.0889
+  ---- GSE273970 (Depression|IBD, 1000 permutations) ----
+  M matrix 390523 x 283, loaded in 0.2 min
+  GSE273970: recomputed coefficients against the stored limma results: r = 1.00000000, largest absolute difference 1.67e-14
+    permutation 1000 / 1000, elapsed 3.7 min
+  Depression|IBD         GSE87648  vs GSE273970 probes 379395  primary rho=+0.0063 P=0.3766 | after exclusion rho=+0.0040 Z=+0.16 P=0.4376
+
+=== 5. Summary ===
+  Within-disease pair (inflammatory bowel disease): primary rho=+0.1174 P=0.0001; after exclusion rho=+0.1113 Z=+3.85 P=0.0001 (Monte Carlo SE 0.0001)
+    critical rho 0.0475, 80% power requires rho >= 0.0719 (primary 0.0413 and 0.0626)
+  Cross-disease pairs involving GSE87648: P < 0.05 in 3 of 8 in the primary analysis and in 3 of 8 after exclusion
+    largest absolute change in rho 0.0044; correlation between primary and new rho over the 8 pairs r = 0.9918
+  No pair changed its status at P < 0.05
+
+  All forty cross-disease pairs, with the eight recomputed pairs substituted:
+    parkinson-ibd                significant pairings 0/4 -> 0/4
+    schizophrenia-ibd            significant pairings 2/4 -> 2/4
+    alzheimer-ibd                significant pairings 1/4 -> 1/4
+    depression-ibd               significant pairings 0/4 -> 0/4
+    nominally significant: 7 -> 7 of 40; largest number per disease pair: 2 -> 2; disease pairs significant in all four pairings: 0 -> 0
+    cross-disease pairs with a detection limit below the within-disease rho of inflammatory bowel disease: 40 -> 40 of 40
+
+Tables written to C:/blood_methylation_project/output/56_sex_exclusion
+
+==============================================
+Status: completed normally
+End: 2026-11-23 03:07:10   elapsed 72.0 min
+Warnings: none
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================

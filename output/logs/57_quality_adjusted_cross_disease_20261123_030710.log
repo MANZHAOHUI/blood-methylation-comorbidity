@@ -1,0 +1,221 @@
+==============================================
+Script: 57_quality_adjusted_cross_disease
+Start: 2026-11-23 03:07:10
+R    : R version 4.4.1 (2024-06-14 ucrt)  x86_64-w64-mingw32
+Working directory: C:/blood_methylation_rproject
+Library paths: C:/blood_methylation_rproject/renv/library/windows/R-4.4/x86_64-w64-mingw32
+Loaded packages that mask base functions (calling these function names unqualified reaches the wrong object):
+  package:graphics -> plot
+  package:methods -> body<-, kronecker
+==============================================
+
+=== 1. Inputs ===
+Ten cohorts, in order of processing: GSE145361=1638, GSE84727=847, GSE80417=636, GSE338167=621, GSE111629=572, GSE198904=429, GSE87648=378, GSE273970=283, GSE112611=238, GSE144858=189
+Pairs: cross-disease 40 (1000 permutations each), within-disease 5 (observed value only, checked against step 44)
+
+=== 2. Quality-adjusted models and permutations, cohort by cohort ===
+==== GSE145361 (1638 samples) ====
+  M matrix 406653 x 1638, loaded in 1.2 min
+  Recomputed coefficients against the stored limma results: r = 1.00000000, largest absolute difference 1.36e-14
+  Samples without a quality index: 0; parameters 233 -> 234
+  Correlation of the effect vectors of the two models: r = 0.9757; largest absolute correlation of the index with the 50 methylation principal components 0.094
+  Not the permuted cohort of any pair; effect vector only
+  Elapsed in total: 1.3 min
+
+==== GSE84727 (847 samples) ====
+  M matrix 404159 x 847, loaded in 0.6 min
+  Recomputed coefficients against the stored limma results: r = 1.00000000, largest absolute difference 5.19e-15
+  Samples without a quality index: 0; parameters 114 -> 115
+  Correlation of the effect vectors of the two models: r = 1.0000; largest absolute correlation of the index with the 20 methylation principal components 0.091
+    permutation 250 / 1000, elapsed 2.1 min
+    permutation 500 / 1000, elapsed 4.2 min
+    permutation 750 / 1000, elapsed 6.3 min
+    permutation 1000 / 1000, elapsed 8.4 min
+  Parkinson|Schizophrenia  GSE145361 vs GSE84727  probes 393628  primary rho=-0.0205 P=0.7902 | adjusted rho=-0.0058 Z=-0.61 P=0.7323
+  Elapsed in total: 10.4 min
+
+==== GSE80417 (636 samples) ====
+  M matrix 417939 x 636, loaded in 0.5 min
+  Recomputed coefficients against the stored limma results: r = 1.00000000, largest absolute difference 6.22e-15
+  Samples without a quality index: 0; parameters 95 -> 96
+  Correlation of the effect vectors of the two models: r = 0.9998; largest absolute correlation of the index with the 5 methylation principal components 0.064
+  PC-Schizophrenia         GSE84727  vs GSE80417  probes 403891  primary rho=+0.0713 | adjusted rho=+0.0738  (within-disease, observed value only)
+    permutation 250 / 1000, elapsed 2.2 min
+    permutation 500 / 1000, elapsed 5.5 min
+    permutation 750 / 1000, elapsed 8.7 min
+    permutation 1000 / 1000, elapsed 11.6 min
+  Parkinson|Schizophrenia  GSE145361 vs GSE80417  probes 406309  primary rho=-0.0060 P=0.5854 | adjusted rho=+0.0139 Z=+1.34 P=0.0869
+  Elapsed in total: 22.4 min
+
+==== GSE338167 (621 samples) ====
+  M matrix 371448 x 621, loaded in 0.7 min
+  Recomputed coefficients against the stored limma results: r = 1.00000000, largest absolute difference 1.07e-14
+  Samples without a quality index: 0; parameters 106 -> 107
+  Correlation of the effect vectors of the two models: r = 0.9997; no methylation principal components in this model
+    permutation 250 / 1000, elapsed 3.9 min
+    permutation 500 / 1000, elapsed 6.1 min
+    permutation 750 / 1000, elapsed 8.3 min
+    permutation 1000 / 1000, elapsed 10.4 min
+  Parkinson|Alzheimer      GSE145361 vs GSE338167 probes 362144  primary rho=-0.0239 P=0.7762 | adjusted rho=+0.0040 Z=+0.13 P=0.4525
+  Schizophrenia|Alzheimer  GSE84727  vs GSE338167 probes 363231  primary rho=+0.0316 P=0.0669 | adjusted rho=+0.0322 Z=+1.41 P=0.0789
+  Schizophrenia|Alzheimer  GSE80417  vs GSE338167 probes 371119  primary rho=+0.0177 P=0.2218 | adjusted rho=+0.0206 Z=+0.82 P=0.2048
+  Elapsed in total: 33.6 min
+
+==== GSE111629 (572 samples) ====
+  M matrix 406325 x 572, loaded in 0.5 min
+  Recomputed coefficients against the stored limma results: r = 1.00000000, largest absolute difference 1.19e-14
+  Samples without a quality index: 0; parameters 85 -> 86
+  Correlation of the effect vectors of the two models: r = 0.9834; no methylation principal components in this model
+  PC-Parkinson             GSE145361 vs GSE111629 probes 406325  primary rho=+0.0430 | adjusted rho=+0.0431  (within-disease, observed value only)
+    permutation 250 / 1000, elapsed 2.8 min
+    permutation 500 / 1000, elapsed 6.4 min
+    permutation 750 / 1000, elapsed 10.1 min
+    permutation 1000 / 1000, elapsed 14.3 min
+  Parkinson|Schizophrenia  GSE84727  vs GSE111629 probes 393330  primary rho=+0.0352 P=0.0060 | adjusted rho=+0.0297 Z=+2.23 P=0.0130
+  Parkinson|Schizophrenia  GSE80417  vs GSE111629 probes 405998  primary rho=+0.0392 P=0.0170 | adjusted rho=+0.0363 Z=+2.02 P=0.0210
+  Parkinson|Alzheimer      GSE338167 vs GSE111629 probes 361860  primary rho=+0.0305 P=0.1039 | adjusted rho=+0.0121 Z=+0.52 P=0.2907
+  Elapsed in total: 48.4 min
+
+==== GSE198904 (429 samples) ====
+  M matrix 371956 x 429, loaded in 0.5 min
+  Recomputed coefficients against the stored limma results: r = 1.00000000, largest absolute difference 9.49e-15
+  Samples without a quality index: 0; parameters 137 -> 138
+  Correlation of the effect vectors of the two models: r = 0.9787; largest absolute correlation of the index with the 50 methylation principal components 0.121
+    permutation 250 / 1000, elapsed 4.3 min
+    permutation 500 / 1000, elapsed 9.0 min
+    permutation 750 / 1000, elapsed 13.5 min
+    permutation 1000 / 1000, elapsed 15.6 min
+  Parkinson|Depression     GSE145361 vs GSE198904 probes 362317  primary rho=+0.0480 P=0.0400 | adjusted rho=-0.0013 Z=-0.12 P=0.5445
+  Parkinson|Depression     GSE111629 vs GSE198904 probes 362047  primary rho=-0.0066 P=0.8921 | adjusted rho=-0.0027 Z=-0.65 P=0.7343
+  Schizophrenia|Depression GSE84727  vs GSE198904 probes 363376  primary rho=-0.0132 P=0.9241 | adjusted rho=+0.0009 Z=+0.15 P=0.4326
+  Schizophrenia|Depression GSE80417  vs GSE198904 probes 371493  primary rho=-0.0089 P=0.8511 | adjusted rho=+0.0050 Z=+0.97 P=0.1668
+  Alzheimer|Depression     GSE338167 vs GSE198904 probes 344677  primary rho=-0.0185 P=0.9720 | adjusted rho=-0.0024 Z=-0.38 P=0.6513
+  Elapsed in total: 64.6 min
+
+==== GSE87648 (378 samples) ====
+  M matrix 406653 x 378, loaded in 0.1 min
+  Recomputed coefficients against the stored limma results: r = 1.00000000, largest absolute difference 3.83e-15
+  Samples without a quality index: 0; parameters 22 -> 23
+  Correlation of the effect vectors of the two models: r = 0.9876; largest absolute correlation of the index with the 5 methylation principal components 0.941
+    permutation 250 / 1000, elapsed 2.5 min
+    permutation 500 / 1000, elapsed 6.3 min
+    permutation 750 / 1000, elapsed 8.9 min
+    permutation 1000 / 1000, elapsed 11.4 min
+  Parkinson|IBD            GSE145361 vs GSE87648  probes 406653  primary rho=-0.0107 P=0.6184 | adjusted rho=+0.0102 Z=+0.42 P=0.3367
+  Parkinson|IBD            GSE111629 vs GSE87648  probes 406325  primary rho=+0.0170 P=0.2338 | adjusted rho=+0.0028 Z=+0.12 P=0.4565
+  Schizophrenia|IBD        GSE84727  vs GSE87648  probes 393628  primary rho=+0.0474 P=0.0010 | adjusted rho=+0.0430 Z=+2.93 P=0.0040
+  Schizophrenia|IBD        GSE80417  vs GSE87648  probes 406309  primary rho=+0.0372 P=0.0090 | adjusted rho=+0.0389 Z=+2.43 P=0.0060
+  Alzheimer|IBD            GSE338167 vs GSE87648  probes 362144  primary rho=+0.0400 P=0.0200 | adjusted rho=+0.0513 Z=+2.39 P=0.0040
+  Depression|IBD           GSE198904 vs GSE87648  probes 362317  primary rho=-0.0162 P=0.8981 | adjusted rho=-0.0054 Z=-1.11 P=0.8721
+  Elapsed in total: 76.2 min
+
+==== GSE273970 (283 samples) ====
+  M matrix 390523 x 283, loaded in 0.1 min
+  Recomputed coefficients against the stored limma results: r = 1.00000000, largest absolute difference 1.67e-14
+  Samples without a quality index: 0; parameters 51 -> 52
+  Correlation of the effect vectors of the two models: r = 0.9997; no methylation principal components in this model
+  PC-Depression            GSE198904 vs GSE273970 probes 371956  primary rho=-0.0089 | adjusted rho=+0.0030  (within-disease, observed value only)
+    permutation 250 / 1000, elapsed 2.3 min
+    permutation 500 / 1000, elapsed 35.4 min
+    permutation 750 / 1000, elapsed 38.2 min
+    permutation 1000 / 1000, elapsed 40.5 min
+  Parkinson|Depression     GSE145361 vs GSE273970 probes 379395  primary rho=+0.0157 P=0.2488 | adjusted rho=+0.0483 Z=+1.78 P=0.0310
+  Parkinson|Depression     GSE111629 vs GSE273970 probes 379096  primary rho=+0.0348 P=0.1339 | adjusted rho=-0.0015 Z=-0.07 P=0.5175
+  Schizophrenia|Depression GSE84727  vs GSE273970 probes 376898  primary rho=+0.0324 P=0.0569 | adjusted rho=+0.0337 Z=+1.61 P=0.0559
+  Schizophrenia|Depression GSE80417  vs GSE273970 probes 389697  primary rho=+0.0484 P=0.0090 | adjusted rho=+0.0529 Z=+2.44 P=0.0060
+  Alzheimer|Depression     GSE338167 vs GSE273970 probes 350811  primary rho=+0.0451 P=0.1269 | adjusted rho=+0.0514 Z=+1.51 P=0.0639
+  Depression|IBD           GSE87648  vs GSE273970 probes 379395  primary rho=+0.0063 P=0.3766 | adjusted rho=-0.0025 Z=-0.11 P=0.5574
+  Elapsed in total: 116.9 min
+
+==== GSE112611 (238 samples) ====
+  M matrix 289139 x 238, loaded in 0.2 min
+  Recomputed coefficients against the stored limma results: r = 1.00000000, largest absolute difference 1.31e-14
+  Samples without a quality index: 0; parameters 69 -> 70
+  Correlation of the effect vectors of the two models: r = 0.9731; no methylation principal components in this model
+  PC-IBD                   GSE87648  vs GSE112611 probes 289139  primary rho=+0.1174 | adjusted rho=+0.1038  (within-disease, observed value only)
+    permutation 250 / 1000, elapsed 1.7 min
+    permutation 500 / 1000, elapsed 3.5 min
+    permutation 750 / 1000, elapsed 5.2 min
+    permutation 1000 / 1000, elapsed 7.0 min
+  Parkinson|IBD            GSE145361 vs GSE112611 probes 289139  primary rho=+0.0044 P=0.4525 | adjusted rho=+0.0164 Z=+0.59 P=0.2777
+  Parkinson|IBD            GSE111629 vs GSE112611 probes 288933  primary rho=-0.0494 P=0.9181 | adjusted rho=-0.0201 Z=-0.93 P=0.8222
+  Schizophrenia|IBD        GSE84727  vs GSE112611 probes 279992  primary rho=+0.0169 P=0.1978 | adjusted rho=+0.0262 Z=+1.54 P=0.0599
+  Schizophrenia|IBD        GSE80417  vs GSE112611 probes 289046  primary rho=+0.0002 P=0.4865 | adjusted rho=+0.0160 Z=+0.79 P=0.2148
+  Alzheimer|IBD            GSE338167 vs GSE112611 probes 261738  primary rho=-0.0147 P=0.7073 | adjusted rho=-0.0048 Z=-0.16 P=0.5594
+  Depression|IBD           GSE198904 vs GSE112611 probes 278120  primary rho=+0.0021 P=0.4585 | adjusted rho=-0.0103 Z=-1.89 P=0.9770
+  Depression|IBD           GSE273970 vs GSE112611 probes 288831  primary rho=-0.0528 P=0.8661 | adjusted rho=-0.0199 Z=-0.55 P=0.6933
+  Elapsed in total: 124.1 min
+
+==== GSE144858 (189 samples) ====
+  M matrix 389403 x 189, loaded in 0.1 min
+  Recomputed coefficients against the stored limma results: r = 1.00000000, largest absolute difference 2.22e-15
+  Samples without a quality index: 0; parameters 21 -> 22
+  Correlation of the effect vectors of the two models: r = 0.9913; largest absolute correlation of the index with the 5 methylation principal components 0.979
+  PC-Alzheimer             GSE338167 vs GSE144858 probes 350743  primary rho=+0.0026 | adjusted rho=+0.0010  (within-disease, observed value only)
+    permutation 250 / 1000, elapsed 2.6 min
+    permutation 500 / 1000, elapsed 6.9 min
+    permutation 750 / 1000, elapsed 12.3 min
+    permutation 1000 / 1000, elapsed 17.2 min
+  Parkinson|Alzheimer      GSE145361 vs GSE144858 probes 382321  primary rho=+0.0085 P=0.3047 | adjusted rho=+0.0120 Z=+0.75 P=0.2348
+  Parkinson|Alzheimer      GSE111629 vs GSE144858 probes 382025  primary rho=-0.0194 P=0.9041 | adjusted rho=-0.0110 Z=-0.84 P=0.7882
+  Schizophrenia|Alzheimer  GSE84727  vs GSE144858 probes 389161  primary rho=-0.0051 P=0.7033 | adjusted rho=-0.0076 Z=-0.79 P=0.7992
+  Schizophrenia|Alzheimer  GSE80417  vs GSE144858 probes 389140  primary rho=+0.0063 P=0.2258 | adjusted rho=+0.0057 Z=+0.67 P=0.2577
+  Alzheimer|Depression     GSE198904 vs GSE144858 probes 350415  primary rho=-0.0074 P=0.8561 | adjusted rho=-0.0067 Z=-1.15 P=0.8771
+  Alzheimer|Depression     GSE273970 vs GSE144858 probes 363110  primary rho=+0.0073 P=0.2627 | adjusted rho=+0.0130 Z=+1.31 P=0.0969
+  Alzheimer|IBD            GSE87648  vs GSE144858 probes 382321  primary rho=+0.0234 P=0.0999 | adjusted rho=+0.0112 Z=+0.59 P=0.2757
+  Alzheimer|IBD            GSE112611 vs GSE144858 probes 272979  primary rho=+0.0263 P=0.0949 | adjusted rho=+0.0191 Z=+1.01 P=0.1628
+  Elapsed in total: 141.5 min
+
+=== 3. Summary ===
+  Within-disease pairs under the adjusted models (permutation results are those of step 44):
+    Schizophrenia    primary rho=+0.0713  adjusted rho=+0.0738  step 44 rho=+0.0738 P=0.0010  agrees
+    Parkinson        primary rho=+0.0430  adjusted rho=+0.0431  step 44 rho=+0.0431 P=0.0380  agrees
+    Depression       primary rho=-0.0089  adjusted rho=+0.0030  step 44 rho=+0.0030 P=0.3217  agrees
+    IBD              primary rho=+0.1174  adjusted rho=+0.1038  step 44 rho=+0.1038 P=0.0010  agrees
+    Alzheimer        primary rho=+0.0026  adjusted rho=+0.0010  step 44 rho=+0.0010 P=0.4735  agrees
+  All five observed values agree with step 44.
+
+  Cross-disease pairs by disease pair:
+    parkinson-schizophrenia      adjusted rho +0.030 +0.036 +0.014 -0.006; significant 2/4 (primary 2/4)
+    parkinson-alzheimer          adjusted rho +0.012 +0.012 -0.011 +0.004; significant 0/4 (primary 0/4)
+    parkinson-ibd                adjusted rho +0.016 -0.020 +0.010 +0.003; significant 0/4 (primary 0/4)
+    schizophrenia-ibd            adjusted rho +0.026 +0.016 +0.043 +0.039; significant 2/4 (primary 2/4)
+    alzheimer-ibd                adjusted rho -0.005 +0.011 +0.019 +0.051; significant 1/4 (primary 1/4)
+    depression-ibd               adjusted rho -0.010 -0.020 -0.002 -0.005; significant 0/4 (primary 0/4)
+    schizophrenia-alzheimer      adjusted rho -0.008 +0.006 +0.032 +0.021; significant 0/4 (primary 0/4)
+    alzheimer-depression         adjusted rho -0.007 +0.013 -0.002 +0.051; significant 0/4 (primary 0/4)
+    parkinson-depression         adjusted rho -0.001 -0.003 +0.048 -0.001; significant 1/4 (primary 1/4)
+    schizophrenia-depression     adjusted rho +0.001 +0.005 +0.034 +0.053; significant 1/4 (primary 1/4)
+
+  Forty cross-disease pairs, primary -> quality-adjusted:
+    nominally significant (P < 0.05): 7 -> 7
+    positive rho: 25 -> 26
+    median rho +0.0068 -> +0.0107; range -0.0528 to +0.0484 -> -0.0201 to +0.0529
+    largest number of significant pairings per disease pair: 2 -> 2; disease pairs significant in all four pairings: 0 -> 0
+    detection limits (80% power) 0.0129 to 0.1087 -> 0.0113 to 0.0963
+    pairs with a detection limit below the within-disease rho of inflammatory bowel disease: 40 (primary, rho 0.1174) -> 40 (adjusted, rho 0.1038) of 40
+    agreement of the forty rho values between the two models: Pearson r = 0.7718, Spearman rho = 0.7627; largest absolute change 0.0493
+    pairs whose status at P < 0.05 changed: 2
+      Parkinson|Depression     GSE145361 vs GSE198904: rho +0.0480 -> -0.0013, P 0.0400 -> 0.5445
+      Parkinson|Depression     GSE145361 vs GSE273970: rho +0.0157 -> +0.0483, P 0.2488 -> 0.0310
+  Effect vectors of the two models, ten cohorts: r from 0.9731 to 1.0000; quality term kept in 10 of 10 models
+
+=== 4. Figure ===
+  [figure] fig54_quality_adjusted_cross_pairs  5.5x6 in @600 dpi  png 270.3 KB
+
+Tables written to C:/blood_methylation_project/output/57_quality_cross
+
+==============================================
+Status: completed normally
+End: 2026-11-23 05:28:43   elapsed 141.6 min
+Warnings: none
+Versions of key packages:
+  EpiDISH  2.22.0
+  minfi  1.52.1
+  limma  3.62.2
+  data.table  1.18.6.1
+  EpiSmokEr  0.1.0
+  dnaMethyAge  0.2.0
+  maxprobes  not installed
+  IlluminaHumanMethylation450kanno.ilmn12.hg19  0.6.1
+==============================================
