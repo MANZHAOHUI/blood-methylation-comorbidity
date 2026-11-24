@@ -7,7 +7,7 @@ authors:
   - family-names: Man
     given-names: Zhaohui
     orcid: "https://orcid.org/0000-0003-2537-1425"
-    affiliation: "Beijing CapitalBio Technology Co., Ltd."
+    affiliation: "CapitalBio Technology Co., Ltd."
 version: "1.0.0"
 license: MIT
 repository-code: "https://github.com/MANZHAOHUI/blood-methylation-comorbidity"
